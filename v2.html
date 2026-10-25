@@ -3,1128 +3,1685 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mineuddin Siam — Web Designer & WordPress Developer</title>
-  <meta name="description" content="Independent web designer and WordPress developer building bespoke, high-converting websites for businesses since 2019.">
-
-  <!-- Typography: Schibsted Grotesk (Display 800, Text 400 & 600) -->
+  <title>Mineuddin Siam — Web Designer & Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
-
-  <script>document.documentElement.classList.add('js');</script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* ─── Architectural Tokens (Palette: Frost and slate) ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --bg: #f7f9fa;
-      --surface: #ecf0f2;
-      --surface-card: #ffffff;
-      --ink: #1f3038;
-      --muted: #33444c;
-      --accent: #0d7480;
-      --accent-ink: #ffffff;
-      --accent-soft: #e2f0f2;
-
-      /* Dark Architectural Bands */
-      --band-dark: #121c21;
-      --band-surface: #1a272e;
-      --band-ink: #f7f9fa;
-      --band-muted: #b0c2cb;
-
-      /* Motion Tokens */
-      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-out: cubic-bezier(0, 0, 0.2, 1);
-
-      /* Five Precise Typographic Steps */
-      --step-small: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem); /* 14px–15px */
-      --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);    /* 17px–19px */
-      --step-lead: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);       /* 20px–24px */
-      --step-subhead: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem);   /* 28px–40px */
-      --step-display: clamp(2rem, 1.4rem + 3.2vw, 4.25rem);       /* 32px–68px */
-
-      /* Structural Grid */
-      --page-gutter: clamp(24px, 5vw, 80px);
-      --max-width: 1280px;
-      --radius: 4px;
-    }
-
-    /* ─── Base Reset ─── */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --bg: #f5f4f0;
+      --bg-card: #eceae4;
+      --bg-dark: #1a1918;
+      --bg-dark-card: #262523;
+      --text: #1a1a1a;
+      --text-muted: #6b6860;
+      --text-light: #e8e6e0;
+      --text-light-muted: #9e9a90;
+      --accent: #4a7c59;
+      --border: #d6d3cb;
+      --border-dark: #3a3835;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --font: 'Outfit', sans-serif;
     }
 
     html {
-      font-size: 16px;
       scroll-behavior: smooth;
-      background-color: var(--bg);
-      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: var(--step-body);
-      line-height: 1.55;
-      color: var(--ink);
-      background-color: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      overflow-x: clip;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    img, video {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    ::selection { background: var(--text); color: var(--bg); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── Cursor Glow ─── */
+    .cursor-glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(180,175,160,0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
     }
 
-    a {
-      color: inherit;
-      text-decoration-thickness: 1.5px;
-      text-underline-offset: 4px;
+    /* ─── Nav ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
     }
 
-    button {
-      font-family: inherit;
-      border: none;
-      background: none;
+    nav.scrolled {
+      background: rgba(245, 244, 240, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      transition: opacity 0.2s ease;
       cursor: pointer;
     }
 
-    /* ─── Motion Layer ─── */
-    @media (prefers-reduced-motion: no-preference) {
-      .line-mask {
-        display: block;
-        overflow: hidden;
-      }
-      .js [data-line] {
-        display: inline-block;
-        transform: translateY(105%);
-        animation: load-line 850ms var(--ease-expo) forwards;
-        animation-delay: calc(100ms + var(--i, 0) * 120ms);
-      }
-      .js [data-load] {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: load-fade 750ms var(--ease-expo) forwards;
-        animation-delay: var(--d, 200ms);
-      }
-      .js [data-scroll] {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 700ms var(--ease-expo), transform 700ms var(--ease-expo);
-        transition-delay: var(--delay, 0ms);
-      }
-      .js [data-scroll].in-view {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    @keyframes load-line { to { transform: translateY(0); } }
-    @keyframes load-fade { to { opacity: 1; transform: translateY(0); } }
-
-    /* ─── Navigation ─── */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: var(--bg);
-      padding: 22px var(--page-gutter);
+    .nav-logo:hover {
+      opacity: 0.75;
     }
 
-    .header-inner {
-      max-width: var(--max-width);
-      margin-inline: auto;
+    .nav-links {
+      display: flex; gap: 32px; list-style: none;
+      font-size: 0.9rem; font-weight: 400; color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--text);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      padding: 10px 24px;
+      background: var(--text); color: var(--bg);
+      border-radius: 100px;
+      font-family: var(--font); font-size: 0.85rem; font-weight: 500;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-cta:hover { transform: translateY(-1px); opacity: 0.85; }
+
+    /* ─── Hero (Trending 2025/2026 Split Stage) ─── */
+    .hero {
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand-mark {
-      font-size: var(--step-lead);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .header-nav a {
-      text-decoration: none;
-      color: var(--muted);
-      transition: color 0.15s ease;
-    }
-
-    .header-nav a:hover,
-    .header-nav a:focus-visible {
-      color: var(--ink);
-    }
-
-    .action-button {
-      display: inline-flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      height: 46px;
-      padding: 0 24px;
-      background-color: var(--ink);
-      color: #ffffff;
-      font-size: var(--step-small);
-      font-weight: 600;
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: background-color 0.15s ease, transform 0.1s ease;
-    }
-
-    .action-button:hover,
-    .action-button:focus-visible {
-      background-color: var(--accent);
-      color: #ffffff;
-    }
-
-    .action-button:active {
-      transform: scale(0.98);
-    }
-
-    .action-button-accent {
-      background-color: var(--accent);
-      color: var(--accent-ink);
-    }
-
-    .action-button-accent:hover,
-    .action-button-accent:focus-visible {
-      background-color: #095963;
-    }
-
-    /* ─── Structural Containers ─── */
-    .page-section {
-      padding: clamp(72px, 8vw, 140px) var(--page-gutter);
-    }
-
-    .section-inner {
-      max-width: var(--max-width);
-      margin-inline: auto;
-    }
-
-    /* ─── Hero Masthead ─── */
-    .hero-masthead {
-      padding-top: clamp(24px, 4vw, 48px);
-      padding-bottom: clamp(72px, 8vw, 120px);
-    }
-
-    .masthead-media-strip {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 16px;
-      margin-bottom: clamp(48px, 6vw, 80px);
-      align-items: stretch;
-    }
-
-    .masthead-clip-frame {
-      height: 380px;
-      background-color: var(--surface);
-      overflow: hidden;
-      border-radius: var(--radius);
+      padding: 130px 40px 60px;
+      max-width: 1240px;
+      margin: 0 auto;
       position: relative;
     }
 
-    .masthead-clip-frame video,
-    .masthead-clip-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* Ambient luminous glow */
+    .hero-ambient-aura {
+      position: absolute;
+      top: 20%;
+      right: 0%;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74, 124, 89, 0.14) 0%, rgba(214, 211, 203, 0.3) 45%, transparent 70%);
+      filter: blur(50px);
+      pointer-events: none;
+      z-index: 0;
+      animation: ambientPulse 9s ease-in-out infinite alternate;
     }
 
-    .hero-editorial-axis {
+    @keyframes ambientPulse {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+      100% { transform: translate(-30px, 25px) scale(1.1); opacity: 1; }
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 38% 62%;
-      align-items: start;
-      gap: 48px;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-meta-col {
+    .hero-main-col {
       display: flex;
       flex-direction: column;
-      gap: 20px;
     }
 
-    .hero-meta-note {
-      font-size: var(--step-small);
+    .hero-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px 6px 10px;
+      background: var(--bg-card);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 24px;
+      width: fit-content;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .status-pulse-ring {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 14px;
+      height: 14px;
+    }
+
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+      animation: pulseGreen 2s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+    }
+
+    .status-sep {
+      color: var(--border);
+      font-weight: 300;
+    }
+
+    .status-badge {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .status-star {
+      color: #b45309;
+      background: rgba(245, 158, 11, 0.12);
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-size: 0.75rem;
       font-weight: 600;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .hero-content-col {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
     }
 
     .hero-headline {
-      font-size: var(--step-display);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 0.98;
-      color: var(--ink);
-    }
-
-    .hero-deck {
-      font-size: var(--step-lead);
-      color: var(--ink);
-      line-height: 1.45;
-      max-width: 46ch;
-    }
-
-    .hero-actions-row {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-top: 12px;
-      flex-wrap: wrap;
-    }
-
-    .secondary-link {
-      font-size: var(--step-small);
+      font-size: clamp(2.8rem, 5.5vw, 4.6rem);
       font-weight: 600;
-      color: var(--ink);
-      padding: 12px 4px;
-    }
-
-    /* ─── Editorial Ledger (Ledger / Proof Band) ─── */
-    .ledger-band {
-      background-color: var(--surface);
-      padding: clamp(64px, 7vw, 100px) var(--page-gutter);
-    }
-
-    .ledger-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-    }
-
-    .ledger-stat-cell {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .ledger-stat-figure {
-      font-size: clamp(2.5rem, 2rem + 2vw, 3.75rem);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: var(--ink);
-    }
-
-    .ledger-stat-label {
-      font-size: var(--step-body);
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.35;
-    }
-
-    .ledger-stat-detail {
-      font-size: var(--step-small);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ─── Main Index / Work Section ─── */
-    .work-section-header {
-      display: grid;
-      grid-template-columns: 38% 62%;
-      align-items: baseline;
-      gap: 48px;
-      margin-bottom: clamp(48px, 6vw, 72px);
-    }
-
-    .section-heading {
-      font-size: var(--step-subhead);
-      font-weight: 800;
-      letter-spacing: -0.03em;
       line-height: 1.1;
-      color: var(--ink);
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin-bottom: 24px;
     }
 
-    .section-standfirst {
-      font-size: var(--step-lead);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    /* ─── Live Architectural Project Drawer ─── */
-    .project-interactive-stage {
-      background-color: var(--surface-card);
-      border-radius: var(--radius);
-      padding: clamp(24px, 4vw, 48px);
-      margin-bottom: clamp(64px, 7vw, 100px);
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 48px;
-      align-items: start;
-    }
-
-    .stage-directory-list {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .stage-item-btn {
-      width: 100%;
-      text-align: left;
-      padding: 16px 20px;
-      border-radius: var(--radius);
-      background-color: transparent;
-      color: var(--ink);
-      transition: background-color 0.15s ease, color 0.15s ease;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .stage-item-btn:hover {
-      background-color: var(--surface);
-    }
-
-    .stage-item-btn.active {
-      background-color: var(--ink);
-      color: #ffffff;
-    }
-
-    .stage-item-title {
-      font-size: var(--step-body);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .stage-item-industry {
-      font-size: var(--step-small);
-      color: var(--muted);
-    }
-
-    .stage-item-btn.active .stage-item-industry {
-      color: #b5c3cb;
-    }
-
-    .stage-display-view {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .stage-preview-frame {
-      width: 100%;
-      height: 480px;
-      background-color: var(--surface);
-      border-radius: var(--radius);
-      overflow: hidden;
+    .hero-highlight {
+      background: linear-gradient(135deg, #1a1a1a 0%, #4a7c59 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
       position: relative;
     }
 
-    .stage-preview-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
+    .hero-sub {
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 36px;
     }
 
-    .stage-spec-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      padding-top: 20px;
+    .hero-sub strong {
+      color: var(--text);
+      font-weight: 500;
     }
 
-    .spec-group {
+    .hero-actions {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .spec-key {
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .spec-value {
-      font-size: var(--step-body);
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    /* ─── Strip Catalogue of Deliverables (One Strip Per Project) ─── */
-    .catalogue-strips-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .project-strip {
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 40px;
-      background-color: var(--surface-card);
-      border-radius: var(--radius);
-      padding: 32px;
+      gap: 14px;
       align-items: center;
-    }
-
-    .strip-thumb-box {
-      width: 100%;
-      height: 240px;
-      background-color: var(--surface);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .strip-thumb-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: transform 0.25s ease;
-    }
-
-    .project-strip:hover .strip-thumb-box img {
-      transform: scale(1.02);
-    }
-
-    .strip-info-col {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .strip-title {
-      font-size: var(--step-lead);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-    }
-
-    .strip-summary {
-      font-size: var(--step-body);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .strip-details-meta {
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--ink);
-    }
-
-    .strip-link {
-      align-self: flex-start;
-      margin-top: 6px;
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .strip-link:hover {
-      text-decoration: underline;
-    }
-
-    /* ─── Client Monograph & Verified Testimonials ─── */
-    .monograph-band {
-      background-color: var(--band-dark);
-      color: var(--band-ink);
-      padding: clamp(80px, 9vw, 150px) var(--page-gutter);
-    }
-
-    .monograph-header {
-      display: grid;
-      grid-template-columns: 38% 62%;
-      align-items: baseline;
-      gap: 48px;
-      margin-bottom: clamp(56px, 7vw, 84px);
-    }
-
-    .monograph-header .section-heading {
-      color: var(--band-ink);
-    }
-
-    .monograph-header .section-standfirst {
-      color: var(--band-muted);
-    }
-
-    .monograph-featured-account {
-      background-color: var(--band-surface);
-      border-radius: var(--radius);
-      padding: clamp(32px, 5vw, 56px);
+      flex-wrap: wrap;
       margin-bottom: 48px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
     }
 
-    .monograph-featured-quote {
-      font-size: var(--step-lead);
-      line-height: 1.5;
-      color: var(--band-ink);
-      max-width: 58ch;
-    }
-
-    .monograph-ledger-columns {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px;
-    }
-
-    .monograph-ledger-entry {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .monograph-ledger-quote {
-      font-size: var(--step-body);
-      line-height: 1.6;
-      color: var(--band-ink);
-    }
-
-    .monograph-author-block {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .monograph-author-name {
-      font-size: var(--step-body);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--band-ink);
-    }
-
-    .monograph-author-market {
-      font-size: var(--step-small);
-      color: var(--band-muted);
-    }
-
-    /* ─── Editorial Contact Section ─── */
-    .contact-editorial-section {
-      padding: clamp(80px, 9vw, 150px) var(--page-gutter);
-      background-color: var(--bg);
-    }
-
-    .contact-editorial-grid {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .contact-callout-block {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .contact-channels-block {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
-      background-color: var(--surface-card);
-      padding: clamp(32px, 5vw, 56px);
-      border-radius: var(--radius);
-    }
-
-    .channel-row {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-
-    .channel-title {
-      font-size: var(--step-small);
-      font-weight: 600;
-      color: var(--muted);
-    }
-
-    .channel-contact-val {
-      font-size: var(--step-lead);
-      font-weight: 800;
-      color: var(--ink);
-      text-decoration: none;
-      word-break: break-all;
-    }
-
-    .channel-contact-val:hover {
-      color: var(--accent);
-    }
-
-    /* ─── Colophon Footer ─── */
-    .colophon-footer {
-      background-color: var(--surface);
-      padding: 48px var(--page-gutter);
-    }
-
-    .footer-inner {
-      max-width: var(--max-width);
-      margin-inline: auto;
-      display: flex;
+    .btn-primary {
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      font-size: var(--step-small);
-      color: var(--muted);
+      gap: 12px;
+      padding: 14px 32px;
+      background: var(--text);
+      color: var(--bg);
+      border-radius: 100px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.14);
+    }
+
+    .btn-primary svg { transition: transform 0.3s ease; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 26px;
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--text);
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background: #25D366;
+      border-color: #25D366;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .hero-stats-row {
+      display: flex;
+      gap: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
       flex-wrap: wrap;
     }
 
-    .footer-credits-note {
-      font-size: var(--step-small);
-      color: var(--muted);
-      max-width: 60ch;
-      line-height: 1.5;
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
     }
 
-    /* ─── Responsive Viewports ─── */
-    @media (max-width: 980px) {
-      .masthead-media-strip {
-        grid-template-columns: 1fr;
-      }
-      .masthead-clip-frame {
-        height: 280px;
-      }
-      .masthead-clip-frame:nth-child(n+2) {
-        display: none;
-      }
-      .hero-editorial-axis {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .ledger-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
-      }
-      .work-section-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .project-interactive-stage {
-        grid-template-columns: 1fr;
-      }
-      .project-strip {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      .monograph-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-      .monograph-ledger-columns {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-      .contact-editorial-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    .hero-stat-number {
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: 6px;
+    }
+
+    /* ─── Hero Interactive Stage (Right Column) ─── */
+    .hero-stage-col {
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .hero-preview-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.03);
+      position: relative;
+      overflow: visible;
+      transform-style: preserve-3d;
+      transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+    }
+
+    .hero-preview-card:hover {
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.13), 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-browser-bar {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      background: #fbfbfa;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dots .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .browser-url {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 14px;
+      background: #f0eee9;
+      border-radius: 100px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .browser-badge {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #166534;
+      background: #dcfce7;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .card-preview-viewport {
+      width: 100%;
+      height: 380px;
+      overflow: hidden;
+      background: #e8e6e0;
+      border-radius: 0 0 20px 20px;
+      position: relative;
+    }
+
+    .card-preview-viewport img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .hero-preview-card:hover .card-preview-viewport img {
+      transform: scale(1.03);
+    }
+
+    /* Floating Glassmorphic Badges */
+    .floating-glass-chip {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      border-radius: 14px;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+      z-index: 10;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+
+    .chip-top {
+      top: -18px;
+      right: -24px;
+    }
+
+    .chip-bottom {
+      bottom: -22px;
+      left: -24px;
+    }
+
+    .hero-preview-card:hover .chip-top {
+      transform: translateY(-4px);
+    }
+
+    .hero-preview-card:hover .chip-bottom {
+      transform: translateY(4px);
+    }
+
+    .chip-icon {
+      width: 32px;
+      height: 32px;
+      background: #fef3c7;
+      color: #d97706;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .chip-icon-brand {
+      width: 32px;
+      height: 32px;
+      background: #dcfce7;
+      color: #15803d;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .chip-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.2;
+    }
+
+    .chip-sub {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* ─── Trending Infinite Marquee Bar ─── */
+    .hero-marquee {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-top: 40px;
+      margin-bottom: 40px;
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 36px;
+      animation: marqueeScroll 35s linear infinite;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-bullet {
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ─── Section Common ─── */
+    .section {
+      padding: 100px 40px 60px;
+      max-width: 1200px; margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.8rem; font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em; margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; letter-spacing: -0.03em;
+      line-height: 1.15; margin-bottom: 64px;
+    }
+
+    /* ─── Project Thumbnails (hero-only crop) ─── */
+    .project-thumb {
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      background: #e0ded8;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* ─── Projects Grid ─── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+    }
+
+    .project-card:hover .project-thumb img {
+      transform: scale(1.04);
+    }
+
+    .project-info { padding: 24px 28px 28px; }
+
+    .project-name {
+      font-size: 1.15rem; font-weight: 600;
+      letter-spacing: -0.01em; margin-bottom: 6px;
+    }
+
+    .project-type {
+      font-size: 0.85rem; color: var(--text-muted); font-weight: 400;
+    }
+
+    .project-tags {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
+    }
+
+    .project-tag {
+      padding: 5px 14px;
+      background: var(--bg); border-radius: 100px;
+      font-size: 0.75rem; font-weight: 400; color: var(--text-muted);
+    }
+
+    /* ─── Featured (full-width alternating, top-aligned) ─── */
+    .featured-section {
+      padding: 0 40px;
+      max-width: 1200px;
+      margin: 0 auto 36px;
+    }
+
+    .featured-card {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      align-items: stretch;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 440px;
+      transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .featured-card:hover { transform: translateY(-4px); }
+
+    .featured-card.reverse { direction: rtl; }
+    .featured-card.reverse > * { direction: ltr; }
+
+    .featured-thumb {
+      height: 440px;
+      overflow: hidden;
+      position: relative;
+      background: #e0ded8;
+    }
+
+    .featured-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .featured-card:hover .featured-thumb img { transform: scale(1.03); }
+
+    .featured-content {
+      padding: 44px 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .featured-number {
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .featured-name {
+      font-size: 1.75rem; font-weight: 600;
+      letter-spacing: -0.025em; line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .featured-desc {
+      font-size: 0.95rem; color: var(--text-muted);
+      line-height: 1.7; font-weight: 300;
+      margin-bottom: 24px;
+    }
+
+    .featured-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .featured-tag {
+      padding: 6px 16px;
+      background: var(--bg); border-radius: 100px;
+      font-size: 0.78rem; color: var(--text-muted); font-weight: 400;
+    }
+
+    /* ─── Testimonials (dark band) ─── */
+    .testimonials-band {
+      background: var(--bg-dark);
+      padding: 120px 40px;
+      margin-top: 40px;
+    }
+
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials-band .section-label { color: var(--text-light-muted); }
+    .testimonials-band .section-title { color: var(--text-light); margin-bottom: 16px; }
+
+    .testimonials-rating-summary {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 48px; padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-dark);
+    }
+
+    .rating-big {
+      font-size: 3.5rem; font-weight: 700;
+      color: var(--text-light); letter-spacing: -0.04em; line-height: 1;
+    }
+
+    .rating-detail { display: flex; flex-direction: column; gap: 4px; }
+    .rating-stars { display: flex; gap: 3px; }
+    .rating-stars svg { width: 18px; height: 18px; fill: #f0b429; }
+
+    .rating-label {
+      font-size: 0.82rem; color: var(--text-light-muted); font-weight: 400;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: var(--bg-dark-card);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      display: flex; flex-direction: column;
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .testimonial-card:hover { transform: translateY(-4px); }
+
+    .testimonial-stars { display: flex; gap: 2px; margin-bottom: 20px; }
+    .testimonial-stars svg { width: 14px; height: 14px; fill: #f0b429; }
+
+    .testimonial-text {
+      font-size: 0.92rem; color: var(--text-light);
+      font-weight: 300; line-height: 1.7;
+      flex: 1; margin-bottom: 24px;
+    }
+
+    .testimonial-author {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .testimonial-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%; background: #3a3835;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 600; color: var(--text-light-muted);
+    }
+
+    .testimonial-name {
+      font-size: 0.85rem; font-weight: 500; color: var(--text-light);
+    }
+
+    .testimonial-source {
+      font-size: 0.75rem; color: var(--text-light-muted); font-weight: 400;
+    }
+
+    .fiverr-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 48px; padding: 12px 24px;
+      background: var(--bg-dark-card); border-radius: 100px;
+      color: var(--text-light-muted);
+      font-size: 0.85rem; font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .fiverr-badge:hover { color: var(--text-light); }
+    .fiverr-badge svg { width: 16px; height: 16px; }
+
+    /* ─── About ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+
+    .about-text p {
+      font-size: 1.05rem; font-weight: 300;
+      color: var(--text-muted); line-height: 1.8; margin-bottom: 24px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px; margin-top: 20px;
+    }
+
+    .stat {
+      padding: 28px;
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      transition: transform 0.3s ease;
+    }
+
+    .stat:hover { transform: translateY(-2px); }
+
+    .stat-number {
+      font-size: 2.2rem; font-weight: 600;
+      letter-spacing: -0.03em; line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.82rem; color: var(--text-muted);
+      font-weight: 400; margin-top: 8px;
+    }
+
+    .stat-accent { background: var(--text); color: var(--bg); }
+    .stat-accent .stat-label { color: rgba(245,244,240,0.5); }
+
+    /* ─── Services ─── */
+    .services-list {
+      display: flex; flex-direction: column;
+      gap: 1px; background: var(--border);
+      border-radius: var(--radius); overflow: hidden;
+    }
+
+    .service-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 36px 40px;
+      background: var(--bg); cursor: default;
+      transition: background 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .service-item:hover {
+      background: var(--bg-card);
+      padding-left: 52px;
+    }
+
+    .service-name {
+      font-size: 1.15rem; font-weight: 500; letter-spacing: -0.01em;
+    }
+
+    .service-desc {
+      font-size: 0.85rem; color: var(--text-muted);
+      font-weight: 400; text-align: right;
+    }
+
+    /* ─── Contact ─── */
+    .contact-band {
+      background: var(--bg-dark);
+      padding: 120px 40px 80px;
+    }
+
+    .contact-inner { max-width: 1200px; margin: 0 auto; }
+
+    .contact-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px; align-items: start;
+    }
+
+    .contact-heading {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 600; letter-spacing: -0.035em;
+      line-height: 1.1; color: var(--text-light);
+    }
+
+    .contact-sub {
+      font-size: 1rem; font-weight: 300;
+      color: var(--text-light-muted);
+      margin-top: 20px; line-height: 1.7;
+    }
+
+    .contact-details {
+      display: flex; flex-direction: column; gap: 28px;
+    }
+
+    .contact-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .contact-item-label {
+      font-size: 0.78rem; color: var(--text-light-muted); font-weight: 400;
+    }
+
+    .contact-item-value {
+      font-size: 1.05rem; font-weight: 500; color: var(--text-light);
+    }
+
+    .contact-item-value a { transition: opacity 0.3s ease; }
+    .contact-item-value a:hover { opacity: 0.6; }
+
+    .contact-links {
+      display: flex; gap: 12px; margin-top: 12px; flex-wrap: wrap;
+    }
+
+    .contact-link-btn {
+      padding: 12px 24px;
+      border: 1.5px solid var(--border-dark);
+      border-radius: 100px;
+      color: var(--text-light);
+      font-family: var(--font); font-size: 0.85rem; font-weight: 500;
+      display: inline-flex; align-items: center; gap: 8px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact-link-btn:hover {
+      background: var(--bg-dark-card);
+      border-color: var(--text-light-muted);
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--bg-dark);
+      padding: 32px 40px;
+      border-top: 1px solid var(--border-dark);
+    }
+
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    footer p {
+      font-size: 0.8rem; color: var(--text-light-muted); font-weight: 400;
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+
+    .footer-links a {
+      font-size: 0.8rem; color: var(--text-light-muted);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover { color: var(--text-light); }
+
+    /* ─── Scroll Reveal ─── */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1), transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .stagger > .reveal:nth-child(2) { transition-delay: 0.1s; }
+    .stagger > .reveal:nth-child(3) { transition-delay: 0.15s; }
+    .stagger > .reveal:nth-child(4) { transition-delay: 0.2s; }
+    .stagger > .reveal:nth-child(5) { transition-delay: 0.25s; }
+    .stagger > .reveal:nth-child(6) { transition-delay: 0.3s; }
+    .stagger > .reveal:nth-child(7) { transition-delay: 0.35s; }
+    .stagger > .reveal:nth-child(8) { transition-delay: 0.4s; }
+    .stagger > .reveal:nth-child(9) { transition-delay: 0.45s; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .nav-links { gap: 20px; font-size: 0.85rem; }
+      .nav-cta { display: none; }
+      .hero { padding: 120px 24px 40px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-stage-col { max-width: 580px; margin: 0 auto; width: 100%; }
+      .card-preview-viewport { height: 280px; }
+      .chip-top { top: -14px; right: 0; }
+      .chip-bottom { bottom: -16px; left: 0; }
+      .hero-stats-row { gap: 28px; }
+      .section { padding: 80px 24px 40px; }
+      .projects-grid { grid-template-columns: 1fr; gap: 24px; }
+      .featured-section { padding: 0 24px; margin-bottom: 28px; }
+      .featured-card { grid-template-columns: 1fr; min-height: auto; }
+      .featured-card.reverse { direction: ltr; }
+      .featured-thumb { height: 280px; width: 100%; }
+      .featured-content { padding: 32px 24px; }
+      .project-thumb { height: 230px; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .testimonials-band { padding: 80px 24px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-band { padding: 80px 24px 60px; }
+      .contact-content { grid-template-columns: 1fr; gap: 48px; }
+      footer { padding: 24px; }
+      .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
     }
 
     @media (max-width: 600px) {
-      .header-nav {
-        display: none;
-      }
-      .ledger-grid {
-        grid-template-columns: 1fr;
-      }
-      .stage-spec-row {
-        grid-template-columns: 1fr;
-      }
-      .stage-preview-frame {
-        height: 280px;
-      }
+      .nav-links { display: none; }
+      .hero-headline { font-size: 2.35rem; }
+      .hero-stats-row { gap: 20px; }
+      .hero-stat-number { font-size: 1.35rem; }
+      .about-stats { grid-template-columns: 1fr; }
+      .project-info { padding: 20px 24px 24px; }
+      .service-item { flex-direction: column; align-items: flex-start; gap: 4px; padding: 28px 24px; }
+      .contact-links { flex-direction: column; }
+      .floating-glass-chip { padding: 8px 12px; }
+      .chip-title { font-size: 0.75rem; }
+      .chip-sub { font-size: 0.68rem; }
+      .card-preview-viewport { height: 220px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-line::after { animation: none; }
+      .hero-badge-dot { animation: none; }
+      .project-card:hover .project-thumb img { transform: none; }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Site Navigation Bar -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="#top" class="brand-mark">Mineuddin Siam</a>
-      <nav class="header-nav" aria-label="Main Navigation">
-        <a href="#work">Index of Work</a>
-        <a href="#proof">Performance</a>
-        <a href="#reviews">Monographs</a>
-        <a href="#contact">Engagement</a>
-      </nav>
-      <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="action-button">Initiate Project</a>
-    </div>
-  </header>
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- Hero Section: Mosaic Masthead & Editorial Axis -->
-  <main id="top">
-    <section class="page-section hero-masthead">
-      <div class="section-inner">
+  <!-- Nav -->
+  <nav id="nav">
+    <a href="#" class="nav-logo" aria-label="Siam Home">Siam</a>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </nav>
 
-        <!-- Masthead Media Mosaic (Architecture & Live Deliverables) -->
-        <div class="masthead-media-strip">
-          <div class="masthead-clip-frame">
-            <video autoplay muted loop playsinline preload="metadata" poster="assets/tbilisi-life-georgia-travel-canon-camera-eosm27-poster.jpg" width="854" height="480" aria-hidden="true">
-              <source src="assets/tbilisi-life-georgia-travel-canon-camera-eosm27.webm" type="video/webm">
-            </video>
-          </div>
-          <div class="masthead-clip-frame">
-            <img src="assets/projects/01-car-detailing.png" alt="Morgans Prestige Car Detailing website interface">
-          </div>
-          <div class="masthead-clip-frame">
-            <img src="assets/projects/06-airfield-cafe.png" alt="Cloud 9 Kitchen and artisan dining website interface">
-          </div>
+  <!-- Hero Section (Trending Split Stage) -->
+  <section class="hero" id="hero">
+    <div class="hero-ambient-aura"></div>
+
+    <div class="hero-grid">
+      <!-- Left Column: Copy & Actions -->
+      <div class="hero-main-col">
+        <div class="hero-status-pill reveal">
+          <span class="status-pulse-ring">
+            <span class="status-pulse-dot"></span>
+          </span>
+          <span class="status-text">Available for Projects</span>
+          <span class="status-sep">/</span>
+          <span class="status-badge">Fiverr Level 2</span>
+          <span class="status-star">★ 5.0 Rating</span>
         </div>
 
-        <!-- Editorial Axis: 42% Meta Notes / 58% Primary Proposition -->
-        <div class="hero-editorial-axis">
-          <div class="hero-meta-col">
-            <p class="hero-meta-note">Independent WordPress engineering, bespoke responsive design, and conversion infrastructure for commercial operators.</p>
-            <p class="hero-meta-note">Operating globally from Bangladesh since 2019. Active Level 2 status across 137 verified client deliveries.</p>
-          </div>
+        <h1 class="hero-headline reveal">
+          Websites made<br>to feel <span class="hero-highlight">right.</span>
+        </h1>
 
-          <div class="hero-content-col">
-            <h1 class="hero-headline">
-              <span class="line-mask"><span data-line style="--i:0">Websites built</span></span>
-              <span class="line-mask"><span data-line style="--i:1">to perform.</span></span>
-            </h1>
-            <p class="hero-deck" data-load style="--d:300ms">I build bespoke, responsive web systems that give independent businesses clear market authority and sustainable inquiry volume.</p>
-            <div class="hero-actions-row" data-load style="--d:420ms">
-              <a href="#work" class="action-button action-button-accent">Inspect Selected Work</a>
-              <a href="#contact" class="secondary-link">Review Engagement Terms</a>
-            </div>
-          </div>
+        <p class="hero-sub reveal">
+          I’m <strong>Mineuddin Siam</strong>, a web developer creating considered websites for businesses with something real to say. Designing and building for the web since 2020.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a href="#work" class="btn-primary">
+            Explore Selected Work
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Hire on Fiverr
+          </a>
+          <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn-whatsapp" title="Chat on WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
         </div>
 
-      </div>
-    </section>
-
-    <!-- Ledger of Verified Delivery Metrics -->
-    <section class="ledger-band" id="proof">
-      <div class="section-inner">
-        <div class="ledger-grid">
-          <div class="ledger-stat-cell" data-scroll style="--delay: 0ms">
-            <span class="ledger-stat-figure">137+</span>
-            <span class="ledger-stat-label">Delivered Websites</span>
-            <p class="ledger-stat-detail">Completed WordPress installations, bespoke re-platforms, and e-commerce stores worldwide.</p>
+        <div class="hero-stats-row reveal">
+          <div class="hero-stat">
+            <span class="hero-stat-number">137+</span>
+            <span class="hero-stat-label">Orders delivered</span>
           </div>
-          <div class="ledger-stat-cell" data-scroll style="--delay: 70ms">
-            <span class="ledger-stat-figure">5.0</span>
-            <span class="ledger-stat-label">Verified Client Rating</span>
-            <p class="ledger-stat-detail">Consistent five-star assessment across 80+ public testimonials on primary gig.</p>
+          <div class="hero-stat">
+            <span class="hero-stat-number">54+</span>
+            <span class="hero-stat-label">Unique clients</span>
           </div>
-          <div class="ledger-stat-cell" data-scroll style="--delay: 140ms">
-            <span class="ledger-stat-figure">100%</span>
-            <span class="ledger-stat-label">Quality & Delivery Record</span>
-            <p class="ledger-stat-detail">Flawless rating metrics in communication, delivery standard, and commercial value.</p>
+          <div class="hero-stat">
+            <span class="hero-stat-number">5.0</span>
+            <span class="hero-stat-label">Star rating</span>
           </div>
-          <div class="ledger-stat-cell" data-scroll style="--delay: 210ms">
-            <span class="ledger-stat-figure">Level 2</span>
-            <span class="ledger-stat-label">Market Credentials</span>
-            <p class="ledger-stat-detail">Recognized specialist rank with verified international repeat commercial buyers.</p>
+          <div class="hero-stat">
+            <span class="hero-stat-number">Level 2</span>
+            <span class="hero-stat-label">Verified seller</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Main Index of Work & Interactive Architectural Drawer -->
-    <section class="page-section" id="work">
-      <div class="section-inner">
-
-        <div class="work-section-header" data-scroll>
-          <h2 class="section-heading">Index of completed client work.</h2>
-          <p class="section-standfirst">Every project is built from clean architectural foundations: bespoke Elementor implementations, fast loading profiles, and intuitive customer navigation.</p>
-        </div>
-
-        <!-- Live Interactive Stage Drawer -->
-        <div class="project-interactive-stage" data-scroll>
-          <div class="stage-directory-list" role="tablist" aria-label="Featured Project Briefs">
-            <button class="stage-item-btn active" role="tab" aria-selected="true" data-proj="morgans">
-              <span class="stage-item-title">Morgans Detailing</span>
-              <span class="stage-item-industry">Prestige Automotive · United Kingdom</span>
-            </button>
-            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="cloud9">
-              <span class="stage-item-title">Cloud 9 Kitchen & Bar</span>
-              <span class="stage-item-industry">Hospitality & Dining · United Kingdom</span>
-            </button>
-            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="tmad">
-              <span class="stage-item-title">TMAD Property Services</span>
-              <span class="stage-item-industry">Commercial Services · United Kingdom</span>
-            </button>
-            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="balloon">
-              <span class="stage-item-title">Bucket-List Flights</span>
-              <span class="stage-item-industry">Aviation & Tourism · United Kingdom</span>
-            </button>
+      <!-- Right Column: Interactive 3D Showcase Card -->
+      <div class="hero-stage-col reveal" id="heroStage">
+        <div class="hero-preview-card" id="heroCard">
+          <div class="card-browser-bar">
+            <div class="browser-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="browser-url">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <span>morgansdetailing.co.uk</span>
+            </div>
+            <span class="browser-badge">Live Case Study</span>
           </div>
 
-          <div class="stage-display-view">
-            <div class="stage-preview-frame">
-              <img id="stageImg" src="assets/projects/01-car-detailing.png" alt="Morgans Detailing website hero fold">
-            </div>
-            <div class="stage-spec-row">
-              <div class="spec-group">
-                <span class="spec-key">Core Technology</span>
-                <span class="spec-value" id="specTech">WordPress · Elementor Pro · Custom CSS</span>
-              </div>
-              <div class="spec-group">
-                <span class="spec-key">Project Scope</span>
-                <span class="spec-value" id="specScope">Complete Commercial Redesign</span>
-              </div>
-              <div class="spec-group">
-                <span class="spec-key">Execution Standard</span>
-                <span class="spec-value" id="specDelivery">Mobile Optimized · 100% Top-Fold Impact</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Catalogue of Deliverables (One Strip Per Project) -->
-        <div class="catalogue-strips-stack">
-
-          <article class="project-strip" data-scroll style="--delay: 0ms">
-            <div class="strip-thumb-box">
-              <img src="assets/projects/04-midlands-carcare.png" alt="Gleave Auto Detailing website screenshot">
-            </div>
-            <div class="strip-info-col">
-              <h3 class="strip-title">Gleave Auto Detailing</h3>
-              <p class="strip-summary">Specialist vehicle enhancement platform featuring package comparisons, service tiers, and responsive booking inquiries.</p>
-              <div class="strip-details-meta">WordPress · Elementor Pro · Bespoke Tiers</div>
-              <a href="#contact" class="strip-link">Discuss Similar Project</a>
-            </div>
-          </article>
-
-          <article class="project-strip" data-scroll style="--delay: 50ms">
-            <div class="strip-thumb-box">
-              <img src="assets/projects/05-chapmans.png" alt="Chapmans Valeting website screenshot">
-            </div>
-            <div class="strip-info-col">
-              <h3 class="strip-title">Chapmans Valeting</h3>
-              <p class="strip-summary">Mobile automotive care website with direct WhatsApp integration, instant package pricing, and verified customer testimonials.</p>
-              <div class="strip-details-meta">WordPress · Instant Pricing Architecture</div>
-              <a href="#contact" class="strip-link">Discuss Similar Project</a>
-            </div>
-          </article>
-
-          <article class="project-strip" data-scroll style="--delay: 50ms">
-            <div class="strip-thumb-box">
-              <img src="assets/projects/08-divine-you.png" alt="Divine You Xx holistic therapy website screenshot">
-            </div>
-            <div class="strip-info-col">
-              <h3 class="strip-title">Divine You Xx Practice</h3>
-              <p class="strip-summary">Holistic wellness and therapy platform built with calm editorial typography, session scheduling, and service directories.</p>
-              <div class="strip-details-meta">WordPress · Consultation Booking CMS</div>
-              <a href="#contact" class="strip-link">Discuss Similar Project</a>
-            </div>
-          </article>
-
-          <article class="project-strip" data-scroll style="--delay: 50ms">
-            <div class="strip-thumb-box">
-              <img src="assets/projects/09-reynolds-son.png" alt="Reynolds and Son heritage building website screenshot">
-            </div>
-            <div class="strip-info-col">
-              <h3 class="strip-title">Reynolds & Son Craftsmanship</h3>
-              <p class="strip-summary">Heritage property restoration website highlighting decades of building expertise, project galleries, and private consultation forms.</p>
-              <div class="strip-details-meta">WordPress · High-Resolution Gallery Architecture</div>
-              <a href="#contact" class="strip-link">Discuss Similar Project</a>
-            </div>
-          </article>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Client Monographs & Verified Reviews -->
-    <section class="monograph-band" id="reviews">
-      <div class="section-inner">
-
-        <div class="monograph-header" data-scroll>
-          <h2 class="section-heading">Verified monographs and client accounts.</h2>
-          <p class="section-standfirst">Documented feedback from real business owners across the United Kingdom, North America, Europe, and Asia.</p>
-        </div>
-
-        <div class="monograph-featured-account" data-scroll>
-          <p class="monograph-featured-quote">"Siam truly impressed me with his exceptional website design skills. His work is not only visually appealing but also reflects a strong attention to detail and professionalism. It was a pleasure working with him, as he went above and beyond, delivering on time with a deep understanding of the project needs."</p>
-          <div class="monograph-author-block">
-            <span class="monograph-author-name">ace2k6</span>
-            <span class="monograph-author-market">United Kingdom · Verified Commercial Buyer · Five Star Delivery</span>
-          </div>
-        </div>
-
-        <div class="monograph-ledger-columns">
-
-          <div class="monograph-ledger-entry" data-scroll style="--delay: 0ms">
-            <p class="monograph-ledger-quote">"Siam's professionalism and attention to detail in website design were outstanding, perfectly aligning with our brand vision. Working with him was an absolute joy due to his deep understanding, politeness, and excellent cooperation."</p>
-            <div class="monograph-author-block">
-              <span class="monograph-author-name">stevecollett2</span>
-              <span class="monograph-author-market">United Kingdom · Verified Buyer</span>
-            </div>
+          <div class="card-preview-viewport">
+            <img src="assets/Client Projects/screencapture-silver-rabbit-386922-hostingersite-2026-09-14-03_03_39.png" alt="Morgans Detailing preview" loading="eager">
           </div>
 
-          <div class="monograph-ledger-entry" data-scroll style="--delay: 70ms">
-            <p class="monograph-ledger-quote">"Siam did an amazing job designing our website, showcasing true professionalism and exceeding all our expectations. Working with him was a breeze; his politeness and excellent cooperation made the entire process smooth and enjoyable."</p>
-            <div class="monograph-author-block">
-              <span class="monograph-author-name">hrhnina</span>
-              <span class="monograph-author-market">Hong Kong · Verified Buyer</span>
-            </div>
-          </div>
-
-          <div class="monograph-ledger-entry" data-scroll style="--delay: 140ms">
-            <p class="monograph-ledger-quote">"It was a pleasure working with Siam. His communication was excellent, clear, and professional. He was incredibly efficient, delivering the project ahead of schedule without compromising on quality. Throughout the process, he was solution-oriented."</p>
-            <div class="monograph-author-block">
-              <span class="monograph-author-name">carolinegorska</span>
-              <span class="monograph-author-market">Sweden · Verified Buyer</span>
-            </div>
-          </div>
-
-          <div class="monograph-ledger-entry" data-scroll style="--delay: 210ms">
-            <p class="monograph-ledger-quote">"Amazing work as always. This is my top choice for all my website needs, tech setup, and expert advice. If you want someone who truly invests in your project and makes it a success, look no further; this is the one."</p>
-            <div class="monograph-author-block">
-              <span class="monograph-author-name">royalphoxx1</span>
-              <span class="monograph-author-market">United States · Repeat Commercial Buyer</span>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Engagement & Inquiries -->
-    <section class="contact-editorial-section" id="contact">
-      <div class="section-inner">
-        <div class="contact-editorial-grid" data-scroll>
-
-          <div class="contact-callout-block">
-            <h2 class="section-heading">Initiate a commercial engagement.</h2>
-            <p class="section-standfirst">Whether you need a bespoke WordPress deployment, a complete rebuild of an outdated brand, or performance tuning for high search conversion, reach out directly with your project requirements.</p>
+          <!-- Floating Interactive Pill: Top Right -->
+          <div class="floating-glass-chip chip-top">
+            <div class="chip-icon">★</div>
             <div>
-              <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="action-button action-button-accent">View Verified Fiverr Profile</a>
+              <div class="chip-title">5.0 Star Rating</div>
+              <div class="chip-sub">Based on 137+ orders</div>
             </div>
           </div>
 
-          <div class="contact-channels-block">
-            <div class="channel-row">
-              <span class="channel-title">Direct Electronic Mail</span>
-              <a href="mailto:mineuddin20siam@gmail.com" class="channel-contact-val">mineuddin20siam@gmail.com</a>
-            </div>
-            <div class="channel-row">
-              <span class="channel-title">Direct WhatsApp Messaging</span>
-              <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="channel-contact-val">+880 1743-248400</a>
-            </div>
-            <div class="channel-row">
-              <span class="channel-title">Official Fiverr Marketplace</span>
-              <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="channel-contact-val">fiverr.com/users/mineuddinsiam</a>
+          <!-- Floating Interactive Pill: Bottom Left -->
+          <div class="floating-glass-chip chip-bottom">
+            <div class="chip-icon-brand">⚡</div>
+            <div>
+              <div class="chip-title">Custom WordPress</div>
+              <div class="chip-sub">Fast & Mobile Friendly</div>
             </div>
           </div>
-
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Colophon & Archival Credits -->
-  <footer class="colophon-footer">
+  <!-- Trending Infinite Marquee Bar -->
+  <div class="hero-marquee">
+    <div class="marquee-track">
+      <span>CUSTOM WORDPRESS DESIGN</span><span class="marquee-bullet">✦</span>
+      <span>ELEMENTOR PRO & CUSTOM CSS</span><span class="marquee-bullet">✦</span>
+      <span>FIVERR LEVEL 2 SELLER</span><span class="marquee-bullet">✦</span>
+      <span>5.0★ VERIFIED CLIENT REVIEWS</span><span class="marquee-bullet">✦</span>
+      <span>E-COMMERCE & WOOCOMMERCE</span><span class="marquee-bullet">✦</span>
+      <span>FAST & FULLY RESPONSIVE</span><span class="marquee-bullet">✦</span>
+      <span>137+ PROJECTS DELIVERED</span><span class="marquee-bullet">✦</span>
+      <span>CUSTOM WORDPRESS DESIGN</span><span class="marquee-bullet">✦</span>
+      <span>ELEMENTOR PRO & CUSTOM CSS</span><span class="marquee-bullet">✦</span>
+      <span>FIVERR LEVEL 2 SELLER</span><span class="marquee-bullet">✦</span>
+      <span>5.0★ VERIFIED CLIENT REVIEWS</span><span class="marquee-bullet">✦</span>
+      <span>E-COMMERCE & WOOCOMMERCE</span><span class="marquee-bullet">✦</span>
+      <span>FAST & FULLY RESPONSIVE</span><span class="marquee-bullet">✦</span>
+      <span>137+ PROJECTS DELIVERED</span><span class="marquee-bullet">✦</span>
+    </div>
+  </div>
+
+  <!-- Section Header -->
+  <section class="section" id="work">
+    <p class="section-label reveal">Selected work</p>
+    <h2 class="section-title reveal">Projects built for real businesses.</h2>
+  </section>
+
+  <!-- Featured 1: Morgans / Midlands Car Care -->
+  <div class="featured-section reveal">
+    <div class="featured-card">
+      <div class="featured-thumb">
+        <img src="assets/Client Projects/screencapture-silver-rabbit-386922-hostingersite-2026-09-14-03_03_39.png" alt="Morgans Detailing" loading="lazy">
+      </div>
+      <div class="featured-content">
+        <p class="featured-number">Featured</p>
+        <h3 class="featured-name">Morgans Detailing</h3>
+        <p class="featured-desc">Bold, premium branding for a mobile car detailing service in the West Midlands. Dark theme with red accents and a clear step-by-step process to drive bookings and build trust.</p>
+        <div class="featured-tags">
+          <span class="featured-tag">WordPress</span>
+          <span class="featured-tag">Car Detailing</span>
+          <span class="featured-tag">Booking Flow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured 2: Cloud 9 Kitchen / Tibenham Airfield -->
+  <div class="featured-section reveal">
+    <div class="featured-card reverse">
+      <div class="featured-thumb">
+        <img src="assets/Client Projects/Submission 2.png" alt="Cloud 9 Kitchen" loading="lazy">
+      </div>
+      <div class="featured-content">
+        <p class="featured-number">Featured</p>
+        <h3 class="featured-name">Cloud 9 Kitchen</h3>
+        <p class="featured-desc">An elegant, warm design for a café and dining experience at Tibenham Airfield in Norfolk. Serif accents and earthy tones reflect the hand-crafted nature of their food and events.</p>
+        <div class="featured-tags">
+          <span class="featured-tag">WordPress</span>
+          <span class="featured-tag">Restaurant</span>
+          <span class="featured-tag">Events</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured 3: TMAD Cleaning Services -->
+  <div class="featured-section reveal">
+    <div class="featured-card">
+      <div class="featured-thumb">
+        <img src="assets/Client Projects/screencapture-tmadcleaningservices-co-uk-2026-10-17-23_52_59.png" alt="TMAD Cleaning Services" loading="lazy">
+      </div>
+      <div class="featured-content">
+        <p class="featured-number">Featured</p>
+        <h3 class="featured-name">TMAD Cleaning Services</h3>
+        <p class="featured-desc">High-standard commercial and residential property maintenance across the UK. Structured, trust-driven layout with clear service pillars, process flow, and lead generation forms.</p>
+        <div class="featured-tags">
+          <span class="featured-tag">WordPress</span>
+          <span class="featured-tag">Commercial Cleaning</span>
+          <span class="featured-tag">Lead Generation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <section class="section">
+    <p class="section-label reveal">More projects</p>
+    <h2 class="section-title reveal">Every client, a unique identity.</h2>
+    <div class="projects-grid stagger">
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/screencapture-cyan-zebra-828714-hostingersite-2026-10-11-23_05_38.png" alt="Car Detailing" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Gleave Auto Detailing</h3>
+          <p class="project-type">Professional car valeting & detailing</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Service Business</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/Submission.png" alt="Chapmans Valeting" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Chapmans Valeting & Detailing</h3>
+          <p class="project-type">Premium mobile valeting in Cambridge</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Car Detailing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/Submission 3.png" alt="Bucket-List Balloon Flights" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Bucket-List Balloon Flights</h3>
+          <p class="project-type">Hot air balloon experience booking</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Tourism</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/Reynolds.png" alt="Reynolds & Son" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Reynolds & Son</h3>
+          <p class="project-type">Kitchen extract cleaning specialists</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Commercial Cleaning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/screencapture-limegreen-dugong-102613-hostingersite-2026-05-25-01_46_13.png" alt="Divine You Xx" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Divine You Xx</h3>
+          <p class="project-type">Aesthetic & skin clinic</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Wellness</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/screencapture-lightpink-fox-698358-hostingersite-2026-08-03-23_01_42.png" alt="Elite Smart Repairs" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">Elite Smart Repairs</h3>
+          <p class="project-type">Mobile car body repair service</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Automotive</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/screencapture-darkorange-deer-349255-hostingersite-2026-05-04-16_20_35.png" alt="MiFaith" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">MiFaith</h3>
+          <p class="project-type">Faith community & app landing page</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Community</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-thumb">
+          <img src="assets/Client Projects/web.jpeg" alt="KCH Counselling Therapy" loading="lazy">
+        </div>
+        <div class="project-info">
+          <h3 class="project-name">KCH Counselling Therapy</h3>
+          <p class="project-type">Online counselling service</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Health & Wellness</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials-band" id="reviews">
+    <div class="testimonials-inner">
+      <p class="section-label reveal">Client reviews</p>
+      <h2 class="section-title reveal">What my clients say.</h2>
+
+      <div class="testimonials-rating-summary reveal">
+        <span class="rating-big">5.0</span>
+        <div class="rating-detail">
+          <div class="rating-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="rating-label">5.0 Star Rating across 80+ verified Fiverr reviews · 100% 5-Star Communication, Quality & Value</span>
+        </div>
+      </div>
+
+      <div class="testimonials-grid stagger">
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Siam truly IMPRESSED me with his exceptional website design skills. His work is not only visually appealing but also reflects a strong attention to detail and professionalism. It was a pleasure working with him, as he went above and beyond, delivering ON TIME with a deep understanding of the project needs."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">ace2k6</div>
+              <div class="testimonial-source">United Kingdom · Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Siam's professionalism and attention to detail in website design were outstanding, perfectly aligning with our brand vision. Working with him was an absolute joy due to his deep understanding, politeness, and excellent cooperation."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">stevecollett2</div>
+              <div class="testimonial-source">United Kingdom · Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Siam did an AMAZING job designing our website, showcasing true professionalism and exceeding all our expectations! Working with him was a breeze — his politeness and excellent cooperation made the entire process smooth and enjoyable. Would definitely hire him again."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">H</div>
+            <div>
+              <div class="testimonial-name">hrhnina</div>
+              <div class="testimonial-source">Hong Kong · Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"It was a pleasure working with Siam. His communication was excellent — clear, professional, and always responsive. He was incredibly efficient, delivering the project ahead of schedule without compromising on quality. Throughout the process, he was friendly, solution-oriented, and made everything effortless."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">C</div>
+            <div>
+              <div class="testimonial-name">carolinegorska</div>
+              <div class="testimonial-source">Sweden · Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"I recently worked with Siam to create a website, and I couldn’t be more impressed with the outcome. We even had a Zoom meeting where he explained the details of his work and how I can implement strategies and simple changes. Highly recommend if you’re looking for someone who will bring your project to life!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">L</div>
+            <div>
+              <div class="testimonial-name">luceric</div>
+              <div class="testimonial-source">Canada · Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-text">"Amazing work as always! This is my top choice for all my website needs, tech setup, and expert advice. If you want someone who truly invests in your project and makes it a success, look no further — this is the one! 5 stars."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">R</div>
+            <div>
+              <div class="testimonial-name">royalphoxx1</div>
+              <div class="testimonial-source">United States · Repeat Buyer</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="fiverr-badge reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        See all reviews on Fiverr
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <p class="section-label reveal">About</p>
+    <h2 class="section-title reveal">The person behind the pixels.</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm Siam, a web designer specialising in WordPress. I work with small businesses, startups, and entrepreneurs to create websites that look professional and actually bring in customers.</p>
+        <p>From car detailing companies and restaurants to e-commerce stores and wellness clinics — I've designed across a wide range of industries. Every project gets a custom design tailored to the business and its audience. No templates, no cookie-cutter layouts.</p>
+        <p>I'm a Level 2 seller on Fiverr with a perfect 5.0 rating, 137+ completed orders, and 54+ unique clients who trust me with their online presence.</p>
+      </div>
+      <div class="about-stats stagger">
+        <div class="stat reveal">
+          <div class="stat-number">137+</div>
+          <div class="stat-label">Orders completed</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number">54+</div>
+          <div class="stat-label">Unique clients</div>
+        </div>
+        <div class="stat stat-accent reveal">
+          <div class="stat-number">5.0 ★</div>
+          <div class="stat-label">Average rating</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Industries served</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <p class="section-label reveal">What I offer</p>
+    <h2 class="section-title reveal">Services</h2>
+    <div class="services-list reveal">
+      <div class="service-item">
+        <span class="service-name">WordPress Website Design</span>
+        <span class="service-desc">Custom-designed, fully responsive websites</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Website Redesign</span>
+        <span class="service-desc">Modernise and revamp existing websites</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">E-commerce / WooCommerce</span>
+        <span class="service-desc">Online stores with product management and payments</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Landing Pages</span>
+        <span class="service-desc">Conversion-focused single-page designs</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">SEO Foundations</span>
+        <span class="service-desc">On-page optimisation and search visibility</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Ongoing Maintenance</span>
+        <span class="service-desc">Updates, hosting support, and content changes</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-band" id="contact">
+    <div class="contact-inner">
+      <div class="contact-content">
+        <div class="reveal">
+          <h2 class="contact-heading">Let's build something together.</h2>
+          <p class="contact-sub">Got a project in mind? Whether it's a brand new website or a redesign, I'd love to hear about it. Reach out and let's get started.</p>
+        </div>
+        <div class="contact-details reveal">
+          <div class="contact-item">
+            <span class="contact-item-label">Email</span>
+            <span class="contact-item-value"><a href="mailto:mineuddin20siam@gmail.com">mineuddin20siam@gmail.com</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">WhatsApp</span>
+            <span class="contact-item-value"><a href="https://wa.me/8801743248400" target="_blank" rel="noopener">+880 1743 248400</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Fiverr</span>
+            <span class="contact-item-value"><a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener">@mineuddinsiam</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-label">Availability</span>
+            <span class="contact-item-value">Open to new projects</span>
+          </div>
+          <div class="contact-links">
+            <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="contact-link-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Hire on Fiverr
+            </a>
+            <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="contact-link-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:mineuddin20siam@gmail.com" class="contact-link-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <div class="footer-inner">
-      <span>Mineuddin Siam · Web Designer & WordPress Developer</span>
-      <p class="footer-credits-note">Footage credit: "Tbilisi life - Georgia Travel - canon camera Eosm27" by Mostafameraji, CC BY-SA 4.0, via Wikimedia Commons.</p>
-      <span>2019–2026</span>
+      <p>&copy; 2024 Siam. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener">Fiverr</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </footer>
 
-  <!-- Script for Live Architectural Drawer and Scroll Observer -->
   <script>
-    (function() {
-      // Intersection Observer for scroll entrances
-      if ('IntersectionObserver' in window) {
-        var scrollObserver = new IntersectionObserver(function(entries) {
-          entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('in-view');
-              scrollObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1 });
+    // Cursor glow
+    const glow = document.getElementById('cursorGlow');
+    let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
+    document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    function animateGlow() {
+      glowX += (mouseX - glowX) * 0.08;
+      glowY += (mouseY - glowY) * 0.08;
+      glow.style.left = glowX + 'px';
+      glow.style.top = glowY + 'px';
+      requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
 
-        document.querySelectorAll('[data-scroll]').forEach(function(el) {
-          scrollObserver.observe(el);
-        });
-      } else {
-        document.querySelectorAll('[data-scroll]').forEach(function(el) {
-          el.classList.add('in-view');
-        });
-      }
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
 
-      var projectData = {
-        morgans: {
-          img: 'assets/projects/01-car-detailing.png',
-          alt: 'Morgans Detailing website hero fold',
-          tech: 'WordPress · Elementor Pro · Custom CSS',
-          scope: 'Complete Commercial Redesign',
-          delivery: 'Mobile Optimized · 100% Top-Fold Impact'
-        },
-        cloud9: {
-          img: 'assets/projects/06-airfield-cafe.png',
-          alt: 'Cloud 9 Kitchen and artisan dining website interface',
-          tech: 'WordPress · Responsive Navigation · Menu CMS',
-          scope: 'Hospitality & Dining Platform',
-          delivery: 'Rapid Table Inquiries · High Contrast Imagery'
-        },
-        tmad: {
-          img: 'assets/projects/02-tmad-property.png',
-          alt: 'TMAD Property Services website screenshot',
-          tech: 'WordPress · Elementor · Commercial Services Grid',
-          scope: 'Corporate Facility Management Site',
-          delivery: 'Instant Quote Callout · Service Detail Architecture'
-        },
-        balloon: {
-          img: 'assets/projects/07-balloon-flights.png',
-          alt: 'Bucket-List Flights aviation website screenshot',
-          tech: 'WordPress · WooCommerce · Booking Integration',
-          scope: 'Luxury Aviation & Tourism Store',
-          delivery: 'Voucher Checkout · Experience Catalogues'
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-      };
-
-      var buttons = document.querySelectorAll('.stage-item-btn');
-      var stageImg = document.getElementById('stageImg');
-      var specTech = document.getElementById('specTech');
-      var specScope = document.getElementById('specScope');
-      var specDelivery = document.getElementById('specDelivery');
-
-      buttons.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          buttons.forEach(function(b) {
-            b.classList.remove('active');
-            b.setAttribute('aria-selected', 'false');
-          });
-          btn.classList.add('active');
-          btn.setAttribute('aria-selected', 'true');
-
-          var key = btn.getAttribute('data-proj');
-          var data = projectData[key];
-          if (data && stageImg) {
-            stageImg.src = data.img;
-            stageImg.alt = data.alt;
-            specTech.textContent = data.tech;
-            specScope.textContent = data.scope;
-            specDelivery.textContent = data.delivery;
-          }
-        });
       });
-    })();
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Interactive 3D Perspective Tilt on Hero Showcase
+    const heroStage = document.getElementById('heroStage');
+    const heroCard = document.getElementById('heroCard');
+
+    if (heroStage && heroCard && window.matchMedia('(pointer: fine)').matches) {
+      let isHovered = false;
+
+      heroStage.addEventListener('mouseenter', () => {
+        isHovered = true;
+      });
+
+      heroStage.addEventListener('mousemove', (e) => {
+        if (!isHovered) return;
+        const rect = heroStage.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -7;
+        const rotateY = ((x - centerX) / centerX) * 7;
+
+        heroCard.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+
+      heroStage.addEventListener('mouseleave', () => {
+        isHovered = false;
+        heroCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    }
   </script>
-</body>
-</html>
+
 </body>
 </html>

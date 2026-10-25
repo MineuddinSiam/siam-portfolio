@@ -10,11 +10,11 @@
 
 ### Available Design Iterations (Latest to Oldest)
 
-- **[Wise Design System (Active Site)](https://mineuddinsiam.github.io/siam-portfolio/)** — High-contrast fintech confidence, Deep Forest Green (`#163300`) & Vibrant Lime (`#9FE870`), Wise-style agency comparison table, interactive instant project budget estimator, and verified client reviews.
-- **[Agentsure System (v4)](https://mineuddinsiam.github.io/siam-portfolio/v5.html)** — Crisp white canvas, Inter Tight & JetBrains Mono, `#005032` accents, and technical terminal spec.
-- **[Modern Dark (v3)](https://mineuddinsiam.github.io/siam-portfolio/v4.html)** — Modern high-contrast dark theme with Plus Jakarta Sans and blue accents.
-- **[Warm Interactive (v2)](https://mineuddinsiam.github.io/siam-portfolio/v1.html)** — Outfit typography, interactive 3D hero stage, and side-by-side featured project cards.
-- **[Architectural Monograph (v1)](https://mineuddinsiam.github.io/siam-portfolio/v2.html)** — Editorial magazine layout with Schibsted Grotesk and video masthead.
+- **[Wise Design System (Latest / Active)](https://mineuddinsiam.github.io/siam-portfolio/)** (`index.html` / [`v5.html`](https://mineuddinsiam.github.io/siam-portfolio/v5.html)) — High-contrast fintech confidence, Deep Forest Green (`#163300`) & Vibrant Lime (`#9FE870`), Wise-style agency comparison table, interactive instant project budget estimator, and verified client reviews.
+- **[Agentsure System (Version 4)](https://mineuddinsiam.github.io/siam-portfolio/v4.html)** (`v4.html`) — Crisp white canvas, Inter Tight & JetBrains Mono, `#005032` accents, and technical terminal spec.
+- **[Modern Dark (Version 3)](https://mineuddinsiam.github.io/siam-portfolio/v3.html)** (`v3.html`) — Modern high-contrast dark theme with Plus Jakarta Sans and blue accents.
+- **[Warm Interactive (Version 2)](https://mineuddinsiam.github.io/siam-portfolio/v2.html)** (`v2.html`) — Outfit typography, interactive 3D hero stage, and side-by-side featured project cards.
+- **[Architectural Monograph (Version 1)](https://mineuddinsiam.github.io/siam-portfolio/v1.html)** (`v1.html`) — Editorial magazine layout with Schibsted Grotesk and video masthead.
 
 ---
 
