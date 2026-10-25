@@ -1,0 +1,640 @@
+{
+  "version": 1,
+  "at": "2026-10-25T13:05:56.340Z",
+  "seed": 377948122,
+  "redraws": 1,
+  "input": {
+    "brief": "Mineuddin Siam — Independent web designer and WordPress developer building high-performing, bespoke websites for real businesses",
+    "sector": "personal-portfolio",
+    "tone": null,
+    "have": [
+      "product-ui",
+      "photography"
+    ],
+    "keep": [],
+    "avoid": [],
+    "sections": [
+      "intro",
+      "work",
+      "gallery",
+      "stats",
+      "proof",
+      "testimonial",
+      "contact",
+      "footer"
+    ],
+    "direction": "editorial-report"
+  },
+  "imagery": "own",
+  "allow": [],
+  "direction": {
+    "id": "editorial-report",
+    "name": "The printed annual",
+    "sectors": [
+      "culture",
+      "nonprofit",
+      "education",
+      "finance",
+      "saas",
+      "ai-product",
+      "health",
+      "agency",
+      "other"
+    ],
+    "tones": [
+      "editorial",
+      "bold"
+    ],
+    "needs": [],
+    "idea": "Lay the page out like a well-designed printed report or magazine feature: a masthead image, a tight oversized title, text held to a strict column line, and colour used in solid blocks the way a two-colour print job would. It gives weight and authority to subjects that are really about content: findings, a manifesto, a programme, a serious product. The reader should feel that someone edited this.",
+    "composition": "A fixed vertical axis at about 42% of the viewport width organises everything: headings begin on it, body columns hang from it, and the 0–42% zone holds small side notes, figures or stays empty. Masthead: a wide image band (photographic mosaic or a single crop) across the top 45% of the first screen; below it the title at 7–9vw starting on the axis, with a two-sentence standfirst at 20–24px. Sections alternate between text pages (title on the axis, body in one or two columns of 34–40ch to its right) and full-bleed colour pages carrying one large figure, quotation or image mosaic. Mosaics are gutterless: photographs and flat colour tiles butted together in a 4- or 6-cell grid. Page numbers, running heads and other print furniture are left out.",
+    "typography": "A tight heavy grotesk or a sharp serif for titles; an excellent text face for reading at 18–20px with leading near 1.5. Headings in sentence case, tracked tight.",
+    "typeClasses": [
+      "grotesk-tight",
+      "serif-display",
+      "serif-text"
+    ],
+    "colour": "Paper, ink and two or three solid block colours. A colour page is a whole section in one flat colour.",
+    "paletteTags": [
+      "flat-loud",
+      "two-tone",
+      "mono-accent"
+    ],
+    "imagery": "Photographs used as blocks in mosaics alongside flat colour tiles; mixed subjects are fine if cropped tight and converted to one treatment.",
+    "photoTreatment": "Give all photographs in a mosaic one treatment: greyscale via `filter: grayscale(1) contrast(1.05)`, or all full colour. Do not mix.",
+    "sectionTags": [
+      "type-led",
+      "colour-field",
+      "dense",
+      "poster"
+    ],
+    "motion": "masked-headline",
+    "richness": "The column line, the mosaics and whole pages of colour give structure and variety without ornaments.",
+    "pitfalls": "The axis must be exact and reused everywhere or it reads as random indentation. Keep paragraphs to a real reading measure. On a phone the axis collapses to the left margin and side notes move inline above their paragraph.",
+    "seenIn": [
+      "aww-ai-in-design-report-2026",
+      "opl-applied-imagination",
+      "opl-the-queue",
+      "opl-artem-taradash",
+      "opl-belgrade-architecture"
+    ],
+    "allow": []
+  },
+  "hero": {
+    "id": "mosaic-masthead-title-on-axis",
+    "name": "Mosaic masthead, title on axis",
+    "archetype": "mosaic",
+    "directions": [
+      "editorial-report",
+      "colour-chapters"
+    ],
+    "needs": [],
+    "blueprint": "The top 52% of the viewport is a full-width masthead band built as a gutterless mosaic: a CSS grid of 6 columns and 2 rows in which four cells are photographs (object-fit: cover, all greyscale via filter: grayscale(1) contrast(1.05)) and the rest are flat tiles in two or three palette colours. One photograph spans two columns and one colour tile spans both rows; cells butt together with no gap. The header lies flush on the band's upper edge: the wordmark in a solid ink block at far left, a flat accent-coloured tab holding three text links that runs from the block to 42% of the width, and the single action as a text link at the far right. Below the band, on the paper ground: a standfirst of one sentence at 20px on the 16px left margin, max 30ch, and, starting exactly at 42% of the width, the title on two lines at clamp(64px, 8.3vw, 128px), medium weight, tracking -0.06em, leading 0.9, running to the right margin. The title's first baseline sits about 110px under the band.",
+    "mobile": "The band becomes a mosaic of 3 columns and 2 rows taking the top 38% of the screen: two photographs and four colour tiles. The header is a single row above it with the wordmark block and a menu word. The axis collapses to the 16px left margin: the title at 13vw on two lines, then the standfirst at 17px beneath it. The action sits as a text link at the foot of the screen.",
+    "headline": "The title of the report, programme or product, 2-5 words, at most 26 characters across two lines.",
+    "motion": "masked-headline",
+    "seenIn": [
+      "aww-ai-in-design-report-2026",
+      "opl-wild-as"
+    ]
+  },
+  "type": {
+    "id": "schibsted-heavy",
+    "name": "Schibsted Grotesk",
+    "class": "grotesk-tight",
+    "display": {
+      "family": "Schibsted Grotesk",
+      "source": "google",
+      "weights": [
+        800
+      ],
+      "italic": false,
+      "settings": "weight 800 · tracking -0.05em · leading 0.88 · sentence case or all lowercase",
+      "css": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap\" rel=\"stylesheet\">"
+    },
+    "text": {
+      "family": "Schibsted Grotesk",
+      "source": "google",
+      "weights": [
+        400,
+        600
+      ],
+      "italic": false,
+      "settings": "400 for paragraphs, 600 for navigation and other functional text · leading 1.4 · tracking -0.01em",
+      "css": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap\" rel=\"stylesheet\">"
+    },
+    "standsInFor": [
+      "ABC Diatype",
+      "Khteka"
+    ],
+    "note": "A compact, warm grotesk set heavy with letters almost touching; small text stays in the same family at semibold. Suits music, events and culture pages where the type is the image.",
+    "seenIn": [
+      "aww-paul-kalkbrenner",
+      "opl-rendez-vous-franceclat",
+      "aww-monolog"
+    ],
+    "links": [
+      "https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;800&display=swap"
+    ],
+    "scale": {
+      "step-small": "clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem)",
+      "step-body": "clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem)",
+      "step-lead": "clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)",
+      "step-head": "clamp(2rem, 1.3rem + 3.2vw, 4rem)"
+    }
+  },
+  "palette": {
+    "id": "cool-white-slate",
+    "name": "Frost and slate",
+    "tags": [
+      "light-neutral"
+    ],
+    "bg": "#f7f9fa",
+    "surface": "#ecf0f2",
+    "ink": "#1f3038",
+    "muted": "#5d6b72",
+    "accent": "#0d7480",
+    "accentInk": "#ffffff",
+    "note": "Cool white and one paler blue-grey step hold everything, with type in dark slate instead of black. Teal appears once per screen at most, as the primary button or one small detail beside the product photograph.",
+    "seenIn": [
+      "opl-aevion",
+      "aww-cominvi"
+    ]
+  },
+  "photos": {
+    "set": "architecture",
+    "title": "Architecture",
+    "note": "structure, lines, bridges, facades and building interiors",
+    "treatment": "Give all photographs in a mosaic one treatment: greyscale via `filter: grayscale(1) contrast(1.05)`, or all full colour. Do not mix.",
+    "others": [
+      "city-day",
+      "fog-and-quiet",
+      "object-still",
+      "hands-and-making"
+    ],
+    "photos": [
+      {
+        "id": 942,
+        "alt": "White angular concrete building against a black sky",
+        "tone": "dark",
+        "colours": [
+          "black",
+          "white",
+          "pale grey"
+        ],
+        "mono": true,
+        "calm": "top",
+        "quality": 5,
+        "ratio": 1.5,
+        "by": "Carl Nenzen Loven",
+        "page": "https://unsplash.com/photos/busqfOj6i80"
+      },
+      {
+        "id": 1081,
+        "alt": "Stepped white modern building corner rising into a pale blue sky",
+        "tone": "light",
+        "colours": [
+          "white",
+          "pale blue",
+          "soft grey"
+        ],
+        "mono": false,
+        "calm": "top",
+        "quality": 5,
+        "ratio": 1.49,
+        "by": "Julien Moreau",
+        "page": "https://unsplash.com/photos/688Fna1pwOQ"
+      },
+      {
+        "id": 743,
+        "alt": "Narrow wedge-shaped building corner seen from below against a teal sky",
+        "tone": "mid",
+        "colours": [
+          "teal blue",
+          "sandstone",
+          "warm brown"
+        ],
+        "mono": false,
+        "calm": "left",
+        "quality": 4,
+        "ratio": 1.5,
+        "by": "Anthony DELANOIX",
+        "page": "https://unsplash.com/photos/Aa8_X_YgrO4"
+      },
+      {
+        "id": 520,
+        "alt": "Suspension bridge tower framed between red brick buildings",
+        "tone": "mid",
+        "colours": [
+          "brick red",
+          "sky blue",
+          "steel grey"
+        ],
+        "mono": false,
+        "calm": "none",
+        "quality": 4,
+        "ratio": 0.67,
+        "by": "Dorothee Hübner",
+        "page": "https://unsplash.com/photos/4vPPtrfLRcs"
+      },
+      {
+        "id": 951,
+        "alt": "Building facade of red, yellow and white rectangular panels",
+        "tone": "light",
+        "colours": [
+          "red",
+          "yellow",
+          "white"
+        ],
+        "mono": false,
+        "calm": "none",
+        "quality": 4,
+        "ratio": 1.6,
+        "by": "Sérgio Rola",
+        "page": "https://unsplash.com/photos/4aQY2CrXsa8"
+      },
+      {
+        "id": 893,
+        "alt": "Curved latticed building facade forming sweeping lines, black and white",
+        "tone": "dark",
+        "colours": [
+          "black",
+          "white",
+          "grey"
+        ],
+        "mono": true,
+        "calm": "none",
+        "quality": 4,
+        "ratio": 1.5,
+        "by": "Samuel Zeller",
+        "page": "https://unsplash.com/photos/j0g8taxHZa0"
+      },
+      {
+        "id": 101,
+        "alt": "Concrete bunker-like building against a pale teal sky",
+        "tone": "mid",
+        "colours": [
+          "pale teal",
+          "concrete grey"
+        ],
+        "mono": false,
+        "calm": "top",
+        "quality": 4,
+        "ratio": 1.5,
+        "by": "Christian Bardenhorst",
+        "page": "https://unsplash.com/photos/8lMhzUjD1Wk"
+      },
+      {
+        "id": 859,
+        "alt": "Red brick building with a cream door, red shutters and a parked bicycle",
+        "tone": "mid",
+        "colours": [
+          "brick red",
+          "cream"
+        ],
+        "mono": false,
+        "calm": "none",
+        "quality": 4,
+        "ratio": 1,
+        "by": "Brennan Ehrhardt",
+        "page": "https://unsplash.com/photos/HALe2SmkWAI"
+      }
+    ]
+  },
+  "motion": {
+    "id": "masked-headline",
+    "name": "Masked headline",
+    "description": "On load, each line of the headline rises from behind its own baseline, about 900ms with a strong ease-out, the second line 110ms after the first; the supporting sentence and the action then fade up together. Nothing else on the page performs. Because headlines are two lines at most, you author the line breaks and wrap each line yourself. Recipe: 'Masked line reveal' in references/motion.md."
+  },
+  "sections": [
+    {
+      "id": "intro-lead-over-four-columns",
+      "role": "intro",
+      "name": "Lead line over four columns",
+      "shape": "grid",
+      "tags": [
+        "type-led",
+        "dense",
+        "quiet"
+      ],
+      "directions": [
+        "contact-sheet",
+        "quiet-instrument",
+        "editorial-report",
+        "type-only-statement",
+        "product-performs",
+        "dense-tiles"
+      ],
+      "needs": [],
+      "blueprint": "Two parts on one 12-column grid with 20px margins. First, a lead paragraph of 30–40 words spans all 12 columns at clamp(22px, 2.2vw, 32px), regular weight, leading 1.2: three lines that read as the opening of a text, with no heading before it. 72px below, four equal columns (three grid columns each, 24px gutters) carry small text at 14–15px with leading 1.45. Each column is one paragraph of 40–70 words that opens with a bold run-in phrase of two or three words in full ink, the rest continuing on the same line in the soft ink. Columns top-align and end ragged at different depths. No cards, icons or dividers; the bold run-ins are the only markers. The four columns answer four plain questions: who, what, where, how to reach them. Padding is modest, 96px top and bottom, so a sheet of images can start straight after.",
+      "mobile": "The lead paragraph at 20px, full width. The four columns become a two-by-two grid with a 20px gutter and 40px row gap at 14px; if any paragraph exceeds 60 words, switch to one column with 32px between paragraphs. Run-in phrases stay bold.",
+      "seenIn": [
+        "opl-april-leihuanani-evangelista",
+        "aww-2xa-studio",
+        "opl-wild-as"
+      ]
+    },
+    {
+      "id": "work-one-strip-per-project",
+      "role": "work",
+      "name": "One strip per project",
+      "shape": "strip",
+      "tags": [
+        "dense",
+        "photo-led"
+      ],
+      "directions": [
+        "contact-sheet",
+        "dark-room",
+        "dense-tiles",
+        "editorial-report"
+      ],
+      "needs": [],
+      "blueprint": "The left 13% of the width is a `position: sticky` column holding the section name at 28px and, beneath it, two text filters at 15px, the active one in full ink. To its right each project is one horizontal strip of four to six images, all exactly 190px tall at their natural widths (`height: 190px; width: auto`), 8px apart, the last one cut off by the right viewport edge with `overflow: hidden`. Under each strip, one line at 13px spread across the strip's width: project name flush left, a three-word descriptor at the centre, the year flush right. 45px separate one strip from the next, so four projects fit on a 900px screen and ten make a page. Square corners; no captions on individual frames. Hovering a strip dims the other strips to 40% opacity. There is no heading beyond the section name in the rail.",
+      "mobile": "The rail becomes a single line above the list: section name left, filters right. Strips are 120px tall and each scrolls sideways on its own with `overflow-x: auto` and scroll snapping. The caption line keeps the name left and the year right; the descriptor is dropped.",
+      "seenIn": [
+        "aww-boc-studio",
+        "aww-gil-huybrecht",
+        "aww-lama-lama-2"
+      ]
+    },
+    {
+      "id": "gallery-dense-masonry-sheet",
+      "role": "gallery",
+      "name": "Dense masonry sheet",
+      "shape": "mosaic",
+      "tags": [
+        "dense",
+        "photo-led"
+      ],
+      "directions": [
+        "contact-sheet",
+        "dense-tiles",
+        "editorial-report",
+        "specimen-catalogue"
+      ],
+      "needs": [],
+      "blueprint": "A three-line statement at 22px, 30ch wide, sits at the 66% column with 64px of space below it; it is the only large text. Then a dense masonry of about twenty tiles in six columns with 4px gaps and 12px outer margins, built with CSS `columns: 6; column-gap: 4px` and `break-inside: avoid` on each figure. Tile sizes range from 90px squares to one feature tile of 280 by 160px that sits above the first two columns, outside the column flow. Images keep their natural ratios, so column bottoms are ragged. Every tile has one caption line at 12px directly beneath, 6px below the image and 14px above the next tile, in the form name, comma, type. Mix photographs, posters, details and textures. No hover chrome; the sheet reads at a glance and fills the full width.",
+      "mobile": "Three columns with 4px gaps and 10px margins; the feature tile spans the full width at the top. Captions stay at 12px but shorten to the name only. The statement sits above at 19px, full width and left-aligned.",
+      "seenIn": [
+        "aww-oimachi",
+        "opl-lovably"
+      ]
+    },
+    {
+      "id": "stats-bars-standing-on-the-edge",
+      "role": "stats",
+      "name": "Bars standing on the edge",
+      "shape": "full-bleed",
+      "tags": [
+        "ui-led",
+        "colour-field"
+      ],
+      "directions": [
+        "editorial-report",
+        "dark-room",
+        "dense-tiles",
+        "colour-chapters",
+        "product-performs"
+      ],
+      "needs": [],
+      "blueprint": "The product's own chart, drawn in HTML, is the whole section. A full-bleed field 90svh tall. Along its bottom edge stand ten to fourteen solid bars, one per true value (months, releases, cohorts), in a CSS grid spanning the full viewport width with 8px gaps and no side margins; heights are the values scaled so the tallest is 58vh. No axes, no grid, no legend; the chart's root is marked data-ui. Every bar is one tone two steps from the field except the one the page is about, which takes the accent. Three bars print their value directly above themselves at clamp(20px, 2vw, 30px), tabular. The headline figure sits top-left on the page margin at clamp(88px, 10vw, 168px), and its claim, two to five words at 28px, sits beneath it on the same margin. Hovering or focusing a bar shows its value and period above it.",
+      "mobile": "Bars run sideways: each a full-width row 28px tall growing from the left edge, 6px gaps, eight values at most. The headline figure sits above at 26vw with its claim at 22px. Three rows print their value at 17px inside the bar's right end. The accent row stays.",
+      "seenIn": [
+        "aww-alethia"
+      ]
+    },
+    {
+      "id": "proof-plain-columns",
+      "role": "proof",
+      "name": "Plain names in columns",
+      "shape": "list",
+      "tags": [
+        "quiet",
+        "type-led"
+      ],
+      "directions": [
+        "quiet-instrument",
+        "contact-sheet",
+        "editorial-report",
+        "split-stage",
+        "uneven-photographs",
+        "place-carries-it"
+      ],
+      "needs": [],
+      "blueprint": "A typographic list with no logos. The heading, two or three words at 28–32px, sits in columns 1–3 and stays top-aligned with the first row of names. Columns 5–12 hold the names in three or four text columns (`columns: 4; column-gap: 32px`), each name on its own line at 20–22px with leading 1.5, sentence case, in the full ink. Where names fall into kinds (clients, press, partners), each kind starts a new column and its first line names the kind in the softer ink at the same size, so no small labels are needed. Columns are of unequal length and are not balanced; ragged bottoms are intended. Twelve to thirty names work best. There are no boxes, bullets or separators: the column edges and the shared baseline do the organising. Leave 120px above and below.",
+      "mobile": "The heading leads at 26px. Names follow in two columns at 17px with a 20px gap; each kind begins after a 32px break with its name in the softer ink on the first line. Long names wrap inside their column rather than shrinking.",
+      "seenIn": [
+        "opl-ayush-halder-portfolio"
+      ]
+    },
+    {
+      "id": "testimonial-portrait-offset-quote",
+      "role": "testimonial",
+      "name": "Portrait and offset quotation",
+      "shape": "split",
+      "tags": [
+        "photo-led",
+        "quiet"
+      ],
+      "directions": [
+        "split-stage",
+        "uneven-photographs",
+        "place-carries-it",
+        "one-motif",
+        "editorial-report",
+        "hero-object"
+      ],
+      "needs": [],
+      "blueprint": "A 12-column row on the page ground with wide margins. A portrait of the speaker, 3:4, fills columns 2–5 and is tall, about 70svh; it takes whatever mask the page gives its photographs (square corners, or the page's one motif shape). The quotation occupies columns 7–12 and starts 120px lower than the top of the portrait: four to six lines at clamp(26px, 2.6vw, 40px) in a light or regular weight, leading 1.2, measure about 26ch. The name and role sit 32px beneath the quotation at 16px, on its left edge. A second, small photograph (1:1, columns 10–11) hangs 96px below the attribution and shows the place or the thing the speaker is talking about. There is no heading. Nothing is centred; every edge lands on a column line, and the two vertical offsets are the design.",
+      "mobile": "The portrait runs at 72% width from the left margin, 3:4. The quotation follows at 24px, full width, starting 32px beneath. Name and role sit under it. The small second photograph sits at 44% width against the right margin, 48px lower, overlapping nothing.",
+      "seenIn": []
+    },
+    {
+      "id": "contact-sentence-portrait-links",
+      "role": "contact",
+      "name": "Sentence, portrait, two links",
+      "shape": "band",
+      "tags": [
+        "type-led",
+        "quiet",
+        "photo-led"
+      ],
+      "directions": [
+        "sentence-as-layout",
+        "uneven-photographs",
+        "contact-sheet",
+        "editorial-report",
+        "quiet-instrument"
+      ],
+      "needs": [],
+      "blueprint": "One closing row of three elements hanging from the same top line, with open ground between them, on a 12-column grid. Columns 1–5: a sentence of 12–18 words at clamp(26px, 3vw, 44px), four lines, leading 1.1, saying what kind of enquiries are welcome; it is set as a paragraph and there is no separate heading. Columns 8–9: one small square portrait or photograph of the place, 150–170px, with square corners. Columns 10–12: a short question at 18px in medium weight, then 20px below it two underlined links stacked at 18px (the email address and one booking or social link), and beneath them a line at 14px in the soft ink with the city and the usual reply time. Columns 6–7 stay empty. The row has 160px of space above and 120px below. No form. On a dark ground the photograph is the only bright thing in the row.",
+      "mobile": "The sentence comes first at 7.4vw. Below it the portrait at 96px square sits at the left margin with the question and the two links to its right, top-aligned, in the remaining width. The city and reply-time line spans the full width beneath.",
+      "seenIn": [
+        "opl-artem-taradash",
+        "aww-bleibtgleich26",
+        "opl-kereliott"
+      ]
+    },
+    {
+      "id": "footer-contact-set-large",
+      "role": "footer",
+      "name": "Contact as the headline",
+      "shape": "statement",
+      "tags": [
+        "colour-field",
+        "type-led",
+        "poster"
+      ],
+      "directions": [
+        "colour-chapters",
+        "loud-flat-poster",
+        "type-only-statement",
+        "borrowed-category",
+        "sentence-as-layout",
+        "editorial-report",
+        "place-carries-it"
+      ],
+      "needs": [],
+      "blueprint": "A full-bleed field in one saturated palette colour, at least 90svh tall. Top row, 40px from the edge: two or three short notes at 15px in columns 1–7 (address, hours, a one-line description) and a back-to-top text link at the right margin. Then a tall empty gap. In the lower half, the way to get in touch is the display line: the telephone number or the email address itself, set at 8–9vw, flush left, hard against the margin, as one link. An email address may break once, before the @, giving two lines. Size it with `clamp()` so the longest line fills at least 80% of the width. Under it, one row of small text at 14px spread across three positions: links at the left, credits in the centre, city and year at the right. The wordmark appears only small, in the top row.",
+      "mobile": "Notes stack at the top at 15px. The contact line sits in the lower half at 12vw; a telephone number stays on one line, an email breaks before the @ and is sized so each half fits the width. The meta row becomes three stacked lines at 13px.",
+      "seenIn": [
+        "aww-era-residence",
+        "aww-coffeetech-r",
+        "opl-ohhmydesign",
+        "opl-mammut-studios",
+        "opl-belgrade-architecture"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "opl-artem-taradash",
+      "name": "Artem Taradash",
+      "url": "https://taradash.me/",
+      "source": "One Page Love",
+      "kind": "personal-portfolio",
+      "score": 7.1,
+      "idea": "A designer's CV compressed into one newspaper-like band at the top, after which oversized product renders and project artefacts speak at full scale.",
+      "mood": [
+        "matter-of-fact",
+        "editorial",
+        "dense",
+        "confident"
+      ],
+      "archetype": "editorial-masthead",
+      "hero": "White page with 20px margins. Top-left are three small black rectangular tags with white text (name and two links). Below them a three-line statement at about 3vw in regular-weight grotesk fills the first third, left-aligned. To its right, starting at the very top edge, run two narrow columns of 12px text, then a third column listing clients one per line, and in the far top-right a circular portrait about 200px wide with a white hand-lettered word across the face. This text band ends by a quarter of the height. Below it a huge cut-out vehicle render bleeds off the bottom, with a project card at right.",
+      "type": "One family, Diatype, in regular weight throughout. Three sizes: about 43px for statements and project titles, 12.4px for all running text, about 11px for tags. Tight leading, sentence case, no bold and no capitals; hierarchy comes from size alone.",
+      "colour": "#ffffff #111111 #f7f9fb #1c4fd8 #f0a23a — Strictly black on white for the frame. All colour arrives with project material: an orange-to-blue gradient, a cobalt zigzag pattern, warm photography.",
+      "imagery": "Product renders cut out on white and shown very large, interface screenshots with a small corner radius, a full-width studio photo with a circular logo overlaid, and textile-pattern fields running margin to margin. Scale varies sharply between projects.",
+      "layout": "A loose six-column grid with 20px margins; small text blocks hang from column lines beside very large images. Each project is arranged differently, and there are no dividers or section backgrounds, only white space and jumps in scale. The tag nav stays fixed top-left.",
+      "sections": [
+        {
+          "role": "work",
+          "description": "Each project pairs one oversized visual with a small caption cluster. In the first, a cut-out product render fills the left 60% and bleeds off the edge. The right third stacks a landscape screenshot with slightly rounded corners, then a row holding a tiny label and two-line title at about 3vw on the left and a five-line 12px description on the right."
+        },
+        {
+          "role": "work",
+          "description": "A row of three: a round black watch-face mock-up about a quarter of the width, a wide rectangle filled with a horizontal blue, violet, orange, blue gradient with a tiny tick scale beneath it, and a narrow text column at far right with label, three-line title and two short paragraphs. Circle, rectangle and text share a top line."
+        },
+        {
+          "role": "gallery",
+          "description": "A cobalt-and-white zigzag textile pattern runs margin to margin for more than a full viewport height with only a two-line caption beneath it at left. Before it, a black-backed mosaic of pattern samples and report-cover mock-ups sits beside two narrow text columns. The pattern is given a section to itself with no mock-up frame."
+        },
+        {
+          "role": "contact",
+          "description": "Closing row on white: a tiny label, then a four-line sentence at about 3vw in the left third; a small square portrait at the two-thirds mark; to its right a short question with two underlined links below. All three hang from the same top line with empty space between them."
+        }
+      ],
+      "steal": [
+        "Put bio, client list and portrait in one compact multi-column band at the top so the first scroll is already work.",
+        "Use solid black rectangular tags with white text as the only navigation chrome.",
+        "Let one project artefact (a pattern, a gradient) run full width for a whole screen with a two-line caption instead of framing it in a mock-up."
+      ]
+    },
+    {
+      "id": "aww-ai-in-design-report-2026",
+      "name": "Ai in Design Report 2026",
+      "url": "https://stateofaidesign.com/",
+      "source": "Awwwards Site of the Day",
+      "kind": "other",
+      "score": 8.4,
+      "idea": "A research report laid out like a colour-blocked print annual: a thermal-blurred video collage on top, an oversized tight grotesk title, and flat orange, lilac, sage and black blocks carrying stats, quotes and chapters.",
+      "mood": [
+        "editorial",
+        "bold",
+        "colour-blocked",
+        "assured",
+        "contemporary"
+      ],
+      "archetype": "editorial-masthead",
+      "hero": "The top 53% is a full-width video band: blurred, heat-map-like abstract footage in orange, lilac and sage, overlaid with four or five hard-edged rectangles of the same footage in grey or green, two tagged with tiny mono labels in white boxes. The header sits flush on top: a black logo block at far left, an orange link tab running to 40% of the width, two plain links at right. Below the band, on white: a two-line deck at about 1.4vw on a 1% left margin, and from 42% across a two-line title at 8.3vw, medium weight, tracking -0.06em. Bottom row: mono credit left, scroll cue and arrow aligned to the title column.",
+      "type": "Beausite Classic, a grotesk with some stroke contrast, in Medium for titles and Regular for text; sentence case, tracking -0.06em at display size. Geist Mono for small uppercase labels. Steps: 8.3vw title, about 5.5vw numerals, about 3vw statements, 16px body, 10px mono. Footer wordmark near 96vw.",
+      "colour": "#ffffff #000000 #fe7141 #cdabfe #d1ddd3 #f0ff1c — White base with flat blocks of orange, lilac, sage and black assigned to whole modules (stat tiles, quote panels, chapter bands), all drawn from the hero footage. Text is black, or off-white on black.",
+      "imagery": "Hero: abstract blurred video with a heat-map grade, cut into overlapping rectangles. Body: warm documentary photos and clips of people at desks in wood-lined rooms, square-cornered, butted directly against flat colour blocks with no gap.",
+      "layout": "1% margins and a recurring column line at about 42% where most headings and text begin. Open white text passages ruled by hairlines alternate with tight mosaics in which photos and colour blocks share edges. Each chapter opens with a full-width colour band.",
+      "sections": [
+        {
+          "role": "proof",
+          "description": "A full-width hairline, a tiny mono label at the left, then seven black partner logos evenly spaced across the full width in one row with generous padding above and below, closed by a second hairline. Immediately beneath, another mono label and a three-line statement at about 3vw, flush left and occupying only the left half, followed by a full-width photo strip."
+        },
+        {
+          "role": "stats",
+          "description": "A mosaic with no gutters. A photo of two people at a laptop fills the left two-thirds at roughly 1:1; the right third is split into two stacked flat tiles, lilac above and sage below. Each tile carries a large numeral with a plus sign at about 5.5vw in its top-left corner and a two-line caption directly beneath; the rest of the tile is empty colour."
+        },
+        {
+          "role": "testimonial",
+          "description": "Quote module as two abutting blocks: a black block on the left 40% holding only a small name and a mono role caption, and a sage block on the right 60% with the quotation at about 3vw, top-left aligned with empty sage beneath. Directly below, a full-width orange band opens a chapter: hairline at top, a large two-digit number with the chapter word under it at left, a two-line title and small paragraph starting at the 42% column."
+        },
+        {
+          "role": "footer",
+          "description": "Black footer. A row of three small source counts along the top, separated by vertical hairlines, then the report name in off-white heavy type at nearly full viewport width with a trademark sign at its top-right, then the year at the same size right-aligned on a second line. Two small link columns with mono headings sit lower left beside the year; a hairline and one row of credits and partner logos close it."
+        }
+      ],
+      "steal": [
+        "Start most headings and text at a fixed column line about 42% across, leaving the left for small decks, credits and chapter numbers.",
+        "Butt flat colour tiles directly against a photograph with no gutter and put one large numeral plus two caption lines in each tile's top-left corner.",
+        "Take the page's flat block colours from the hero footage so the abstract video and the layout read as one palette."
+      ],
+      "media": "A video collage covers 100% of the screen at load and lifts to the top ~53% to uncover the title on white. Below, a documentary photograph two thirds wide in a sticky frame beside stacked colour stat blocks, a pinned deck of colour cards each with a 10s clip docked bottom-left, and a carousel of equal stills running off the right edge: 12 images and 6 muted videos, all square-cornered.",
+      "motion": "No preloader, but the collage re-cuts itself for about 4s before the title lands. Framer drives the sticky stacking (a 1350px photo frame and three 900px chapter cards that peel away to uncover the next); there is no split text, links change colour over .2s cubic-bezier(.44,0,.56,1), and one panel slides 610px in over 500ms cubic-bezier(0.44,0,0.37,1)."
+    },
+    {
+      "id": "opl-davesocozy",
+      "name": "davesocozy",
+      "url": "https://davesocozy.com",
+      "source": "One Page Love",
+      "kind": "personal-portfolio",
+      "score": 7.5,
+      "idea": "A collage artist introduces himself by building a collage: each scroll step changes one caption and drops more paper cut-outs onto a green cutting mat.",
+      "mood": [
+        "cozy",
+        "handmade",
+        "playful",
+        "warm"
+      ],
+      "archetype": "centred-statement-media-below",
+      "hero": "Cream page with a single centred object: a green cutting mat 776px wide by 582px tall (54% of viewport width), printed with a white grid, an inner border and diagonal guide lines, casting a soft shadow. One small portrait photo lies at its exact centre, tilted about three degrees. A one-line greeting in bold monospace at 32px sits 30px above the mat. The four viewport corners hold fixed controls: a glossy green flower logo top-left and three dark brown bevelled buttons in uppercase mono (shop top-right, Instagram bottom-left, enter studio bottom-right). A small scroll cue sits under the mat.",
+      "type": "Martian Mono everywhere. Bold 32px for the changing caption (one or two centred lines); 12px tracked uppercase for buttons and hints. Only two sizes, and the mono face gives a label-maker feel that suits a workbench.",
+      "colour": "#ede6d4 #5c894e #241a15 #3d2b22 #ffffff — Warm cream ground, mat green as the one large colour block, chocolate brown for text and buttons. Other colour arrives only through the collage scraps.",
+      "imagery": "Cut-out vintage imagery (twin-lens camera, game console, microphone, globe, fox, fish, crumpled paper) and one portrait photo, each rotated a few degrees with a slight shadow, scattered on the mat like paper scraps. A 3D room follows.",
+      "layout": "A single fixed stage: nothing scrolls away, the mat stays centred while its contents and the caption above change. Corner-pinned buttons replace a nav bar. Empty cream margins of about 23% of the width on each side.",
+      "sections": [
+        {
+          "role": "intro",
+          "description": "Scroll-driven introduction on the pinned stage. The caption above the mat is replaced sentence by sentence, each as two centred lines of bold mono, and with every sentence two or three more cut-outs land on the mat around the portrait at loose angles, some overlapping it and a few flying in from outside. By the last caption the mat holds about ten scraps and a line of tiny uppercase instructions appears beneath the caption."
+        },
+        {
+          "role": "other",
+          "description": "After the intro the mat hands over to a canvas-rendered studio room that the visitor looks around with the mouse and clicks into (the page's own text lists a desk of collages, a wall of framed pieces and a television). The four corner buttons persist as the only chrome. The room itself is not in the captured frames, so its composition is unknown."
+        }
+      ],
+      "steal": [
+        "Pin one physical work surface in the centre and let scrolling add objects to it while a single caption line above changes, instead of stacking sections.",
+        "Put navigation in the four viewport corners as small tactile buttons so the centre stays free.",
+        "Rotate every cut-out by a different few degrees and give each a small shadow so flat images read as paper."
+      ]
+    }
+  ],
+  "scenes": []
+}

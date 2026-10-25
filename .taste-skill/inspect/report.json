@@ -1,0 +1,1973 @@
+{
+ "url": "index.html",
+ "at": "2026-10-25T13:14:34.464Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    0.55,
+    0.56,
+    0.82,
+    0.77,
+    0.83,
+    0.75,
+    0.51
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 4,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 6006,
+     "screens": 6.7,
+     "words": 627,
+     "img": 7,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 8,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "01-car-detailing.png",
+      "06-airfield-cafe.png",
+      "01-car-detailing.png",
+      "04-midlands-carcare.png",
+      "05-chapmans.png",
+      "08-divine-you.png",
+      "09-reynolds-son.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "chars": 26,
+     "lines": 2,
+     "size": 68,
+     "vw": 4.7,
+     "font": "Schibsted Grotesk",
+     "weight": 800,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.55,
+     "top": 598,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "lines": 2,
+     "size": 68,
+     "font": "Schibsted Grotesk"
+    },
+    "headings": [
+     {
+      "text": "Websites built to perform.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 68,
+      "vw": 4.7,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.55,
+      "top": 598,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "137+",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 1158,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "5.0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 1158,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.21,
+      "top": 1158,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Level 2",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 60,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.21,
+      "top": 1158,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Index of completed client work.",
+      "words": 5,
+      "chars": 31,
+      "lines": 2,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 1542,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Verified monographs and client accounts.",
+      "words": 5,
+      "chars": 40,
+      "lines": 2,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.34,
+      "top": 4071,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Initiate a commercial engagement.",
+      "words": 4,
+      "chars": 33,
+      "lines": 2,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.44,
+      "top": 5360,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Schibsted Grotesk",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      15,
+      19,
+      24,
+      40,
+      60,
+      68
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Schibsted Grotesk",
+      "size": 19,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.1
+     },
+     "measureChars": 71,
+     "max": {
+      "size": 68,
+      "vw": 4.7,
+      "font": "Schibsted Grotesk",
+      "text": "Websites built"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ecf0f2",
+       "top": 1058,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1732,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#121c21",
+       "top": 3942,
+       "hsl": {
+        "h": 200,
+        "s": 0.29,
+        "l": 0.1
+       }
+      },
+      {
+       "color": "#1a272e",
+       "top": 4243,
+       "hsl": {
+        "h": 201,
+        "s": 0.28,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#f7f9fa",
+       "top": 5230,
+       "hsl": {
+        "h": 200,
+        "s": 0.23,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#33444c",
+       "share": 0.41
+      },
+      {
+       "color": "#f7f9fa",
+       "share": 0.29
+      },
+      {
+       "color": "#1f3038",
+       "share": 0.19
+      },
+      {
+       "color": "#b0c2cb",
+       "share": 0.06
+      },
+      {
+       "color": "#0d7480",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1f3038",
+      "hsl": {
+       "h": 199,
+       "s": 0.29,
+       "l": 0.17
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": 4,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Initiate Project",
+      "Inspect Selected Work"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 8,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 2539
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.18
+     },
+     {
+      "type": "img",
+      "ratio": 0.09
+     },
+     {
+      "type": "img",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 90,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "schibsted grotesk"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 6006,
+    "margins": {
+     "left": 80,
+     "right": 80
+    },
+    "sections": [
+     {
+      "sel": "section.page-section.hero-masthead",
+      "tag": "section",
+      "top": 90,
+      "height": 968,
+      "words": 65,
+      "media": 3,
+      "middle": 0,
+      "heading": {
+       "text": "Websites built",
+       "size": 68,
+       "tag": "h1"
+      },
+      "left": 80,
+      "right": 80,
+      "textLeft": 80,
+      "textRight": 255,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proof.ledger-band",
+      "tag": "section",
+      "top": 1058,
+      "height": 369,
+      "words": 62,
+      "media": 0,
+      "middle": 54,
+      "heading": {
+       "text": "137+",
+       "size": 60,
+       "tag": "span"
+      },
+      "left": 80,
+      "right": 100,
+      "textLeft": 80,
+      "textRight": 100,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.page-section",
+      "tag": "section",
+      "top": 1427,
+      "height": 2515,
+      "words": 210,
+      "media": 5,
+      "middle": 0,
+      "heading": {
+       "text": "Index of completed client work.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 80,
+      "right": 83,
+      "textLeft": 80,
+      "textRight": 83,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#reviews.monograph-band",
+      "tag": "section",
+      "top": 3942,
+      "height": 1288,
+      "words": 266,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Verified monographs and client accounts.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 80,
+      "right": 71,
+      "textLeft": 80,
+      "textRight": 71,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-editorial-section",
+      "tag": "section",
+      "top": 5230,
+      "height": 635,
+      "words": 52,
+      "media": 0,
+      "middle": 130,
+      "heading": {
+       "text": "Initiate a commercial engagement.",
+       "size": 40,
+       "tag": "h2"
+      },
+      "left": 80,
+      "right": 205,
+      "textLeft": 80,
+      "textRight": 205,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.colophon-footer",
+      "tag": "footer",
+      "top": 5865,
+      "height": 141,
+      "words": 30,
+      "media": 0,
+      "middle": 192,
+      "heading": null,
+      "left": 80,
+      "right": 80,
+      "textLeft": 80,
+      "textRight": 80,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Websites built to perform.",
+      "size": 68,
+      "top": 598,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 80,
+      "n": 9
+     },
+     {
+      "x": 572,
+      "n": 8
+     },
+     {
+      "x": 614,
+      "n": 5
+     },
+     {
+      "x": 736,
+      "n": 3
+     },
+     {
+      "x": 136,
+      "n": 1
+     },
+     {
+      "x": 408,
+      "n": 1
+     },
+     {
+      "x": 1064,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 19,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0.08,
+    "voidBox": {
+     "x": 0,
+     "y": 720,
+     "w": 600,
+     "h": 180
+    }
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 8,
+   "filled": [
+    0.46,
+    0.69,
+    0.76,
+    0.82,
+    0.77,
+    0.93,
+    0.73,
+    0.62
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 4,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 7449,
+     "screens": 7.3,
+     "words": 627,
+     "img": 7,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "01-car-detailing.png",
+      "04-midlands-carcare.png",
+      "05-chapmans.png",
+      "08-divine-you.png",
+      "09-reynolds-son.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "chars": 26,
+     "lines": 2,
+     "size": 47,
+     "vw": 6.1,
+     "font": "Schibsted Grotesk",
+     "weight": 800,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 617,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "lines": 2,
+     "size": 47,
+     "font": "Schibsted Grotesk"
+    },
+    "headings": [
+     {
+      "text": "Websites built to perform.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 47,
+      "vw": 6.1,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 617,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "137+",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 47.4,
+      "vw": 6.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 1048,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "5.0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 47.4,
+      "vw": 6.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.43,
+      "top": 1048,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 47.4,
+      "vw": 6.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 1207,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Level 2",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 47.4,
+      "vw": 6.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.43,
+      "top": 1207,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Index of completed client work.",
+      "words": 5,
+      "chars": 31,
+      "lines": 1,
+      "size": 32.4,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 1474,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Verified monographs and client accounts.",
+      "words": 5,
+      "chars": 40,
+      "lines": 1,
+      "size": 32.4,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 5047,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Initiate a commercial engagement.",
+      "words": 4,
+      "chars": 33,
+      "lines": 1,
+      "size": 32.4,
+      "vw": 4.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 6551,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Schibsted Grotesk",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      15,
+      18,
+      22,
+      32,
+      47
+     ],
+     "sizeCount": 5,
+     "notLoaded": [],
+     "body": {
+      "font": "Schibsted Grotesk",
+      "size": 17.9,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.1
+     },
+     "measureChars": 55,
+     "max": {
+      "size": 47.4,
+      "vw": 6.2,
+      "font": "Schibsted Grotesk",
+      "text": "137+"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ecf0f2",
+       "top": 984,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 1678,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#121c21",
+       "top": 4967,
+       "hsl": {
+        "h": 200,
+        "s": 0.29,
+        "l": 0.1
+       }
+      },
+      {
+       "color": "#1a272e",
+       "top": 5226,
+       "hsl": {
+        "h": 201,
+        "s": 0.28,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#f7f9fa",
+       "top": 6471,
+       "hsl": {
+        "h": 200,
+        "s": 0.23,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#33444c",
+       "share": 0.41
+      },
+      {
+       "color": "#f7f9fa",
+       "share": 0.29
+      },
+      {
+       "color": "#1f3038",
+       "share": 0.19
+      },
+      {
+       "color": "#b0c2cb",
+       "share": 0.06
+      },
+      {
+       "color": "#0d7480",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1f3038",
+      "hsl": {
+       "h": 199,
+       "s": 0.29,
+       "l": 0.17
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 2,
+     "radius": 4,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Initiate Project",
+      "Inspect Selected Work"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.25
+     }
+    ],
+    "nav": {
+     "links": 6,
+     "fixed": true,
+     "height": 113,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "schibsted grotesk"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 7449,
+    "margins": {
+     "left": 38,
+     "right": 40
+    },
+    "sections": [
+     {
+      "sel": "section.page-section.hero-masthead",
+      "tag": "section",
+      "top": 113,
+      "height": 871,
+      "words": 65,
+      "media": 1,
+      "middle": 0,
+      "heading": {
+       "text": "Websites built",
+       "size": 47,
+       "tag": "h1"
+      },
+      "left": 38,
+      "right": 38,
+      "textLeft": 38,
+      "textRight": 40,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proof.ledger-band",
+      "tag": "section",
+      "top": 984,
+      "height": 418,
+      "words": 62,
+      "media": 0,
+      "middle": 35,
+      "heading": {
+       "text": "137+",
+       "size": 47,
+       "tag": "span"
+      },
+      "left": 38,
+      "right": 75,
+      "textLeft": 38,
+      "textRight": 75,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.page-section",
+      "tag": "section",
+      "top": 1402,
+      "height": 3566,
+      "words": 210,
+      "media": 5,
+      "middle": 0,
+      "heading": {
+       "text": "Index of completed client work.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 38,
+      "right": 42,
+      "textLeft": 38,
+      "textRight": 42,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#reviews.monograph-band",
+      "tag": "section",
+      "top": 4967,
+      "height": 1503,
+      "words": 266,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Verified monographs and client accounts.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 38,
+      "right": 50,
+      "textLeft": 38,
+      "textRight": 50,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-editorial-section",
+      "tag": "section",
+      "top": 6471,
+      "height": 793,
+      "words": 52,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Initiate a commercial engagement.",
+       "size": 32,
+       "tag": "h2"
+      },
+      "left": 38,
+      "right": 55,
+      "textLeft": 38,
+      "textRight": 55,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.colophon-footer",
+      "tag": "footer",
+      "top": 7263,
+      "height": 186,
+      "words": 30,
+      "media": 0,
+      "middle": 144,
+      "heading": null,
+      "left": 38,
+      "right": 38,
+      "textLeft": 38,
+      "textRight": 38,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Websites built to perform.",
+      "size": 47,
+      "top": 617,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 38,
+      "n": 17
+     },
+     {
+      "x": 70,
+      "n": 9
+     },
+     {
+      "x": 398,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 18,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 11,
+   "filled": [
+    0.64,
+    0.76,
+    0.73,
+    0.76,
+    0.8,
+    0.85,
+    0.79,
+    0.94,
+    0.98,
+    0.64,
+    0.79
+   ],
+   "motion": {
+    "elements": 21,
+    "css": 4,
+    "transitions": 17,
+    "scripted": 0,
+    "videos": 1,
+    "playingVideos": 1
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 8834,
+     "screens": 10.5,
+     "words": 621,
+     "img": 7,
+     "video": 1,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 5,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 1,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "01-car-detailing.png",
+      "04-midlands-carcare.png",
+      "05-chapmans.png",
+      "08-divine-you.png",
+      "09-reynolds-son.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "chars": 26,
+     "lines": 2,
+     "size": 34.9,
+     "vw": 8.9,
+     "font": "Schibsted Grotesk",
+     "weight": 800,
+     "tracking": -0.04,
+     "leading": 0.98,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.88,
+     "top": 629,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Websites built to perform.",
+     "words": 4,
+     "lines": 2,
+     "size": 34.9,
+     "font": "Schibsted Grotesk"
+    },
+    "headings": [
+     {
+      "text": "Websites built to perform.",
+      "words": 4,
+      "chars": 26,
+      "lines": 2,
+      "size": 34.9,
+      "vw": 8.9,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 629,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "137+",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1119,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "5.0",
+      "words": 1,
+      "chars": 3,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1268,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "100%",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1417,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Level 2",
+      "words": 2,
+      "chars": 7,
+      "lines": 1,
+      "size": 40,
+      "vw": 10.3,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.04,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1566,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Index of completed client work.",
+      "words": 5,
+      "chars": 31,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 1824,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Verified monographs and client accounts.",
+      "words": 5,
+      "chars": 40,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 5678,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Initiate a commercial engagement.",
+      "words": 4,
+      "chars": 33,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Schibsted Grotesk",
+      "weight": 800,
+      "tracking": -0.03,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.88,
+      "top": 7734,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 8,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Schibsted Grotesk",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      17,
+      20,
+      28,
+      35,
+      40
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Schibsted Grotesk",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 10.1
+     },
+     "measureChars": 27,
+     "max": {
+      "size": 40,
+      "vw": 10.3,
+      "font": "Schibsted Grotesk",
+      "text": "137+"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#f7f9fa",
+     "bodyBgHsl": {
+      "h": 200,
+      "s": 0.23,
+      "l": 0.97
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ecf0f2",
+       "top": 1055,
+       "hsl": {
+        "h": 200,
+        "s": 0.19,
+        "l": 0.94
+       }
+      },
+      {
+       "color": "#ffffff",
+       "top": 2106,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#121c21",
+       "top": 5598,
+       "hsl": {
+        "h": 200,
+        "s": 0.29,
+        "l": 0.1
+       }
+      },
+      {
+       "color": "#1a272e",
+       "top": 5938,
+       "hsl": {
+        "h": 201,
+        "s": 0.28,
+        "l": 0.14
+       }
+      },
+      {
+       "color": "#f7f9fa",
+       "top": 7654,
+       "hsl": {
+        "h": 200,
+        "s": 0.23,
+        "l": 0.97
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#33444c",
+       "share": 0.4
+      },
+      {
+       "color": "#f7f9fa",
+       "share": 0.3
+      },
+      {
+       "color": "#1f3038",
+       "share": 0.19
+      },
+      {
+       "color": "#b0c2cb",
+       "share": 0.06
+      },
+      {
+       "color": "#0d7480",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#1f3038",
+      "hsl": {
+       "h": 199,
+       "s": 0.29,
+       "l": 0.17
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 4,
+     "inHero": 1,
+     "radius": 4,
+     "height": 46,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Initiate Project"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 0,
+     "boxRadius": 0,
+     "squareMedia": 0,
+     "roundedMedia": 6,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 3165
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "video",
+      "ratio": 0.29
+     }
+    ],
+    "nav": {
+     "links": 2,
+     "fixed": true,
+     "height": 90,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "schibsted grotesk"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 8834,
+    "margins": {
+     "left": 24,
+     "right": 31
+    },
+    "sections": [
+     {
+      "sel": "section.page-section.hero-masthead",
+      "tag": "section",
+      "top": 90,
+      "height": 965,
+      "words": 65,
+      "media": 1,
+      "middle": 0,
+      "heading": null,
+      "left": 24,
+      "right": 24,
+      "textLeft": 24,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#proof.ledger-band",
+      "tag": "section",
+      "top": 1055,
+      "height": 697,
+      "words": 62,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "137+",
+       "size": 40,
+       "tag": "span"
+      },
+      "left": 24,
+      "right": 37,
+      "textLeft": 24,
+      "textRight": 37,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#work.page-section",
+      "tag": "section",
+      "top": 1752,
+      "height": 3846,
+      "words": 210,
+      "media": 5,
+      "middle": 0,
+      "heading": {
+       "text": "Index of completed client work.",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 32,
+      "textLeft": 24,
+      "textRight": 32,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#reviews.monograph-band",
+      "tag": "section",
+      "top": 5598,
+      "height": 2056,
+      "words": 266,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Verified monographs and client accounts.",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 27,
+      "textLeft": 24,
+      "textRight": 27,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "section#contact.contact-editorial-section",
+      "tag": "section",
+      "top": 7654,
+      "height": 908,
+      "words": 52,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Initiate a commercial engagement.",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 24,
+      "right": 31,
+      "textLeft": 24,
+      "textRight": 31,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "footer.colophon-footer",
+      "tag": "footer",
+      "top": 8562,
+      "height": 273,
+      "words": 30,
+      "media": 0,
+      "middle": 0,
+      "heading": null,
+      "left": 24,
+      "right": 36,
+      "textLeft": 24,
+      "textRight": 36,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Websites built to perform.",
+      "size": 35,
+      "top": 629,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 24,
+      "n": 19
+     },
+     {
+      "x": 56,
+      "n": 9
+     }
+    ],
+    "leftBlocks": 28,
+    "bodySize": 17,
+    "stage": false,
+    "explains": true,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": null,
+   "consoleErrors": []
+  }
+ ],
+ "findings": [],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/desktop-fold.jpg",
+   "pages": [
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/desktop-page-01.jpg",
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/desktop-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/tablet-fold.jpg",
+   "pages": [
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/tablet-page-01.jpg",
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/tablet-page-02.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/mobile-fold.jpg",
+   "pages": [
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/mobile-page-01.jpg",
+    "/Users/siam/Documents/Antigravity/Web Design Training/.taste-skill/inspect/mobile-page-02.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
