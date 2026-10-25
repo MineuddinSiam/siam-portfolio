@@ -8,13 +8,13 @@
 
 ---
 
-### Available Design Iterations
+### Available Design Iterations (Latest to Oldest)
 
-1. **[Latest Live Website (Wise Fintech System)](https://mineuddinsiam.github.io/siam-portfolio/)** — High-contrast fintech confidence, Deep Forest Green (`#163300`) & Vibrant Lime (`#9FE870`), Wise-style agency comparison table, interactive instant project budget estimator, and verified reviews.
-2. **[Agentsure Clean System (v5)](https://mineuddinsiam.github.io/siam-portfolio/v5.html)** — Crisp white canvas, Inter Tight & JetBrains Mono, `#005032` accents, and terminal spec.
-3. **[Modern Dark Theme (v4)](https://mineuddinsiam.github.io/siam-portfolio/v4.html)** — Modern high-contrast dark theme with Plus Jakarta Sans and blue accents.
-4. **[Warm Interactive Theme (v1)](https://mineuddinsiam.github.io/siam-portfolio/v1.html)** — Outfit typography, interactive 3D hero stage, and side-by-side featured project cards.
-5. **[Architectural Monograph (v2)](https://mineuddinsiam.github.io/siam-portfolio/v2.html)** — Editorial magazine layout with Schibsted Grotesk and video masthead.
+- **[Latest · Wise Design System (Active index.html)](https://mineuddinsiam.github.io/siam-portfolio/)** — High-contrast fintech confidence, Deep Forest Green (`#163300`) & Vibrant Lime (`#9FE870`), Wise-style agency comparison table, interactive instant project budget estimator, and verified client reviews.
+- **[version 4 · Agentsure System](https://mineuddinsiam.github.io/siam-portfolio/v5.html)** — Crisp white canvas, Inter Tight & JetBrains Mono, `#005032` accents, and technical terminal spec.
+- **[version 3 · Modern Dark](https://mineuddinsiam.github.io/siam-portfolio/v4.html)** — Modern high-contrast dark theme with Plus Jakarta Sans and blue accents.
+- **[version 2 · Warm Interactive](https://mineuddinsiam.github.io/siam-portfolio/v1.html)** — Outfit typography, interactive 3D hero stage, and side-by-side featured project cards.
+- **[version 1 · Architectural Monograph](https://mineuddinsiam.github.io/siam-portfolio/v2.html)** — Editorial magazine layout with Schibsted Grotesk and video masthead.
 
 ---
 
