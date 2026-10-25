@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Siam Portfolio — Version Gallery</title>
+  <title>Siam Portfolio — Design Versions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
       background: #151a21;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      padding: 24px 28px;
+      padding: 26px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -64,63 +64,58 @@
       margin-bottom: 8px;
     }
     .card-title {
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .card-desc {
-      font-size: 0.92rem;
+      font-size: 0.94rem;
       color: #8b99a8;
     }
     .btn {
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 100px;
       background: #2563eb;
       color: #fff;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       white-space: nowrap;
+      transition: background 0.15s ease;
+    }
+    .card:hover .btn {
+      background: #1d4ed8;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Portfolio Versions</h1>
-    <p class="lead">Compare all 4 live iterations created for Mineuddin Siam's website:</p>
+    <h1>Portfolio Design Versions</h1>
+    <p class="lead">Compare the 3 distinct website designs created for Mineuddin Siam:</p>
 
     <div class="grid">
-      <a href="v4.html" class="card">
+      <a href="index.html" class="card">
         <div>
-          <span class="tag">Version 4.0 · Current</span>
+          <span class="tag">Design 1 · Current Live</span>
           <h2 class="card-title">Modern Dark Theme (Plus Jakarta Sans)</h2>
-          <p class="card-desc">High-converting dark portfolio with everyday natural language, clean cards, and direct WhatsApp contact.</p>
+          <p class="card-desc">High-converting dark portfolio with natural conversational English, clean project cards, client review grid, and direct WhatsApp contact.</p>
         </div>
         <span class="btn">View Live →</span>
       </a>
 
       <a href="v1.html" class="card">
         <div>
-          <span class="tag">Version 1.0</span>
-          <h2 class="card-title">Outfit Sans with 3D Tilt Hero</h2>
-          <p class="card-desc">Warm aesthetic with Outfit typography, interactive 3D hero card, live status pill, and featured project cards.</p>
+          <span class="tag">Design 2</span>
+          <h2 class="card-title">Warm Interactive (Outfit Typography & 3D Tilt Hero)</h2>
+          <p class="card-desc">Warm aesthetic with Outfit geometric font, interactive 3D hero stage, live status badge, and side-by-side featured project layouts.</p>
         </div>
         <span class="btn">View Live →</span>
       </a>
 
       <a href="v2.html" class="card">
         <div>
-          <span class="tag">Version 2.0</span>
+          <span class="tag">Design 3</span>
           <h2 class="card-title">Architectural Monograph (Frost & Slate)</h2>
-          <p class="card-desc">Editorial monograph layout with Schibsted Grotesk, video masthead, and interactive project drawer.</p>
-        </div>
-        <span class="btn">View Live →</span>
-      </a>
-
-      <a href="v3.html" class="card">
-        <div>
-          <span class="tag">Version 3.0</span>
-          <h2 class="card-title">Restored Outfit with Simplified Copy</h2>
-          <p class="card-desc">Restored Version 1 design with simplified client review text and natural language.</p>
+          <p class="card-desc">Editorial magazine style with Schibsted Grotesk, video mosaic masthead, and interactive project directory drawer.</p>
         </div>
         <span class="btn">View Live →</span>
       </a>
