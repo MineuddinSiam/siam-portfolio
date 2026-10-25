@@ -6,11 +6,11 @@
   <title>Siam Portfolio — Design Versions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', -apple-system, sans-serif;
+      font-family: 'Outfit', -apple-system, sans-serif;
       background: #0E0F0C;
       color: #f0f4f8;
       padding: 60px 24px 80px;
@@ -49,7 +49,7 @@
     }
     h1 {
       font-size: 2.5rem;
-      font-weight: 900;
+      font-weight: 800;
       letter-spacing: -0.035em;
       margin-bottom: 10px;
     }
@@ -81,12 +81,12 @@
       background: #1b2024;
     }
     .card.featured {
-      border-color: rgba(159, 232, 112, 0.5);
-      background: linear-gradient(180deg, #163300 0%, #101c0c 100%);
+      border-color: rgba(230, 220, 200, 0.4);
+      background: linear-gradient(180deg, #22211D 0%, #161513 100%);
     }
     .card.featured:hover {
-      border-color: #9FE870;
-      background: linear-gradient(180deg, #1c4000 0%, #14240f 100%);
+      border-color: #FAF9F5;
+      background: linear-gradient(180deg, #2A2823 0%, #1B1A17 100%);
     }
     .tag {
       display: inline-block;
@@ -97,6 +97,10 @@
       padding: 4px 10px;
       border-radius: 9999px;
       margin-bottom: 10px;
+    }
+    .tag-gold {
+      color: #141412;
+      background: #E8E4DA;
     }
     .tag-lime {
       color: #163300;
@@ -146,7 +150,7 @@
       color: #7b8b9d;
     }
     .card.featured .meta-pills {
-      color: #9FE870;
+      color: #E8E4DA;
     }
     .meta-pills span {
       background: rgba(255, 255, 255, 0.05);
@@ -154,7 +158,7 @@
       border-radius: 4px;
     }
     .card.featured .meta-pills span {
-      background: rgba(159, 232, 112, 0.15);
+      background: rgba(255, 255, 255, 0.1);
     }
     .btn {
       padding: 13px 26px;
@@ -173,12 +177,12 @@
       background: #1d4ed8;
       transform: translateX(2px);
     }
-    .btn-lime {
-      background: #9FE870;
-      color: #163300;
+    .btn-gold {
+      background: #FAF9F5;
+      color: #141412;
     }
-    .card.featured:hover .btn-lime {
-      background: #b5f28f;
+    .card.featured:hover .btn-gold {
+      background: #FFFFFF;
     }
     .footer {
       margin-top: 48px;
@@ -217,25 +221,40 @@
         <span>GitHub Pages Active</span>
       </div>
       <h1>Portfolio Design Versions</h1>
-      <p class="lead">Compare all 5 distinct design directions created for Mineuddin Siam. The oldest version is at the bottom, progressing up to the latest active design.</p>
+      <p class="lead">Compare all design directions created for Mineuddin Siam. The oldest version is at the bottom, progressing up to the latest active design.</p>
     </div>
 
     <div class="grid">
-      <!-- 5. Latest: Wise Design System (Active index.html) -->
+      <!-- Latest: Mindly Editorial System (Active index.html) -->
       <a href="index.html" class="card featured">
         <div>
-          <span class="tag tag-lime">Latest · Active</span>
+          <span class="tag tag-gold">Latest · Active</span>
+          <h2 class="card-title">Mindly Editorial System</h2>
+          <p class="card-desc">Warm aesthetic with Outfit + Instrument Serif cursive header mix, Siam's portrait stage with curved connector lines, floating glassmorphism cards, and split featured project showcases.</p>
+          <div class="meta-pills">
+            <span>Outfit + Instrument Serif Cursive</span>
+            <span>Portrait Stage</span>
+            <span>Warm Cream</span>
+            <span>Floating Cards</span>
+          </div>
+        </div>
+        <span class="btn btn-gold">View Live →</span>
+      </a>
+
+      <!-- 5. Wise Design System (v5.html) -->
+      <a href="v5.html" class="card">
+        <div>
+          <span class="tag tag-lime">Version 5</span>
           <h2 class="card-title">Wise Design System</h2>
-          <p class="card-desc">High-contrast fintech confidence with deep forest green (#163300) and vibrant lime (#9FE870), Inter typography, side-by-side agency comparison table, interactive instant project budget estimator, and verified client reviews.</p>
+          <p class="card-desc">High-contrast fintech confidence with deep forest green (#163300) and vibrant lime (#9FE870), Inter typography, side-by-side agency comparison table, and interactive scope estimator.</p>
           <div class="meta-pills">
             <span>Inter</span>
             <span>#163300 Forest</span>
             <span>#9FE870 Lime</span>
             <span>Interactive Estimator</span>
-            <span>Wise DesignMD System</span>
           </div>
         </div>
-        <span class="btn btn-lime">View Live →</span>
+        <span class="btn">View Live →</span>
       </a>
 
       <!-- 4. Agentsure System (v4.html) -->
@@ -302,7 +321,7 @@
 
     <div class="footer">
       <span>Repository: <a href="https://github.com/MineuddinSiam/siam-portfolio" target="_blank" rel="noopener">MineuddinSiam/siam-portfolio</a></span>
-      <a href="DESIGN.md">View DESIGN.md System Specs →</a>
+      <a href="https://github.com/MineuddinSiam/siam-portfolio" target="_blank" rel="noopener">GitHub Main Branch →</a>
     </div>
   </div>
 </body>

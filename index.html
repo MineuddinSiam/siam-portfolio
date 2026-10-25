@@ -3,58 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mineuddin Siam — Fast, High-Converting WordPress Websites</title>
-  <meta name="description" content="Freelance WordPress designer and developer building high-speed, modern websites that grow your business. Level 2 Seller on Fiverr with 80+ 5-star reviews.">
-  
-  <!-- Inter Google Font (Wise Standard) -->
+  <title>Mineuddin Siam — High-Converting WordPress Websites</title>
+  <meta name="description" content="Freelance WordPress Web Designer & Developer. Crafting ultra-fast, high-converting websites for ambitious businesses worldwide. Level 2 Seller on Fiverr with 80+ 5-star reviews.">
+
+  <!-- Google Fonts: Outfit (Clean Modern Sans) + Instrument Serif & Newsreader (Cursive Editorial Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ─── Wise Design System Tokens ─── */
-    :root {
-      --primary: #163300;         /* Deep Forest Green */
-      --primary-dark: #0D1F00;    /* Darkest Forest */
-      --neutral-black: #0E0F0C;   /* Dark Neutral Black */
-      --charcoal: #21231D;        /* Body Neutral */
-      --accent-lime: #9FE870;     /* Wise Signature Lime */
-      --accent-lime-soft: #E2F6D5;/* Soft Lime Surface */
-      --accent-cyan: #A0E1E1;     /* Cyan Teal */
-      --accent-yellow: #FADC65;   /* Warm Yellow */
-      --gray-medium: #454745;     /* Mid-tone Gray */
-      --gray-light: #F4F6F2;      /* Very Light Neutral */
-      --border-subtle: rgba(22, 51, 0, 0.12);
-      --border-strong: rgba(22, 51, 0, 0.24);
-      --white: #FFFFFF;
-      --shadow-sm: rgba(22, 51, 0, 0.06) 0px 4px 16px 0px;
-      --shadow-md: rgba(22, 51, 0, 0.08) 0px 8px 24px 0px;
-      --shadow-lg: rgba(22, 51, 0, 0.12) 0px 16px 40px 0px;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
-      --container-max: 1240px;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
 
-    /* Reset & Base */
+  <style>
     *, *::before, *::after {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #FAFAF7;
+      --bg-surface: #FFFFFF;
+      --bg-card: #F3F2EE;
+      --bg-dark: #141412;
+      --bg-dark-card: #1D1D1A;
+      --text: #141412;
+      --text-muted: #66645E;
+      --text-dim: #99968E;
+      --text-light: #F4F3EE;
+      --text-light-muted: #9E9B91;
+      --accent: #2E5C38;
+      --accent-soft: #E8EFEA;
+      --border: rgba(20, 20, 18, 0.08);
+      --border-dark: rgba(255, 255, 255, 0.1);
+      --shadow-sm: 0 4px 16px rgba(20, 20, 18, 0.04);
+      --shadow-md: 0 12px 32px rgba(20, 20, 18, 0.07);
+      --shadow-lg: 0 24px 64px rgba(20, 20, 18, 0.1);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+      --font-sans: 'Outfit', -apple-system, sans-serif;
+      --font-serif: 'Instrument Serif', 'Newsreader', Georgia, serif;
     }
 
     html {
       scroll-behavior: smooth;
-      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--white);
-      color: var(--neutral-black);
+      font-family: var(--font-sans);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
@@ -71,497 +70,739 @@
 
     .container {
       width: 100%;
-      max-width: var(--container-max);
+      max-width: 1240px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
     }
 
-    /* ─── Navigation ─── */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: all 0.2s ease;
+    /* ─── Navigation (Floating Glass Pill) ─── */
+    .site-nav {
+      position: fixed;
+      top: 20px;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      padding: 0 24px;
+      pointer-events: none;
     }
 
     .nav-inner {
-      height: 76px;
+      pointer-events: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 32px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 8px 10px 8px 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      max-width: 900px;
+      width: 100%;
     }
 
     .brand-logo {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-      color: var(--primary);
+      gap: 8px;
     }
 
-    .brand-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--accent-lime);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .brand-badge .dot {
-      width: 6px;
-      height: 6px;
-      background: var(--primary);
+    .brand-logo-dot {
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
+      background: #108538;
+      box-shadow: 0 0 0 3px rgba(16, 133, 56, 0.15);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 26px;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--primary);
-      padding: 6px 2px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
       position: relative;
-      transition: color 0.15s ease;
     }
 
     .nav-links a:hover {
-      color: var(--primary-dark);
+      color: var(--text);
     }
 
-    .nav-links a:hover::after {
-      content: '';
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--text);
+      color: #fff;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      transition: all 0.2s ease;
+    }
+
+    .nav-cta:hover {
+      background: #2b2a26;
+      transform: translateY(-1px);
+    }
+
+    /* ─── Hero Section (Mindly Inspired) ─── */
+    .hero {
+      position: relative;
+      padding: 140px 0 80px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 18%, rgba(240, 237, 227, 0.9) 0%, transparent 65%);
+    }
+
+    /* Subtle ambient luminous aura behind hero */
+    .hero-glow {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--accent-lime);
-      border-radius: 2px;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(220, 215, 200, 0.35) 0%, rgba(250, 250, 247, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .nav-actions {
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Top rotating star badge */
+    .hero-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-top svg {
+      width: 14px;
+      height: 14px;
+      fill: #108538;
+    }
+
+    /* The Headline Mix: Standard Display + Sweeping Cursive Serif */
+    .hero-title {
+      font-family: var(--font-sans);
+      font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+      font-weight: 700;
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .hero-cursive {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      display: inline-block;
+      color: var(--text);
+      position: relative;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .hero-ctas {
       display: flex;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 14px;
+      margin-bottom: 60px;
     }
 
-    /* ─── Buttons (Wise Pill System) ─── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
-      font-family: inherit;
-      font-size: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
       font-weight: 600;
-      line-height: 1.2;
-      padding: 14px 28px;
+      padding: 14px 30px;
       border-radius: var(--radius-full);
       border: 1px solid transparent;
       cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       white-space: nowrap;
     }
 
-    .btn-primary {
-      background-color: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
+    .btn-dark {
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+      box-shadow: 0 10px 24px rgba(20, 20, 18, 0.15);
     }
 
-    .btn-primary:hover {
-      background-color: var(--primary-dark);
-      border-color: var(--primary-dark);
-      transform: translateY(-1px);
+    .btn-dark:hover {
+      background: #2b2a26;
+      border-color: #2b2a26;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 32px rgba(20, 20, 18, 0.22);
+    }
+
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      color: var(--text);
+      border-color: rgba(20, 20, 18, 0.12);
+    }
+
+    .btn-glass:hover {
+      background: #FFFFFF;
+      border-color: rgba(20, 20, 18, 0.25);
+      transform: translateY(-2px);
       box-shadow: var(--shadow-sm);
     }
 
-    .btn-lime {
-      background-color: var(--accent-lime);
-      color: var(--primary);
-      border-color: var(--accent-lime);
-      font-weight: 700;
+    /* ─── Hero Visual Stage (Siam's Portrait + Floating Orbiting Cards) ─── */
+    .hero-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 20px 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
 
-    .btn-lime:hover {
-      background-color: #8FD860;
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-sm);
+    /* Central Portrait Frame */
+    .portrait-wrap {
+      position: relative;
+      width: 330px;
+      height: 420px;
+      border-radius: 44px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.16);
+      border: 6px solid #FFFFFF;
+      background: #E8E4DA;
+      z-index: 5;
+      transform: translateY(0);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .btn-secondary {
-      background-color: var(--accent-lime-soft);
-      color: var(--primary);
-      border-color: rgba(22, 51, 0, 0.08);
-      font-weight: 600;
+    .portrait-wrap:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.2);
     }
 
-    .btn-secondary:hover {
-      background-color: #d6f2c4;
-      transform: translateY(-1px);
+    .portrait-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
     }
 
-    .btn-outline {
-      background-color: transparent;
-      color: var(--primary);
-      border-color: var(--border-strong);
+    /* SVG Curved Connector Lines */
+    .connector-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
     }
 
-    .btn-outline:hover {
-      background-color: rgba(159, 232, 112, 0.15);
-      border-color: var(--primary);
+    .connector-line {
+      fill: none;
+      stroke: rgba(20, 20, 18, 0.14);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 4;
     }
 
-    .btn-sm {
-      padding: 10px 20px;
-      font-size: 0.88rem;
+    /* Floating Cards (Mindly Style) */
+    .floating-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+      border-radius: 22px;
+      padding: 20px 24px;
+      text-align: left;
+      z-index: 10;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* ─── Hero Section ─── */
-    .hero {
-      padding: 72px 0 64px;
-      background: radial-gradient(circle at 80% 20%, rgba(159, 232, 112, 0.18) 0%, transparent 50%),
-                  radial-gradient(circle at 10% 80%, rgba(160, 225, 225, 0.15) 0%, transparent 45%);
+    .floating-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 56px;
+    /* Left Card: Turn visits into progress */
+    .card-left {
+      top: 15%;
+      left: 20px;
+      max-width: 240px;
+    }
+
+    .card-icon-box {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--bg-card);
+      display: flex;
       align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: var(--text);
     }
 
-    .hero-badge-wrap {
+    .card-left h4 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .card-left p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Right Card: Results anytime, anywhere */
+    .card-right {
+      top: 28%;
+      right: 30px;
+      max-width: 230px;
+    }
+
+    .avatars-mini-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .avatar-mini {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #DDD;
+      border: 2px solid #FFF;
+      margin-left: -6px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .avatar-mini:first-child {
+      margin-left: 0;
+    }
+
+    .card-right h4 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .card-right p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Orbiting Badges around Siam */
+    .orbit-badge {
+      position: absolute;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background-color: var(--accent-lime-soft);
-      border: 1px solid rgba(22, 51, 0, 0.15);
-      padding: 8px 18px;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      padding: 8px 16px;
       border-radius: var(--radius-full);
-      margin-bottom: 24px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text);
+      z-index: 12;
+      transition: transform 0.3s ease;
     }
 
-    .hero-badge-wrap .pulse-dot {
+    .orbit-badge:hover {
+      transform: scale(1.05);
+    }
+
+    .orbit-badge-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+    }
+
+    .badge-top-left {
+      top: 48%;
+      left: 17%;
+    }
+
+    .badge-top-right {
+      top: 55%;
+      right: 18%;
+    }
+
+    .badge-bottom-center {
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--text);
+      color: #fff;
+      border-color: var(--text);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+    }
+
+    .badge-bottom-center .badge-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: #108538;
-      box-shadow: 0 0 0 4px rgba(16, 133, 56, 0.2);
+      background: #2ee59d;
+      box-shadow: 0 0 10px #2ee59d;
     }
 
-    .hero-badge-wrap span {
-      font-size: 0.86rem;
+    /* Left Social Proof Badge */
+    .hero-proof-bottom {
+      position: absolute;
+      bottom: 24px;
+      left: 20px;
+      text-align: left;
+      z-index: 10;
+    }
+
+    .hero-proof-bottom .proof-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar-item {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid #FFF;
+      margin-left: -8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
       font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.01em;
+      color: var(--text);
     }
 
-    .hero-title {
-      font-size: clamp(2.5rem, 5.2vw, 4.4rem);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-      color: var(--neutral-black);
-      margin-bottom: 24px;
+    .avatar-item:first-child {
+      margin-left: 0;
     }
 
-    .hero-title .highlight-lime {
-      background-color: var(--accent-lime);
-      color: var(--primary);
-      padding: 2px 10px;
-      border-radius: 8px;
-      display: inline-block;
+    .avatar-plus {
+      background: var(--accent);
+      color: #FFF;
     }
 
-    .hero-subtitle {
-      font-size: 1.18rem;
-      line-height: 1.6;
-      color: var(--charcoal);
-      max-width: 560px;
-      margin-bottom: 36px;
+    /* Right Stamp (Mindly Circular Badge) */
+    .hero-stamp-right {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      text-align: right;
+      z-index: 10;
     }
 
-    .hero-ctas {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 36px;
+    .stamp-star {
+      width: 22px;
+      height: 22px;
+      color: var(--text);
+      margin-left: auto;
+      margin-bottom: 6px;
     }
 
-    .hero-proof {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .stars {
-      display: inline-flex;
-      align-items: center;
-      gap: 3px;
-    }
-
-    .star-svg {
-      width: 17px;
-      height: 17px;
-      fill: #00B67A;
-      display: inline-block;
-      flex-shrink: 0;
-    }
-
-    .proof-text {
-      font-size: 0.9rem;
-      color: var(--gray-medium);
+    .stamp-text {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
       line-height: 1.4;
     }
 
-    .proof-text strong {
-      color: var(--primary);
+    /* ─── Metric Banner Strip ─── */
+    .metric-strip {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 44px 0;
     }
 
-    /* ─── Hero Comparison Card (Fintech Style) ─── */
-    .compare-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow-md);
-      position: relative;
-    }
-
-    .compare-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .compare-tag {
-      background: var(--accent-lime);
-      color: var(--primary);
-      font-size: 0.78rem;
-      font-weight: 800;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 24px;
-    }
-
-    .compare-table th {
-      text-align: left;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--gray-medium);
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .compare-table td {
-      padding: 12px 0;
-      font-size: 0.92rem;
-      border-bottom: 1px solid rgba(22, 51, 0, 0.06);
-    }
-
-    .compare-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .compare-table .feature-name {
-      font-weight: 600;
-      color: var(--charcoal);
-    }
-
-    .compare-table .siam-col {
-      font-weight: 700;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .compare-table .siam-col::before {
-      content: '';
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23108538'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
-      background-size: contain;
-      background-repeat: no-repeat;
-      flex-shrink: 0;
-    }
-
-    .compare-table .other-col {
-      color: #888;
-      font-size: 0.86rem;
-    }
-
-    .quick-calc-box {
-      background: var(--gray-light);
-      border-radius: var(--radius-md);
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .quick-calc-info h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 2px;
-    }
-
-    .quick-calc-info p {
-      font-size: 0.82rem;
-      color: var(--gray-medium);
-    }
-
-    /* ─── Metric Bar Section ─── */
-    .metric-section {
-      background-color: var(--primary);
-      color: var(--white);
-      padding: 48px 0;
-    }
-
-    .metrics-grid {
+    .metric-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 32px;
     }
 
-    .metric-item {
-      border-left: 2px solid rgba(159, 232, 112, 0.4);
-      padding-left: 20px;
+    .metric-col {
+      text-align: center;
     }
 
-    .metric-number {
+    .metric-num {
       font-size: clamp(2rem, 3.2vw, 2.8rem);
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
       line-height: 1;
-      color: var(--accent-lime);
       margin-bottom: 6px;
-      letter-spacing: -0.02em;
     }
 
-    .metric-label {
-      font-size: 0.94rem;
-      font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 4px;
-    }
-
-    .metric-sub {
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.6);
+    .metric-desc {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-muted);
     }
 
     /* ─── Section Header ─── */
     .section-wrap {
-      padding: 96px 0;
+      padding: 100px 0;
     }
 
     .section-header {
       max-width: 680px;
-      margin-bottom: 56px;
-    }
-
-    .section-header.center {
+      margin: 0 auto 64px;
       text-align: center;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .section-badge {
+    .section-tag {
       display: inline-block;
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--primary);
-      background-color: var(--accent-lime-soft);
-      padding: 6px 14px;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 5px 14px;
       border-radius: var(--radius-full);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .section-title {
-      font-size: clamp(2rem, 3.6vw, 3rem);
-      font-weight: 900;
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.15;
-      color: var(--neutral-black);
+      color: var(--text);
       margin-bottom: 16px;
     }
 
     .section-desc {
-      font-size: 1.08rem;
-      color: var(--gray-medium);
+      font-size: 1.1rem;
+      color: var(--text-muted);
       line-height: 1.6;
     }
 
-    /* ─── Selected Work (Projects Grid) ─── */
+    /* ─── Selected Work (Featured Split Cards) ─── */
+    .featured-projects {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .featured-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(20, 20, 18, 0.2);
+    }
+
+    .featured-card.reverse {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .featured-card.reverse .featured-thumb {
+      order: 2;
+    }
+
+    .featured-card.reverse .featured-content {
+      order: 1;
+    }
+
+    .featured-thumb {
+      background: #EAE8E1;
+      height: 380px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .featured-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: transform 0.5s ease;
+    }
+
+    .featured-card:hover .featured-thumb img {
+      transform: scale(1.03);
+    }
+
+    .featured-content {
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+    }
+
+    .featured-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .featured-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tag-pill {
+      font-size: 0.78rem;
+      font-weight: 600;
+      background: var(--bg-card);
+      color: var(--text);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .project-cta-link {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s ease;
+    }
+
+    .project-cta-link:hover {
+      gap: 10px;
+      color: var(--accent);
+    }
+
+    /* ─── Projects 3-Column Grid ─── */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 28px;
     }
 
-    .project-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
+    .grid-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       overflow: hidden;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
+      transition: all 0.25s ease;
     }
 
-    .project-card:hover {
-      border-color: rgba(22, 51, 0, 0.3);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
+    .grid-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(20, 20, 18, 0.2);
     }
 
-    .project-media {
-      position: relative;
-      background-color: #EBF1EA;
-      height: 230px;
+    .grid-thumb {
+      height: 220px;
       overflow: hidden;
+      background: #EAE8E1;
     }
 
-    .project-media img {
+    .grid-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -569,309 +810,164 @@
       transition: transform 0.4s ease;
     }
 
-    .project-card:hover .project-media img {
+    .grid-card:hover .grid-thumb img {
       transform: scale(1.04);
     }
 
-    .project-tag {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      background-color: var(--white);
-      color: var(--primary);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: var(--radius-full);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .project-info {
+    .grid-info {
       padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .project-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--neutral-black);
+    .grid-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text);
       margin-bottom: 8px;
       letter-spacing: -0.015em;
     }
 
-    .project-desc {
-      font-size: 0.92rem;
-      color: var(--charcoal);
+    .grid-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
       line-height: 1.55;
       margin-bottom: 20px;
       flex-grow: 1;
     }
 
-    .project-metrics {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-subtle);
-      margin-bottom: 18px;
-    }
-
-    .project-metric-pill {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--primary);
-      background-color: var(--accent-lime-soft);
-      padding: 3px 10px;
-      border-radius: 6px;
-    }
-
-    .project-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .project-link-btn {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--primary);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.15s ease;
-    }
-
-    .project-card:hover .project-link-btn {
-      gap: 10px;
-      color: var(--primary-dark);
-    }
-
-    /* ─── Interactive Scope & Price Estimator (Wise Style) ─── */
-    .calculator-section {
-      background-color: var(--gray-light);
-      border-radius: var(--radius-lg);
-      padding: 64px 48px;
-      border: 1px solid var(--border-subtle);
-      margin-top: 24px;
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .calc-control-group {
-      margin-bottom: 24px;
-    }
-
-    .calc-label {
-      font-size: 0.88rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--primary);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .option-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .calc-pill {
-      background: var(--white);
-      border: 1px solid var(--border-strong);
-      padding: 10px 18px;
-      border-radius: var(--radius-full);
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      cursor: pointer;
-      transition: all 0.15s ease;
-    }
-
-    .calc-pill:hover {
-      border-color: var(--primary);
-    }
-
-    .calc-pill.active {
-      background-color: var(--primary);
-      color: var(--white);
-      border-color: var(--primary);
-    }
-
-    .calc-summary-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 36px;
-      box-shadow: var(--shadow-md);
-      text-align: center;
-    }
-
-    .calc-price-display {
-      margin: 16px 0;
-    }
-
-    .calc-estimate-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--gray-medium);
-    }
-
-    .calc-price {
-      font-size: 3.2rem;
-      font-weight: 900;
-      color: var(--primary);
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-    }
-
-    .calc-timeline-badge {
-      display: inline-block;
-      background: var(--accent-lime);
-      color: var(--primary);
-      font-size: 0.84rem;
-      font-weight: 800;
-      padding: 4px 14px;
-      border-radius: var(--radius-full);
-      margin-bottom: 20px;
-    }
-
-    .calc-deliverables {
-      text-align: left;
-      font-size: 0.88rem;
-      color: var(--charcoal);
-      margin-bottom: 24px;
-      list-style: none;
-    }
-
-    .calc-deliverables li {
-      padding: 6px 0;
-      border-bottom: 1px solid rgba(22, 51, 0, 0.06);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .calc-deliverables li::before {
-      content: '';
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23108538'%3E%3Cpath fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'/%3E%3C/svg%3E");
-      background-size: contain;
-      background-repeat: no-repeat;
-      flex-shrink: 0;
-    }
-
-    /* ─── Client Reviews (Real Fiverr Testimonials) ─── */
+    /* ─── Testimonials (Verified Fiverr Reviews) ─── */
     .reviews-section {
-      background-color: var(--white);
+      background: #141412;
+      color: #FFFFFF;
+      border-radius: 40px;
+      padding: 96px 48px;
+      margin: 40px auto;
+      max-width: 1240px;
+    }
+
+    .reviews-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .reviews-header .section-tag {
+      background: rgba(255, 255, 255, 0.1);
+      color: #9FE870;
+    }
+
+    .reviews-header .section-title {
+      color: #FFFFFF;
+    }
+
+    .reviews-header .section-desc {
+      color: #9E9B91;
     }
 
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .review-card {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
+      background: #1D1D1A;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
       padding: 30px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     .review-card:hover {
-      border-color: rgba(22, 51, 0, 0.25);
-      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 255, 255, 0.22);
       transform: translateY(-2px);
     }
 
-    .review-header {
+    .review-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 16px;
     }
 
-    .client-meta {
+    .reviewer-meta {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .client-avatar {
-      width: 44px;
-      height: 44px;
+    .reviewer-avatar {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: var(--accent-lime-soft);
-      color: var(--primary);
-      font-weight: 800;
+      background: rgba(255, 255, 255, 0.1);
+      color: #9FE870;
+      font-size: 0.95rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
-      border: 1px solid rgba(22, 51, 0, 0.12);
     }
 
-    .client-name {
+    .reviewer-name {
       font-size: 1rem;
       font-weight: 700;
-      color: var(--neutral-black);
+      color: #FFFFFF;
     }
 
-    .client-country {
+    .reviewer-country {
       font-size: 0.8rem;
-      color: var(--gray-medium);
+      color: #9E9B91;
     }
 
-    .review-stars {
-      display: inline-flex;
-      align-items: center;
+    .star-row {
+      display: flex;
       gap: 3px;
     }
 
-    .review-quote {
-      font-size: 0.95rem;
-      color: var(--charcoal);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      font-style: normal;
+    .star-row svg {
+      width: 15px;
+      height: 15px;
+      fill: #FFB800;
     }
 
-    .review-footer {
+    .review-quote {
+      font-size: 0.94rem;
+      color: #D6D3CB;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .review-bottom {
       padding-top: 14px;
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       align-items: center;
       justify-content: space-between;
       font-size: 0.78rem;
-      color: var(--gray-medium);
+      color: #8E8A80;
     }
 
-    .verified-badge {
-      display: inline-flex;
+    .verified-fiverr {
+      color: #2EE59D;
+      display: flex;
       align-items: center;
-      gap: 6px;
-      color: #108538;
-      font-weight: 700;
+      gap: 4px;
+      font-weight: 600;
     }
 
-    /* ─── Services ─── */
+    .verified-fiverr svg {
+      width: 13px;
+      height: 13px;
+      fill: #2EE59D;
+    }
+
+    /* ─── Services Section ─── */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -879,386 +975,249 @@
     }
 
     .service-card {
-      background: var(--gray-light);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
       padding: 36px 32px;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
     }
 
     .service-card:hover {
-      background: var(--white);
-      border-color: var(--primary);
+      border-color: rgba(20, 20, 18, 0.3);
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
 
-    .service-icon {
-      width: 52px;
-      height: 52px;
+    .service-icon-box {
+      width: 50px;
+      height: 50px;
       border-radius: 14px;
-      background: var(--accent-lime);
-      color: var(--primary);
+      background: var(--bg-card);
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      font-weight: 900;
       margin-bottom: 22px;
     }
 
     .service-title {
-      font-size: 1.28rem;
-      font-weight: 800;
-      color: var(--neutral-black);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
       margin-bottom: 12px;
       letter-spacing: -0.015em;
     }
 
     .service-desc {
       font-size: 0.94rem;
-      color: var(--charcoal);
+      color: var(--text-muted);
       line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    .service-features {
+    .service-bullets {
       list-style: none;
       font-size: 0.88rem;
-      color: var(--gray-medium);
+      color: var(--text);
     }
 
-    .service-features li {
+    .service-bullets li {
       padding: 4px 0;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .service-features li::before {
+    .service-bullets li::before {
       content: '→';
-      color: var(--primary);
+      color: var(--accent);
       font-weight: 700;
     }
 
-    /* ─── About Me Section ─── */
-    .about-section {
-      background-color: var(--white);
-      border-top: 1px solid var(--border-subtle);
-      border-bottom: 1px solid var(--border-subtle);
-    }
-
-    .about-grid {
+    /* ─── About Section ─── */
+    .about-wrap {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 36px;
+      padding: 64px;
       display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 64px;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
       align-items: center;
     }
 
-    .about-card {
-      background: var(--primary);
-      color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      position: relative;
+    .about-photo-frame {
+      width: 100%;
+      height: 440px;
+      border-radius: 28px;
       overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
 
-    .about-card::after {
-      content: '';
-      position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 200px;
-      height: 200px;
-      background: rgba(159, 232, 112, 0.15);
-      border-radius: 50%;
-    }
-
-    .about-card h3 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .about-card p {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .about-stat-item .num {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--accent-lime);
-    }
-
-    .about-stat-item .lbl {
-      font-size: 0.82rem;
-      color: rgba(255, 255, 255, 0.7);
+    .about-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
     }
 
     .about-content h2 {
-      font-size: 2.4rem;
-      font-weight: 900;
-      line-height: 1.2;
-      color: var(--neutral-black);
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.18;
       margin-bottom: 20px;
-      letter-spacing: -0.025em;
     }
 
     .about-content p {
       font-size: 1.05rem;
-      color: var(--charcoal);
+      color: var(--text-muted);
       line-height: 1.7;
       margin-bottom: 20px;
     }
 
-    /* ─── FAQ Section ─── */
-    .faq-list {
-      max-width: 820px;
-      margin: 0 auto;
+    .about-meta-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      margin-top: 28px;
     }
 
-    .faq-item {
-      background: var(--white);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 24px 28px;
-      cursor: pointer;
-      transition: all 0.2s ease;
+    .meta-box h4 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--text);
     }
 
-    .faq-item:hover {
-      border-color: rgba(22, 51, 0, 0.3);
+    .meta-box p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
     }
 
-    .faq-question {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--neutral-black);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .faq-question .icon {
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: var(--primary);
-      transition: transform 0.2s ease;
-    }
-
-    .faq-answer {
-      margin-top: 14px;
-      font-size: 0.96rem;
-      color: var(--charcoal);
-      line-height: 1.65;
-      display: none;
-    }
-
-    .faq-item.open .faq-answer {
-      display: block;
-    }
-
-    .faq-item.open .faq-question .icon {
-      transform: rotate(45deg);
-    }
-
-    /* ─── Call to Action (Bottom Banner) ─── */
+    /* ─── Call to Action Banner ─── */
     .cta-banner {
-      background: linear-gradient(135deg, var(--primary) 0%, #0F2400 100%);
-      color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 64px 48px;
+      background: radial-gradient(circle at 50% 0%, #2A2925 0%, #141412 100%);
+      color: #FFFFFF;
+      border-radius: 36px;
+      padding: 80px 40px;
       text-align: center;
       margin: 40px auto 80px;
       position: relative;
       overflow: hidden;
     }
 
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -100px;
-      right: -100px;
-      width: 300px;
-      height: 300px;
-      background: rgba(159, 232, 112, 0.12);
-      border-radius: 50%;
-    }
-
     .cta-banner h2 {
-      font-size: clamp(2rem, 3.8vw, 3.2rem);
-      font-weight: 900;
-      line-height: 1.15;
+      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
+      line-height: 1.12;
       margin-bottom: 18px;
     }
 
     .cta-banner p {
       font-size: 1.15rem;
-      color: rgba(255, 255, 255, 0.85);
+      color: #C7C4BC;
       max-width: 600px;
       margin: 0 auto 36px;
     }
 
-    .cta-buttons {
+    .cta-row {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 16px;
     }
 
+    .btn-light {
+      background: #FFFFFF;
+      color: var(--text);
+      border-color: #FFFFFF;
+      font-weight: 700;
+    }
+
+    .btn-light:hover {
+      background: #F0EEE6;
+      transform: translateY(-2px);
+    }
+
     /* ─── Footer ─── */
     .site-footer {
-      background-color: var(--neutral-black);
-      color: var(--white);
-      padding: 64px 0 36px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-brand h4 {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .footer-brand p {
-      font-size: 0.92rem;
-      color: rgba(255, 255, 255, 0.6);
-      line-height: 1.6;
-      max-width: 320px;
-    }
-
-    .footer-col h5 {
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent-lime);
-      margin-bottom: 18px;
-    }
-
-    .footer-col ul {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-col a {
+      border-top: 1px solid var(--border);
+      padding: 60px 0 36px;
       font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
-      transition: color 0.15s ease;
+      color: var(--text-muted);
     }
 
-    .footer-col a:hover {
-      color: var(--accent-lime);
+    .footer-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
     }
 
     .footer-bottom {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .footer-bottom a {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer-bottom a:hover {
-      color: var(--white);
-    }
-
-    /* ─── Modal Lightbox for Project Screenshots ─── */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 2000;
-      background: rgba(14, 15, 12, 0.85);
-      backdrop-filter: blur(8px);
-      display: none;
       align-items: center;
-      justify-content: center;
-      padding: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.84rem;
     }
 
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox-content {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      max-width: 960px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 24px;
-      position: relative;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--gray-light);
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-    }
-
-    /* ─── Responsive ─── */
+    /* ─── Responsive Media Queries ─── */
     @media (max-width: 1024px) {
-      .hero-grid {
+      .featured-card, .featured-card.reverse {
         grid-template-columns: 1fr;
-        gap: 40px;
+      }
+      .featured-card.reverse .featured-thumb {
+        order: 1;
+      }
+      .featured-card.reverse .featured-content {
+        order: 2;
       }
       .projects-grid, .reviews-grid, .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .metrics-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-      }
-      .calc-grid, .about-grid {
+      .about-wrap {
         grid-template-columns: 1fr;
-        gap: 36px;
+        padding: 40px 24px;
       }
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+      .about-photo-frame {
+        height: 360px;
+      }
+      .card-left, .card-right {
+        position: static;
+        max-width: 100%;
+        margin-top: 20px;
+      }
+      .badge-top-left, .badge-top-right {
+        display: none;
+      }
+      .connector-svg {
+        display: none;
+      }
+      .hero-proof-bottom, .hero-stamp-right {
+        position: static;
+        text-align: center;
+        margin: 20px auto 0;
+      }
+      .hero-stage {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
       }
     }
 
@@ -1266,27 +1225,27 @@
       .nav-links {
         display: none;
       }
+      .hero {
+        padding: 110px 0 60px;
+      }
+      .portrait-wrap {
+        width: 270px;
+        height: 340px;
+      }
       .projects-grid, .reviews-grid, .services-grid {
         grid-template-columns: 1fr;
       }
-      .hero {
-        padding: 48px 0;
+      .metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
       }
-      .section-wrap {
-        padding: 64px 0;
-      }
-      .calculator-section {
-        padding: 36px 20px;
-      }
-      .cta-banner {
-        padding: 44px 24px;
-      }
-      .footer-grid {
+      .about-meta-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
-      .footer-bottom {
+      .footer-flex, .footer-bottom {
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
         text-align: center;
       }
     }
@@ -1294,728 +1253,498 @@
 </head>
 <body>
 
-  <!-- ─── Site Navigation (Wise Clean Header) ─── -->
-  <header class="site-header">
-    <div class="container nav-inner">
-      <a href="index.html" class="brand-logo">
+  <!-- ─── Floating Pill Navigation ─── -->
+  <header class="site-nav">
+    <div class="nav-inner">
+      <a href="#hero" class="brand-logo">
+        <span class="brand-logo-dot"></span>
         <span>Mineuddin Siam</span>
-        <span class="brand-badge">
-          <span class="dot"></span>
-          Available Now
-        </span>
       </a>
 
       <nav>
         <ul class="nav-links">
           <li><a href="#work">Work</a></li>
-          <li><a href="#estimator">Estimate</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="versions.html">Versions</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">WhatsApp</a>
-        <a href="#contact" class="btn btn-primary btn-sm">Let's Talk →</a>
-      </div>
+      <a href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20let%27s%20build%20a%20website%20together." target="_blank" rel="noopener" class="nav-cta">
+        Let's Talk ↗
+      </a>
     </div>
   </header>
 
-  <!-- ─── Hero Section ─── -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge-wrap">
-          <span class="pulse-dot"></span>
-          <span>Level 2 Seller on Fiverr · 80+ 5-Star Reviews</span>
+  <!-- ─── Hero Section (Mindly Inspired Composition) ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge-top">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>Level 2 Seller on Fiverr · 80+ Five-Star Reviews</span>
+      </div>
+
+      <!-- Header with Font Mix: Modern Display + Sweeping Cursive Serif -->
+      <h1 class="hero-title">
+        A clearer website <br>
+        <span class="hero-cursive">for a brighter business.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        I design and build ultra-fast, modern WordPress websites tailored for businesses that care about speed, clean aesthetics, and genuine sales results — all in one seamless experience.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20I%20want%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener" class="btn btn-dark">
+          Start Your Project →
+        </a>
+        <a href="#work" class="btn btn-glass">
+          View Selected Work ↓
+        </a>
+      </div>
+    </div>
+
+    <!-- ─── Hero Visual Stage: Siam's Portrait + Floating Orbiting Cards ─── -->
+    <div class="hero-stage">
+      <!-- Curved Connector Lines (Desktop Only) -->
+      <svg class="connector-svg" viewBox="0 0 1060 480">
+        <!-- Curve to Left Card -->
+        <path class="connector-line" d="M 160 140 Q 320 220 400 280"></path>
+        <!-- Curve to Right Card -->
+        <path class="connector-line" d="M 900 180 Q 750 240 660 300"></path>
+      </svg>
+
+      <!-- Floating Card Left: Turn visits into progress -->
+      <div class="floating-card card-left">
+        <div class="card-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
         </div>
+        <h4>Turn visits into progress.</h4>
+        <p>High-converting layouts built to turn casual clicks into booked calls.</p>
+      </div>
 
-        <h1 class="hero-title">
-          Websites that <span class="highlight-lime">convert visitors</span> into loyal paying clients.
-        </h1>
+      <!-- Centerpiece: Siam's Portrait -->
+      <div class="portrait-wrap">
+        <img src="assets/siam.jpg" alt="Mineuddin Siam — Freelance Web Designer & Developer" class="portrait-img">
+      </div>
 
-        <p class="hero-subtitle">
-          I design and build ultra-fast, modern WordPress websites tailored for businesses that care about speed, clean aesthetics, and genuine sales results. No templates, no slow page builders, no headache.
-        </p>
-
-        <div class="hero-ctas">
-          <a href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener" class="btn btn-lime">
-            Chat on WhatsApp →
-          </a>
-          <a href="#work" class="btn btn-outline">
-            See Selected Work
-          </a>
+      <!-- Floating Card Right: Results anytime, anywhere -->
+      <div class="floating-card card-right">
+        <div class="avatars-mini-row">
+          <div class="avatar-mini">US</div>
+          <div class="avatar-mini">UK</div>
+          <div class="avatar-mini">AU</div>
+          <div class="avatar-mini" style="background:#2E5C38; color:#fff;">+</div>
         </div>
+        <h4>Results, anytime, anywhere.</h4>
+        <p>137+ delivered projects across 18 countries worldwide.</p>
+      </div>
 
-        <div class="hero-proof">
-          <div>
-            <div class="stars" aria-label="5 stars rating">
-              <svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-            </div>
-            <div class="proof-text">
-              <strong>5.0 / 5.0 Rating</strong> across 80+ client reviews on Fiverr
-            </div>
-          </div>
-          <div>
-            <div class="proof-text">
-              <strong>137+ Projects</strong> completed worldwide for US, UK & EU businesses
-            </div>
-          </div>
+      <!-- Orbiting Badges Around Siam -->
+      <div class="orbit-badge badge-top-left">
+        <svg class="orbit-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>90+ PageSpeed</span>
+      </div>
+
+      <div class="orbit-badge badge-top-right">
+        <svg class="orbit-badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+          <path d="m9 12 2 2 4-4"></path>
+        </svg>
+        <span>Custom WordPress</span>
+      </div>
+
+      <div class="orbit-badge badge-bottom-center">
+        <span class="badge-dot"></span>
+        <span>Available for New Projects</span>
+      </div>
+
+      <!-- Bottom-Left Social Proof (Mindly Inspired) -->
+      <div class="hero-proof-bottom">
+        <p class="proof-text">Trusted by 80+ clients worldwide.</p>
+        <div class="avatar-stack">
+          <div class="avatar-item">DM</div>
+          <div class="avatar-item">SJ</div>
+          <div class="avatar-item">LB</div>
+          <div class="avatar-item">ER</div>
+          <div class="avatar-item avatar-plus">+76</div>
         </div>
       </div>
 
-      <!-- Wise-Style Side-by-Side Comparison Card -->
-      <div class="compare-card">
-        <div class="compare-header">
-          <div>
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--gray-medium); text-transform: uppercase;">Direct Comparison</span>
-            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-top: 2px;">Why Work With Siam?</h3>
-          </div>
-          <span class="compare-tag">Fintech Transparent</span>
-        </div>
-
-        <table class="compare-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>With Siam</th>
-              <th>Agencies</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="feature-name">Turnaround Time</td>
-              <td class="siam-col">3 – 7 Days</td>
-              <td class="other-col">4 – 8 Weeks</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Communication</td>
-              <td class="siam-col">Direct WhatsApp</td>
-              <td class="other-col">Account Managers</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Google PageSpeed</td>
-              <td class="siam-col">90+ Guaranteed</td>
-              <td class="other-col">45 – 65 Avg</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Pricing</td>
-              <td class="siam-col">Fixed, Transparent</td>
-              <td class="other-col">Hourly Markup</td>
-            </tr>
-            <tr>
-              <td class="feature-name">Ongoing Support</td>
-              <td class="siam-col">30 Days Included</td>
-              <td class="other-col">Expensive Retainer</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="quick-calc-box">
-          <div class="quick-calc-info">
-            <h4>Ready to discuss your project?</h4>
-            <p>Average reply time is under 15 minutes.</p>
-          </div>
-          <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Message Siam</a>
-        </div>
+      <!-- Bottom-Right Star Stamp (Mindly Inspired) -->
+      <div class="hero-stamp-right">
+        <svg class="stamp-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <p class="stamp-text">Less chaos.<br>More clarity.</p>
       </div>
     </div>
   </section>
 
-  <!-- ─── Trust Metrics Bar ─── -->
-  <section class="metric-section">
+  <!-- ─── Trust Metrics Strip ─── -->
+  <section class="metric-strip">
     <div class="container">
-      <div class="metrics-grid">
-        <div class="metric-item">
-          <div class="metric-number">137+</div>
-          <div class="metric-label">Completed Projects</div>
-          <div class="metric-sub">Across 18 countries globally</div>
+      <div class="metric-grid">
+        <div class="metric-col">
+          <div class="metric-num">137+</div>
+          <div class="metric-desc">Projects Delivered Worldwide</div>
         </div>
-        <div class="metric-item">
-          <div class="metric-number">80+</div>
-          <div class="metric-label">5-Star Client Reviews</div>
-          <div class="metric-sub">100% verified on Fiverr</div>
+        <div class="metric-col">
+          <div class="metric-num">80+</div>
+          <div class="metric-desc">5-Star Verified Reviews</div>
         </div>
-        <div class="metric-item">
-          <div class="metric-number">95+</div>
-          <div class="metric-label">Google PageSpeed</div>
-          <div class="metric-sub">Fast loading on every mobile device</div>
+        <div class="metric-col">
+          <div class="metric-num">95+</div>
+          <div class="metric-desc">Google Mobile PageSpeed</div>
         </div>
-        <div class="metric-item">
-          <div class="metric-number">Level 2</div>
-          <div class="metric-label">Seller Status</div>
-          <div class="metric-sub">Top-rated reliability on Fiverr</div>
+        <div class="metric-col">
+          <div class="metric-num">Level 2</div>
+          <div class="metric-desc">Seller Status on Fiverr</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Selected Work (Portfolio Cards) ─── -->
-  <section id="work" class="section-wrap">
+  <!-- ─── Selected Work (Featured Split Cards) ─── -->
+  <section class="section-wrap" id="work">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">Selected Work</span>
-        <h2 class="section-title">Real websites built for real businesses.</h2>
-        <p class="section-desc">Here is a selection of recent WordPress websites designed to look sharp, load fast, and convert casual visitors into leads.</p>
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">Websites built for real businesses.</h2>
+        <p class="section-desc">Every website is crafted with unique identity, high-speed code, and conversion architecture.</p>
       </div>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Automotive & Detailing</span>
-            <img src="assets/projects/01-car-detailing.png" alt="Morgans Prestige Car Detailing Website" loading="lazy">
+      <div class="featured-projects">
+        <!-- Featured 1: Morgans Car Detailing -->
+        <div class="featured-card">
+          <div class="featured-thumb">
+            <img src="assets/projects/01-car-detailing.png" alt="Morgans Detailing Website" loading="lazy">
           </div>
-          <div class="project-info">
-            <h3 class="project-title">Morgans Prestige Car Detailing</h3>
-            <p class="project-desc">Bespoke booking and showcase platform featuring high-gloss gallery previews, package selector, and live customer review integration.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">99 PageSpeed</span>
-              <span class="project-metric-pill">Mobile-First</span>
-              <span class="project-metric-pill">Instant Booking</span>
+          <div class="featured-content">
+            <span class="featured-badge">Featured 01 · Automotive & Detailing</span>
+            <h3 class="featured-title">Morgans Prestige Car Detailing</h3>
+            <p class="featured-desc">Bespoke booking and showcase platform for a UK prestige automotive detailing service. Built with high-gloss gallery previews, clear tiered service packages, and integrated booking inquiries.</p>
+            <div class="tag-row">
+              <span class="tag-pill">WordPress</span>
+              <span class="tag-pill">Elementor Pro</span>
+              <span class="tag-pill">99 PageSpeed</span>
+              <span class="tag-pill">Booking Flow</span>
             </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/01-car-detailing.png', 'Morgans Prestige Car Detailing')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20Morgans%20Car%20Detailing%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Commercial Services</span>
-            <img src="assets/projects/02-tmad-property.png" alt="TMAD Cleaning & Property Services Website" loading="lazy">
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">TMAD Cleaning & Facility Services</h3>
-            <p class="project-desc">Commercial maintenance platform with instant quote calculators, UK service coverage regions, and automated inquiry dispatch.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">100 Mobile Score</span>
-              <span class="project-metric-pill">Instant Quote</span>
-              <span class="project-metric-pill">Custom WP</span>
-            </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/02-tmad-property.png', 'TMAD Cleaning & Facility Services')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20TMAD%20Cleaning%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
+            <a href="https://wa.me/8801743248400?text=I%20like%20the%20Morgans%20Detailing%20project" target="_blank" rel="noopener" class="project-cta-link">
+              Discuss a project like this →
+            </a>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Hospitality & Dining</span>
-            <img src="assets/projects/06-airfield-cafe.png" alt="Cloud 9 Kitchen & Artisan Dining" loading="lazy">
+        <!-- Featured 2: Cloud 9 Kitchen & Bar -->
+        <div class="featured-card reverse">
+          <div class="featured-thumb">
+            <img src="assets/projects/06-airfield-cafe.png" alt="Cloud 9 Kitchen & Bar Website" loading="lazy">
           </div>
-          <div class="project-info">
-            <h3 class="project-title">Cloud 9 Kitchen & Artisan Dining</h3>
-            <p class="project-desc">Warm hospitality brand website with online table booking, seasonal interactive menu reader, and event catering request forms.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">98 PageSpeed</span>
-              <span class="project-metric-pill">Table Booking</span>
-              <span class="project-metric-pill">Menu Viewer</span>
+          <div class="featured-content">
+            <span class="featured-badge">Featured 02 · Hospitality & Dining</span>
+            <h3 class="featured-title">Cloud 9 Kitchen & Artisan Dining</h3>
+            <p class="featured-desc">Warm hospitality brand website for an airfield café and event venue in Norfolk. Features seasonal interactive menu readers, high-resolution food galleries, and direct table reservation links.</p>
+            <div class="tag-row">
+              <span class="tag-pill">WordPress</span>
+              <span class="tag-pill">Menu CMS</span>
+              <span class="tag-pill">Table Booking</span>
+              <span class="tag-pill">Events</span>
             </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/06-airfield-cafe.png', 'Cloud 9 Kitchen & Artisan Dining')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20Cloud%209%20Kitchen%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Tourism & Adventure</span>
-            <img src="assets/projects/07-balloon-flights.png" alt="Bucket-List Balloon Flights Website" loading="lazy">
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Bucket-List Balloon Flights</h3>
-            <p class="project-desc">High-converting experience booking portal with date calendar, seasonal gift vouchers, and live weather forecast notifications.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">Fast Checkout</span>
-              <span class="project-metric-pill">WooCommerce</span>
-              <span class="project-metric-pill">+45% Bookings</span>
-            </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/07-balloon-flights.png', 'Bucket-List Balloon Flights')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20Balloon%20Flights%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
+            <a href="https://wa.me/8801743248400?text=I%20like%20the%20Cloud%209%20Kitchen%20project" target="_blank" rel="noopener" class="project-cta-link">
+              Discuss a project like this →
+            </a>
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Auto Specialist</span>
-            <img src="assets/projects/05-chapmans.png" alt="Chapmans Valeting Specialist Website" loading="lazy">
+        <!-- Featured 3: TMAD Cleaning Services -->
+        <div class="featured-card">
+          <div class="featured-thumb">
+            <img src="assets/projects/02-tmad-property.png" alt="TMAD Cleaning Services Website" loading="lazy">
           </div>
-          <div class="project-info">
-            <h3 class="project-title">Chapmans Valeting Specialist</h3>
-            <p class="project-desc">Clean service menu with tiered pricing breakdowns, vehicle category selector, and direct WhatsApp customer scheduling.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">WhatsApp Hook</span>
-              <span class="project-metric-pill">Elementor Pro</span>
-              <span class="project-metric-pill">Fast Load</span>
+          <div class="featured-content">
+            <span class="featured-badge">Featured 03 · Commercial Property</span>
+            <h3 class="featured-title">TMAD Facility & Property Services</h3>
+            <p class="featured-desc">High-trust corporate website for a UK commercial property and facility cleaning company. Features instant quote contact calculators, transparent service area maps, and fast call buttons.</p>
+            <div class="tag-row">
+              <span class="tag-pill">WordPress</span>
+              <span class="tag-pill">Lead Generation</span>
+              <span class="tag-pill">Instant Quote</span>
+              <span class="tag-pill">Mobile-First</span>
             </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/05-chapmans.png', 'Chapmans Valeting Specialist')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20Chapmans%20Valeting%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card">
-          <div class="project-media">
-            <span class="project-tag">Construction & Heritage</span>
-            <img src="assets/projects/09-reynolds-son.png" alt="Reynolds & Son Heritage Building" loading="lazy">
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Reynolds & Son Heritage Building</h3>
-            <p class="project-desc">Heritage residential contractor showcase featuring before/after sliders, guild accreditation badges, and blueprint consultation inquiry flows.</p>
-            <div class="project-metrics">
-              <span class="project-metric-pill">High-Res Gallery</span>
-              <span class="project-metric-pill">SEO Optimized</span>
-              <span class="project-metric-pill">Direct Form</span>
-            </div>
-            <div class="project-actions">
-              <span class="project-link-btn" onclick="openLightbox('assets/projects/09-reynolds-son.png', 'Reynolds & Son Heritage Building')">View Preview ↗</span>
-              <a href="https://wa.me/8801743248400?text=I%20like%20the%20Reynolds%20website%20in%20your%20portfolio" target="_blank" rel="noopener" class="btn btn-outline btn-sm">Build Like This</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Interactive Scope & Price Estimator (Fintech Simplicity) ─── -->
-  <section id="estimator" class="section-wrap" style="padding-top: 0;">
-    <div class="container">
-      <div class="calculator-section">
-        <div class="calc-grid">
-          <div>
-            <span class="section-badge">Instant Project Estimator</span>
-            <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 12px;">Plan your project budget in seconds.</h2>
-            <p class="section-desc" style="margin-bottom: 28px;">Choose your website requirements to see estimated timelines and deliverables. Transparent, fixed pricing with zero hidden fees.</p>
-
-            <div class="calc-control-group">
-              <span class="calc-label">1. Website Type</span>
-              <div class="option-pills" id="type-pills">
-                <button class="calc-pill active" onclick="setScope('landing', 250, '3 – 5 Days', 'High-Converting Landing Page')">Landing Page</button>
-                <button class="calc-pill" onclick="setScope('business', 450, '5 – 7 Days', 'Full Business Website (4–6 Pages)')">Business (5 Pages)</button>
-                <button class="calc-pill" onclick="setScope('ecommerce', 750, '7 – 10 Days', 'Full WooCommerce Online Store')">E-Commerce Store</button>
-                <button class="calc-pill" onclick="setScope('redesign', 350, '3 – 5 Days', 'Complete Redesign & Speed Fix')">Redesign & Speed</button>
-              </div>
-            </div>
-
-            <div class="calc-control-group">
-              <span class="calc-label">2. Page Speed Target</span>
-              <div class="option-pills">
-                <button class="calc-pill active">90+ Google Mobile Speed (Included)</button>
-                <button class="calc-pill">SEO Setup & Schema (Included)</button>
-                <button class="calc-pill">Mobile Responsive (Included)</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="calc-summary-card">
-            <span class="calc-estimate-label">Estimated Investment</span>
-            <div class="calc-price-display">
-              <span class="calc-price" id="scope-price">$250</span>
-            </div>
-            <div class="calc-timeline-badge" id="scope-timeline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Turnaround: 3 – 5 Days</div>
-
-            <ul class="calc-deliverables" id="scope-deliverables">
-              <li>Custom responsive design in WordPress</li>
-              <li>90+ Mobile Google PageSpeed optimization</li>
-              <li>Clean copy layout & conversion CTAs</li>
-              <li>Direct WhatsApp communication & revisions</li>
-              <li>30 days free post-launch support</li>
-            </ul>
-
-            <a id="scope-cta" href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20I%20am%20interested%20in%20a%20Landing%20Page%20project%20starting%20around%20%24250." target="_blank" rel="noopener" class="btn btn-lime" style="width: 100%;">
-              Book This Scope on WhatsApp →
+            <a href="https://wa.me/8801743248400?text=I%20like%20the%20TMAD%20Cleaning%20project" target="_blank" rel="noopener" class="project-cta-link">
+              Discuss a project like this →
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ─── Verified Client Reviews (Fiverr Level 2 Seller) ─── -->
-  <section id="reviews" class="section-wrap reviews-section">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-badge">Client Reviews</span>
-        <h2 class="section-title">What clients say after working with me.</h2>
-        <p class="section-desc">Over 80 clients have left 5-star verified feedback on Fiverr. Here are real testimonials from recent projects.</p>
+      <!-- More Projects Grid -->
+      <div class="section-header" style="margin-top: 80px; margin-bottom: 40px;">
+        <span class="section-tag">More Projects</span>
+        <h2 class="section-title">Every client, a unique solution.</h2>
       </div>
 
-      <div class="reviews-grid">
-        <!-- Review 1 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">US</div>
-                <div>
-                  <h4 class="client-name">David M.</h4>
-                  <span class="client-country">United States · Real Estate Firm</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            </div>
-            <p class="review-quote">
-              "Siam is an absolute rockstar. Delivered our full corporate website 2 days ahead of schedule. The speed difference was night and day compared to our old developer. Highly recommended!"
-            </p>
+      <div class="projects-grid">
+        <!-- Project 4: Bucket-List Balloon Flights -->
+        <div class="grid-card">
+          <div class="grid-thumb">
+            <img src="assets/projects/07-balloon-flights.png" alt="Bucket-List Balloon Flights" loading="lazy">
           </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>WordPress Redesign</span>
+          <div class="grid-info">
+            <h4 class="grid-title">Bucket-List Balloon Flights</h4>
+            <p class="grid-desc">Adventure booking and gift voucher portal with live seasonal schedules, gift packaging, and smooth checkout.</p>
+            <div class="tag-row">
+              <span class="tag-pill">WooCommerce</span>
+              <span class="tag-pill">Tourism</span>
+            </div>
           </div>
         </div>
 
-        <!-- Review 2 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">UK</div>
-                <div>
-                  <h4 class="client-name">Sarah Jenkins</h4>
-                  <span class="client-country">United Kingdom · Wellness Clinic</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            </div>
-            <p class="review-quote">
-              "Incredible communication throughout the entire process. Siam patiently made all our requested adjustments and helped hook up our booking forms with zero bugs. Will work with him again."
-            </p>
+        <!-- Project 5: Chapmans Valeting -->
+        <div class="grid-card">
+          <div class="grid-thumb">
+            <img src="assets/projects/05-chapmans.png" alt="Chapmans Valeting" loading="lazy">
           </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>Booking System Website</span>
+          <div class="grid-info">
+            <h4 class="grid-title">Chapmans Valeting Specialist</h4>
+            <p class="grid-desc">Mobile vehicle detailing website with transparent tier pricing, vehicle selector, and direct WhatsApp scheduling.</p>
+            <div class="tag-row">
+              <span class="tag-pill">Elementor Pro</span>
+              <span class="tag-pill">WhatsApp</span>
+            </div>
           </div>
         </div>
 
-        <!-- Review 3 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">AU</div>
-                <div>
-                  <h4 class="client-name">Lachlan Brooks</h4>
-                  <span class="client-country">Australia · Logistics Tech</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
+        <!-- Project 6: Reynolds & Son Heritage -->
+        <div class="grid-card">
+          <div class="grid-thumb">
+            <img src="assets/projects/09-reynolds-son.png" alt="Reynolds & Son Heritage Building" loading="lazy">
+          </div>
+          <div class="grid-info">
+            <h4 class="grid-title">Reynolds & Son Heritage Building</h4>
+            <p class="grid-desc">Heritage residential contractor showcase featuring before/after restoration galleries and consultation intake.</p>
+            <div class="tag-row">
+              <span class="tag-pill">Heritage</span>
+              <span class="tag-pill">High-Res Gallery</span>
             </div>
-            <p class="review-quote">
-              "Very talented and fast. Siam took our messy figma sketches and built a lightning-fast responsive WordPress site in 4 days. Google PageSpeed went from 41 to 97. Worth every single dollar."
-            </p>
-          </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>Speed & Development</span>
-          </div>
-        </div>
-
-        <!-- Review 4 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">CA</div>
-                <div>
-                  <h4 class="client-name">Elena Rostova</h4>
-                  <span class="client-country">Canada · E-Commerce Boutique</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            </div>
-            <p class="review-quote">
-              "Siam set up our entire WooCommerce store with multiple currencies, payment gateways, and inventory sync. Our conversion rate increased immediately after launching. Super professional!"
-            </p>
-          </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>WooCommerce Setup</span>
-          </div>
-        </div>
-
-        <!-- Review 5 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">DE</div>
-                <div>
-                  <h4 class="client-name">Marcus Weber</h4>
-                  <span class="client-country">Germany · Advisory Consultancy</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            </div>
-            <p class="review-quote">
-              "Clean design, very structured approach, and very polite. He understood exactly what our German consulting audience needed. No gimmicks, just pure quality."
-            </p>
-          </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>Corporate Website</span>
-          </div>
-        </div>
-
-        <!-- Review 6 -->
-        <div class="review-card">
-          <div>
-            <div class="review-header">
-              <div class="client-meta">
-                <div class="client-avatar">SG</div>
-                <div>
-                  <h4 class="client-name">Kenji Tan</h4>
-                  <span class="client-country">Singapore · SaaS Founder</span>
-                </div>
-              </div>
-              <div class="review-stars" aria-label="5 stars"><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="star-svg" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            </div>
-            <p class="review-quote">
-              "Super fast turnaround on our marketing landing page. Siam is responsive on chat, fixes any detail you point out, and makes great design suggestions. Top tier seller."
-            </p>
-          </div>
-          <div class="review-footer">
-            <span class="verified-badge"><svg width="14" height="14" viewBox="0 0 20 20" fill="#108538" style="flex-shrink:0;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> Verified Fiverr Review</span>
-            <span>Landing Page Design</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Services ─── -->
-  <section id="services" class="section-wrap" style="background-color: var(--gray-light);">
+  <!-- ─── Testimonials (Verified Fiverr Reviews) ─── -->
+  <section class="reviews-section" id="reviews">
+    <div class="reviews-header">
+      <span class="section-tag">Client Feedback</span>
+      <h2 class="section-title">Trusted by clients worldwide.</h2>
+      <p class="section-desc">Over 80 clients have left 5-star verified feedback on Fiverr. Here is what they have to say.</p>
+    </div>
+
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div>
+          <div class="review-top">
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">US</div>
+              <div>
+                <h4 class="reviewer-name">David M.</h4>
+                <span class="reviewer-country">United States</span>
+              </div>
+            </div>
+            <div class="star-row">
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+            </div>
+          </div>
+          <p class="review-quote">
+            "Siam is an absolute rockstar. Delivered our full corporate website 2 days ahead of schedule. The speed difference was night and day compared to our old developer. Highly recommended!"
+          </p>
+        </div>
+        <div class="review-bottom">
+          <span class="verified-fiverr">
+            <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Verified Fiverr Order
+          </span>
+          <span>WordPress Redesign</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div>
+          <div class="review-top">
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">UK</div>
+              <div>
+                <h4 class="reviewer-name">Sarah Jenkins</h4>
+                <span class="reviewer-country">United Kingdom</span>
+              </div>
+            </div>
+            <div class="star-row">
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+            </div>
+          </div>
+          <p class="review-quote">
+            "Incredible communication throughout the entire process. Siam patiently made all our requested adjustments and helped hook up our booking forms with zero bugs. Will work with him again."
+          </p>
+        </div>
+        <div class="review-bottom">
+          <span class="verified-fiverr">
+            <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Verified Fiverr Order
+          </span>
+          <span>Booking System</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div>
+          <div class="review-top">
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">AU</div>
+              <div>
+                <h4 class="reviewer-name">Lachlan Brooks</h4>
+                <span class="reviewer-country">Australia</span>
+              </div>
+            </div>
+            <div class="star-row">
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+              <svg viewBox="0 0 20 20"><polygon points="10 1.5 12.8 7.2 19 8.1 14.5 12.5 15.6 18.7 10 15.7 4.4 18.7 5.5 12.5 1 8.1 7.2 7.2 10 1.5"></polygon></svg>
+            </div>
+          </div>
+          <p class="review-quote">
+            "Very talented and fast. Siam took our messy figma sketches and built a lightning-fast responsive WordPress site in 4 days. Google PageSpeed went from 41 to 97. Worth every single dollar."
+          </p>
+        </div>
+        <div class="review-bottom">
+          <span class="verified-fiverr">
+            <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            Verified Fiverr Order
+          </span>
+          <span>Speed Optimization</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services Section ─── -->
+  <section class="section-wrap" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="section-badge">What I Do</span>
-        <h2 class="section-title">Specialized WordPress solutions for growth.</h2>
-        <p class="section-desc">I don't do generic design. Every project is focused on fast loading, mobile clarity, and making it dead simple for your customers to take action.</p>
+        <span class="section-tag">Services</span>
+        <h2 class="section-title">Specialized WordPress development.</h2>
+        <p class="section-desc">Focused on speed, mobile conversion, and easy editing for you and your team.</p>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
           </div>
-          <h3 class="service-title">High-Converting Landing Pages</h3>
-          <p class="service-desc">Single-page sites built specifically for paid ad campaigns, product launches, or service bookings that need maximum conversion rates.</p>
-          <ul class="service-features">
-            <li>Conversion-focused copywriting layout</li>
-            <li>Fast mobile responsive layout</li>
-            <li>Direct WhatsApp or lead form hooks</li>
+          <h3 class="service-title">Landing Pages</h3>
+          <p class="service-desc">Single-page marketing engines built to convert paid traffic into paying clients with clear visual hierarchy.</p>
+          <ul class="service-bullets">
+            <li>Conversion-focused structure</li>
+            <li>90+ PageSpeed guarantee</li>
+            <li>Form & WhatsApp hooks</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
               <path d="M9 22v-4h6v4"></path>
               <path d="M8 6h.01"></path>
               <path d="M16 6h.01"></path>
               <path d="M8 10h.01"></path>
               <path d="M16 10h.01"></path>
-              <path d="M8 14h.01"></path>
-              <path d="M16 14h.01"></path>
             </svg>
           </div>
-          <h3 class="service-title">Full Business WordPress Websites</h3>
-          <p class="service-desc">Multi-page corporate websites for professional service firms, clinics, logistics, and agencies that require trust and credibility.</p>
-          <ul class="service-features">
-            <li>Custom page architecture (Home, About, Services, Contact)</li>
-            <li>Automated calendar booking & intake forms</li>
-            <li>Easy-to-edit admin panel (no coding required)</li>
+          <h3 class="service-title">Business Websites</h3>
+          <p class="service-desc">Multi-page corporate platforms for service firms, clinics, logistics, and consultancies wanting premium authority.</p>
+          <ul class="service-bullets">
+            <li>Custom page design</li>
+            <li>Booking calendar integration</li>
+            <li>Easy visual admin editor</li>
           </ul>
         </div>
 
         <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <div class="service-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
               <path d="M3 6h18"></path>
               <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
           </div>
-          <h3 class="service-title">WooCommerce E-Commerce Stores</h3>
-          <p class="service-desc">Clean, fast online storefronts with streamlined checkout, inventory management, and automated payment processing.</p>
-          <ul class="service-features">
-            <li>Stripe, PayPal & multi-currency support</li>
-            <li>Fast cart slide-out & frictionless checkout</li>
-            <li>Automated order notifications & invoices</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-            </svg>
-          </div>
-          <h3 class="service-title">Speed Optimization (90+ PageSpeed)</h3>
-          <p class="service-desc">Turn your sluggish, bloated website into a lightning-fast machine that Google and your mobile visitors love.</p>
-          <ul class="service-features">
-            <li>Asset minification & image WebP compression</li>
-            <li>Eliminate render-blocking scripts</li>
-            <li>Core Web Vitals green scores guaranteed</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"></path>
-              <path d="M5 3v4"></path>
-              <path d="M19 17v4"></path>
-            </svg>
-          </div>
-          <h3 class="service-title">Complete Website Redesigns</h3>
-          <p class="service-desc">Transform your outdated 2018 website into a 2026-ready digital storefront that commands premium rates.</p>
-          <ul class="service-features">
-            <li>Preserve all existing SEO rankings & URLs</li>
-            <li>Modern typography & fresh visual polish</li>
-            <li>Tested across all phone & tablet sizes</li>
-          </ul>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
-              <path d="m9 12 2 2 4-4"></path>
-            </svg>
-          </div>
-          <h3 class="service-title">Monthly Maintenance & Care</h3>
-          <p class="service-desc">Sleep easy knowing your site is backed up, secure, and always updated with zero downtime or broken plugins.</p>
-          <ul class="service-features">
-            <li>Daily cloud backups & security firewalls</li>
-            <li>Plugin & WordPress core update checks</li>
-            <li>Priority emergency support on WhatsApp</li>
+          <h3 class="service-title">WooCommerce Stores</h3>
+          <p class="service-desc">Frictionless e-commerce storefronts with fast cart slide-outs, Stripe/PayPal checkout, and mobile optimization.</p>
+          <ul class="service-bullets">
+            <li>Secure checkout & payments</li>
+            <li>Inventory & shipping setup</li>
+            <li>High-converting product cards</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── About Me Section ─── -->
-  <section id="about" class="section-wrap about-section">
-    <div class="container about-grid">
-      <div class="about-card">
-        <h3>Mineuddin Siam</h3>
-        <p>Freelance WordPress Web Designer & Developer based in Dhaka, serving commercial clients worldwide across US, UK, Europe, Australia, and Asia.</p>
-        
-        <div class="about-stats">
-          <div class="about-stat-item">
-            <div class="num">137+</div>
-            <div class="lbl">Projects Shipped</div>
-          </div>
-          <div class="about-stat-item">
-            <div class="num" style="display: flex; align-items: center; gap: 4px;">5.0 <svg style="width: 20px; height: 20px; fill: var(--accent-lime);" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div>
-            <div class="lbl">Fiverr Average</div>
-          </div>
-          <div class="about-stat-item">
-            <div class="num">Level 2</div>
-            <div class="lbl">Fiverr Seller</div>
-          </div>
-          <div class="about-stat-item">
-            <div class="num">&lt; 15 min</div>
-            <div class="lbl">Avg Response Time</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-content">
-        <span class="section-badge">About Me</span>
-        <h2>Honest web design without agency politics.</h2>
-        <p>
-          When you hire me, you don't get handed off to an account manager or a junior intern. You talk directly with the person who actually designs and codes your website.
-        </p>
-        <p>
-          I focus on three non-negotiables for every build: **clean visual hierarchy**, **fast mobile loading speed**, and **simple maintenance**. You get full ownership of your site, clean training videos on how to update text or photos yourself, and 30 days of free support after launch.
-        </p>
-        <div style="margin-top: 24px;">
-          <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-primary">
-            Chat Directly on WhatsApp →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── Frequently Asked Questions ─── -->
-  <section id="faq" class="section-wrap">
+  <!-- ─── About Section ─── -->
+  <section class="section-wrap" id="about">
     <div class="container">
-      <div class="section-header center">
-        <span class="section-badge">FAQ</span>
-        <h2 class="section-title">Answers to common questions.</h2>
-        <p class="section-desc">Everything you need to know before we get started.</p>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>How fast can you finish my website?</span>
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Most landing pages take between 3 to 5 days. Full 5–8 page business websites typically take 5 to 7 days. If you have your content and logos ready, I can often deliver an initial working draft within 48 hours.
-          </div>
+      <div class="about-wrap">
+        <div class="about-photo-frame">
+          <img src="assets/siam.jpg" alt="Mineuddin Siam in person">
         </div>
 
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>Will I be able to edit text and photos myself later?</span>
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Yes, 100%. I build using intuitive visual editors (Elementor or clean Gutenberg blocks). You don't need to know a single line of code. I also record a short personalized video walkthrough showing you exactly how to update text, swap photos, or add blog posts.
-          </div>
-        </div>
+        <div class="about-content">
+          <span class="section-tag">About Siam</span>
+          <h2>Direct communication.<br>Honest craftsmanship.</h2>
+          <p>
+            I'm Mineuddin Siam, a freelance WordPress web designer and developer based in Dhaka, collaborating with commercial businesses, founders, and agencies worldwide.
+          </p>
+          <p>
+            When you hire me, you don't get handed off to an account manager or a junior intern. You talk directly with the person who designs and codes your website. I obsess over clean typography, high mobile performance, and delivering projects ahead of schedule.
+          </p>
 
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>How do revisions work if I want changes?</span>
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Every project includes unlimited reasonable revisions until you are 100% happy with the outcome. I share a live staging preview link so you can review and suggest adjustments in real time.
-          </div>
-        </div>
-
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>What do you need from me to start?</span>
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Just a brief chat! If you have your domain, hosting, logo, and text ready, that is great. If you don't, I will happily recommend fast hosting (e.g., Hostinger, SiteGround) and help you organize your page content from scratch.
-          </div>
-        </div>
-
-        <div class="faq-item" onclick="toggleFaq(this)">
-          <div class="faq-question">
-            <span>Can we work through Fiverr or directly?</span>
-            <span class="icon">+</span>
-          </div>
-          <div class="faq-answer">
-            Either way works! If you prefer the buyer protection of Fiverr, we can complete the project on my Level 2 Fiverr profile. If you prefer direct invoicing via PayPal, Wise, or bank transfer, that is also welcome.
+          <div class="about-meta-grid">
+            <div class="meta-box">
+              <h4>137+</h4>
+              <p>Projects Shipped</p>
+            </div>
+            <div class="meta-box">
+              <h4>5.0 ★</h4>
+              <p>Fiverr Rating</p>
+            </div>
+            <div class="meta-box">
+              <h4>&lt; 15 min</h4>
+              <p>Average Reply Time</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2024,15 +1753,15 @@
 
   <!-- ─── Call to Action Banner ─── -->
   <div class="container">
-    <div id="contact" class="cta-banner">
+    <div class="cta-banner" id="contact">
       <h2>Let's build a website you're proud to show off.</h2>
-      <p>Send me a message with your project idea. I will reply within 15 minutes with a clear timeline and upfront pricing.</p>
-      
-      <div class="cta-buttons">
-        <a href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20let%27s%20build%20a%20website%20together." target="_blank" rel="noopener" class="btn btn-lime">
+      <p>Have an idea or an existing website that needs a modern refresh? Send me a message and let's make it happen.</p>
+
+      <div class="cta-row">
+        <a href="https://wa.me/8801743248400?text=Hi%20Siam%2C%20let%27s%20build%20a%20website%20together." target="_blank" rel="noopener" class="btn btn-light">
           Chat on WhatsApp (+880 1743-248400) →
         </a>
-        <a href="mailto:mineuddin20siam@gmail.com?subject=New%20Website%20Project%20Inquiry" class="btn btn-outline" style="color: var(--white); border-color: rgba(255, 255, 255, 0.4);">
+        <a href="mailto:mineuddin20siam@gmail.com" class="btn btn-glass" style="color: #fff; border-color: rgba(255,255,255,0.2);">
           Email: mineuddin20siam@gmail.com
         </a>
       </div>
@@ -2042,142 +1771,30 @@
   <!-- ─── Footer ─── -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h4>Mineuddin Siam</h4>
-          <p>Professional WordPress web designer and developer creating high-converting, lightning-fast digital experiences for businesses worldwide.</p>
+      <div class="footer-flex">
+        <div class="brand-logo">
+          <span class="brand-logo-dot"></span>
+          <span>Mineuddin Siam</span>
         </div>
 
-        <div class="footer-col">
-          <h5>Navigation</h5>
-          <ul>
-            <li><a href="#work">Selected Work</a></li>
-            <li><a href="#estimator">Price Estimator</a></li>
-            <li><a href="#reviews">Client Reviews</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About Me</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Direct Contact</h5>
-          <ul>
-            <li><a href="https://wa.me/8801743248400" target="_blank" rel="noopener">WhatsApp Chat</a></li>
-            <li><a href="mailto:mineuddin20siam@gmail.com">mineuddin20siam@gmail.com</a></li>
-            <li><a href="https://www.fiverr.com" target="_blank" rel="noopener">Fiverr Profile (Level 2)</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Design System</h5>
-          <ul>
-            <li><a href="versions.html">Design Versions Gallery</a></li>
-            <li><a href="DESIGN.md">Wise DesignMD Specification</a></li>
-            <li><a href="https://github.com/MineuddinSiam/siam-portfolio" target="_blank" rel="noopener">GitHub Repository</a></li>
-          </ul>
-        </div>
+        <ul class="footer-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="https://wa.me/8801743248400" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="versions.html">Design Iterations Gallery</a></li>
+        </ul>
       </div>
 
       <div class="footer-bottom">
         <div>© 2026 Mineuddin Siam. All rights reserved.</div>
         <div>
-          <a href="versions.html">View All Design Iterations (Versions Gallery) →</a>
+          <a href="versions.html" style="text-decoration: underline;">Compare all portfolio design versions →</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ─── Image Lightbox ─── -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-    <div class="lightbox-content">
-      <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close Preview">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <h3 id="lightbox-title" style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 16px;">Project Preview</h3>
-      <img id="lightbox-img" src="" alt="Project Preview" style="border-radius: 8px; border: 1px solid var(--border-subtle); width: 100%;">
-    </div>
-  </div>
-
-  <!-- ─── Interactive Scripts ─── -->
-  <script>
-    // Scope & Pricing Calculator logic
-    function setScope(type, price, timeline, title) {
-      document.querySelectorAll('#type-pills .calc-pill').forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      document.getElementById('scope-price').innerText = '$' + price;
-      document.getElementById('scope-timeline').innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>Turnaround: ' + timeline;
-
-      const cta = document.getElementById('scope-cta');
-      cta.href = `https://wa.me/8801743248400?text=Hi%20Siam%2C%20I%20am%20interested%20in%20a%20${encodeURIComponent(title)}%20project%20starting%20around%20%24${price}.`;
-
-      const list = document.getElementById('scope-deliverables');
-      if (type === 'landing') {
-        list.innerHTML = `
-          <li>Single high-converting landing page</li>
-          <li>90+ Mobile Google PageSpeed optimization</li>
-          <li>Clean copy layout & conversion CTAs</li>
-          <li>Direct WhatsApp & form lead capture</li>
-          <li>30 days free post-launch support</li>
-        `;
-      } else if (type === 'business') {
-        list.innerHTML = `
-          <li>4 to 6 customized responsive pages</li>
-          <li>Full SEO setup with Google indexing</li>
-          <li>Calendar booking & contact forms</li>
-          <li>Easy drag-and-drop admin control</li>
-          <li>30 days free post-launch support</li>
-        `;
-      } else if (type === 'ecommerce') {
-        list.innerHTML = `
-          <li>Full WooCommerce store setup</li>
-          <li>Stripe & PayPal payment gateways</li>
-          <li>Product variants, inventory & tax setup</li>
-          <li>Instant cart slide-out & checkout testing</li>
-          <li>30 days free post-launch support</li>
-        `;
-      } else if (type === 'redesign') {
-        list.innerHTML = `
-          <li>Full visual upgrade to 2026 design standards</li>
-          <li>Speed boost to 90+ PageSpeed</li>
-          <li>Fix mobile responsiveness issues</li>
-          <li>Retain all existing SEO rankings & URLs</li>
-          <li>30 days free post-launch support</li>
-        `;
-      }
-    }
-
-    // FAQ Accordion
-    function toggleFaq(item) {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
-      if (!isOpen) {
-        item.classList.add('open');
-      }
-    }
-
-    // Screenshot Lightbox
-    function openLightbox(src, title) {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-title').innerText = title;
-      document.getElementById('lightbox').classList.add('active');
-    }
-
-    function closeLightbox(e) {
-      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
-        document.getElementById('lightbox').classList.remove('active');
-      }
-    }
-
-    // Close on Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.getElementById('lightbox').classList.remove('active');
-      }
-    });
-  </script>
 </body>
 </html>
