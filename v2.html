@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mineuddin Siam — Web Designer & WordPress Developer</title>
+  <meta name="description" content="Independent web designer and WordPress developer building bespoke, high-converting websites for businesses since 2019.">
+
+  <!-- Typography: Schibsted Grotesk (Display 800, Text 400 & 600) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400;0,600;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    /* ─── Architectural Tokens (Palette: Frost and slate) ─── */
+    :root {
+      --bg: #f7f9fa;
+      --surface: #ecf0f2;
+      --surface-card: #ffffff;
+      --ink: #1f3038;
+      --muted: #33444c;
+      --accent: #0d7480;
+      --accent-ink: #ffffff;
+      --accent-soft: #e2f0f2;
+
+      /* Dark Architectural Bands */
+      --band-dark: #121c21;
+      --band-surface: #1a272e;
+      --band-ink: #f7f9fa;
+      --band-muted: #b0c2cb;
+
+      /* Motion Tokens */
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+      /* Five Precise Typographic Steps */
+      --step-small: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem); /* 14px–15px */
+      --step-body: clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);    /* 17px–19px */
+      --step-lead: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);       /* 20px–24px */
+      --step-subhead: clamp(1.75rem, 1.45rem + 1.2vw, 2.5rem);   /* 28px–40px */
+      --step-display: clamp(2rem, 1.4rem + 3.2vw, 4.25rem);       /* 32px–68px */
+
+      /* Structural Grid */
+      --page-gutter: clamp(24px, 5vw, 80px);
+      --max-width: 1280px;
+      --radius: 4px;
+    }
+
+    /* ─── Base Reset ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: 'Schibsted Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: var(--step-body);
+      line-height: 1.55;
+      color: var(--ink);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+
+    img, video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 4px;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* ─── Motion Layer ─── */
+    @media (prefers-reduced-motion: no-preference) {
+      .line-mask {
+        display: block;
+        overflow: hidden;
+      }
+      .js [data-line] {
+        display: inline-block;
+        transform: translateY(105%);
+        animation: load-line 850ms var(--ease-expo) forwards;
+        animation-delay: calc(100ms + var(--i, 0) * 120ms);
+      }
+      .js [data-load] {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: load-fade 750ms var(--ease-expo) forwards;
+        animation-delay: var(--d, 200ms);
+      }
+      .js [data-scroll] {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 700ms var(--ease-expo), transform 700ms var(--ease-expo);
+        transition-delay: var(--delay, 0ms);
+      }
+      .js [data-scroll].in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes load-line { to { transform: translateY(0); } }
+    @keyframes load-fade { to { opacity: 1; transform: translateY(0); } }
+
+    /* ─── Navigation ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg);
+      padding: 22px var(--page-gutter);
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-mark {
+      font-size: var(--step-lead);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .header-nav a {
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.15s ease;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      color: var(--ink);
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 46px;
+      padding: 0 24px;
+      background-color: var(--ink);
+      color: #ffffff;
+      font-size: var(--step-small);
+      font-weight: 600;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+
+    .action-button:hover,
+    .action-button:focus-visible {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .action-button:active {
+      transform: scale(0.98);
+    }
+
+    .action-button-accent {
+      background-color: var(--accent);
+      color: var(--accent-ink);
+    }
+
+    .action-button-accent:hover,
+    .action-button-accent:focus-visible {
+      background-color: #095963;
+    }
+
+    /* ─── Structural Containers ─── */
+    .page-section {
+      padding: clamp(72px, 8vw, 140px) var(--page-gutter);
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin-inline: auto;
+    }
+
+    /* ─── Hero Masthead ─── */
+    .hero-masthead {
+      padding-top: clamp(24px, 4vw, 48px);
+      padding-bottom: clamp(72px, 8vw, 120px);
+    }
+
+    .masthead-media-strip {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: clamp(48px, 6vw, 80px);
+      align-items: stretch;
+    }
+
+    .masthead-clip-frame {
+      height: 380px;
+      background-color: var(--surface);
+      overflow: hidden;
+      border-radius: var(--radius);
+      position: relative;
+    }
+
+    .masthead-clip-frame video,
+    .masthead-clip-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-editorial-axis {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      align-items: start;
+      gap: 48px;
+    }
+
+    .hero-meta-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero-meta-note {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .hero-content-col {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .hero-headline {
+      font-size: var(--step-display);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.98;
+      color: var(--ink);
+    }
+
+    .hero-deck {
+      font-size: var(--step-lead);
+      color: var(--ink);
+      line-height: 1.45;
+      max-width: 46ch;
+    }
+
+    .hero-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .secondary-link {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--ink);
+      padding: 12px 4px;
+    }
+
+    /* ─── Editorial Ledger (Ledger / Proof Band) ─── */
+    .ledger-band {
+      background-color: var(--surface);
+      padding: clamp(64px, 7vw, 100px) var(--page-gutter);
+    }
+
+    .ledger-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+
+    .ledger-stat-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ledger-stat-figure {
+      font-size: clamp(2.5rem, 2rem + 2vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--ink);
+    }
+
+    .ledger-stat-label {
+      font-size: var(--step-body);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .ledger-stat-detail {
+      font-size: var(--step-small);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ─── Main Index / Work Section ─── */
+    .work-section-header {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      align-items: baseline;
+      gap: 48px;
+      margin-bottom: clamp(48px, 6vw, 72px);
+    }
+
+    .section-heading {
+      font-size: var(--step-subhead);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    .section-standfirst {
+      font-size: var(--step-lead);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ─── Live Architectural Project Drawer ─── */
+    .project-interactive-stage {
+      background-color: var(--surface-card);
+      border-radius: var(--radius);
+      padding: clamp(24px, 4vw, 48px);
+      margin-bottom: clamp(64px, 7vw, 100px);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .stage-directory-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .stage-item-btn {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      border-radius: var(--radius);
+      background-color: transparent;
+      color: var(--ink);
+      transition: background-color 0.15s ease, color 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .stage-item-btn:hover {
+      background-color: var(--surface);
+    }
+
+    .stage-item-btn.active {
+      background-color: var(--ink);
+      color: #ffffff;
+    }
+
+    .stage-item-title {
+      font-size: var(--step-body);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .stage-item-industry {
+      font-size: var(--step-small);
+      color: var(--muted);
+    }
+
+    .stage-item-btn.active .stage-item-industry {
+      color: #b5c3cb;
+    }
+
+    .stage-display-view {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .stage-preview-frame {
+      width: 100%;
+      height: 480px;
+      background-color: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .stage-preview-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .stage-spec-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding-top: 20px;
+    }
+
+    .spec-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .spec-key {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .spec-value {
+      font-size: var(--step-body);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ─── Strip Catalogue of Deliverables (One Strip Per Project) ─── */
+    .catalogue-strips-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .project-strip {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 40px;
+      background-color: var(--surface-card);
+      border-radius: var(--radius);
+      padding: 32px;
+      align-items: center;
+    }
+
+    .strip-thumb-box {
+      width: 100%;
+      height: 240px;
+      background-color: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .strip-thumb-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.25s ease;
+    }
+
+    .project-strip:hover .strip-thumb-box img {
+      transform: scale(1.02);
+    }
+
+    .strip-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .strip-title {
+      font-size: var(--step-lead);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .strip-summary {
+      font-size: var(--step-body);
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .strip-details-meta {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .strip-link {
+      align-self: flex-start;
+      margin-top: 6px;
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .strip-link:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── Client Monograph & Verified Testimonials ─── */
+    .monograph-band {
+      background-color: var(--band-dark);
+      color: var(--band-ink);
+      padding: clamp(80px, 9vw, 150px) var(--page-gutter);
+    }
+
+    .monograph-header {
+      display: grid;
+      grid-template-columns: 38% 62%;
+      align-items: baseline;
+      gap: 48px;
+      margin-bottom: clamp(56px, 7vw, 84px);
+    }
+
+    .monograph-header .section-heading {
+      color: var(--band-ink);
+    }
+
+    .monograph-header .section-standfirst {
+      color: var(--band-muted);
+    }
+
+    .monograph-featured-account {
+      background-color: var(--band-surface);
+      border-radius: var(--radius);
+      padding: clamp(32px, 5vw, 56px);
+      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .monograph-featured-quote {
+      font-size: var(--step-lead);
+      line-height: 1.5;
+      color: var(--band-ink);
+      max-width: 58ch;
+    }
+
+    .monograph-ledger-columns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+    }
+
+    .monograph-ledger-entry {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .monograph-ledger-quote {
+      font-size: var(--step-body);
+      line-height: 1.6;
+      color: var(--band-ink);
+    }
+
+    .monograph-author-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .monograph-author-name {
+      font-size: var(--step-body);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--band-ink);
+    }
+
+    .monograph-author-market {
+      font-size: var(--step-small);
+      color: var(--band-muted);
+    }
+
+    /* ─── Editorial Contact Section ─── */
+    .contact-editorial-section {
+      padding: clamp(80px, 9vw, 150px) var(--page-gutter);
+      background-color: var(--bg);
+    }
+
+    .contact-editorial-grid {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-callout-block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-channels-block {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      background-color: var(--surface-card);
+      padding: clamp(32px, 5vw, 56px);
+      border-radius: var(--radius);
+    }
+
+    .channel-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .channel-title {
+      font-size: var(--step-small);
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .channel-contact-val {
+      font-size: var(--step-lead);
+      font-weight: 800;
+      color: var(--ink);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .channel-contact-val:hover {
+      color: var(--accent);
+    }
+
+    /* ─── Colophon Footer ─── */
+    .colophon-footer {
+      background-color: var(--surface);
+      padding: 48px var(--page-gutter);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: var(--step-small);
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .footer-credits-note {
+      font-size: var(--step-small);
+      color: var(--muted);
+      max-width: 60ch;
+      line-height: 1.5;
+    }
+
+    /* ─── Responsive Viewports ─── */
+    @media (max-width: 980px) {
+      .masthead-media-strip {
+        grid-template-columns: 1fr;
+      }
+      .masthead-clip-frame {
+        height: 280px;
+      }
+      .masthead-clip-frame:nth-child(n+2) {
+        display: none;
+      }
+      .hero-editorial-axis {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .ledger-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+      }
+      .work-section-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .project-interactive-stage {
+        grid-template-columns: 1fr;
+      }
+      .project-strip {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .monograph-header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .monograph-ledger-columns {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .contact-editorial-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-nav {
+        display: none;
+      }
+      .ledger-grid {
+        grid-template-columns: 1fr;
+      }
+      .stage-spec-row {
+        grid-template-columns: 1fr;
+      }
+      .stage-preview-frame {
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation Bar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand-mark">Mineuddin Siam</a>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="#work">Index of Work</a>
+        <a href="#proof">Performance</a>
+        <a href="#reviews">Monographs</a>
+        <a href="#contact">Engagement</a>
+      </nav>
+      <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="action-button">Initiate Project</a>
+    </div>
+  </header>
+
+  <!-- Hero Section: Mosaic Masthead & Editorial Axis -->
+  <main id="top">
+    <section class="page-section hero-masthead">
+      <div class="section-inner">
+
+        <!-- Masthead Media Mosaic (Architecture & Live Deliverables) -->
+        <div class="masthead-media-strip">
+          <div class="masthead-clip-frame">
+            <video autoplay muted loop playsinline preload="metadata" poster="assets/tbilisi-life-georgia-travel-canon-camera-eosm27-poster.jpg" width="854" height="480" aria-hidden="true">
+              <source src="assets/tbilisi-life-georgia-travel-canon-camera-eosm27.webm" type="video/webm">
+            </video>
+          </div>
+          <div class="masthead-clip-frame">
+            <img src="assets/projects/01-car-detailing.png" alt="Morgans Prestige Car Detailing website interface">
+          </div>
+          <div class="masthead-clip-frame">
+            <img src="assets/projects/06-airfield-cafe.png" alt="Cloud 9 Kitchen and artisan dining website interface">
+          </div>
+        </div>
+
+        <!-- Editorial Axis: 42% Meta Notes / 58% Primary Proposition -->
+        <div class="hero-editorial-axis">
+          <div class="hero-meta-col">
+            <p class="hero-meta-note">Independent WordPress engineering, bespoke responsive design, and conversion infrastructure for commercial operators.</p>
+            <p class="hero-meta-note">Operating globally from Bangladesh since 2019. Active Level 2 status across 137 verified client deliveries.</p>
+          </div>
+
+          <div class="hero-content-col">
+            <h1 class="hero-headline">
+              <span class="line-mask"><span data-line style="--i:0">Websites built</span></span>
+              <span class="line-mask"><span data-line style="--i:1">to perform.</span></span>
+            </h1>
+            <p class="hero-deck" data-load style="--d:300ms">I build bespoke, responsive web systems that give independent businesses clear market authority and sustainable inquiry volume.</p>
+            <div class="hero-actions-row" data-load style="--d:420ms">
+              <a href="#work" class="action-button action-button-accent">Inspect Selected Work</a>
+              <a href="#contact" class="secondary-link">Review Engagement Terms</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ledger of Verified Delivery Metrics -->
+    <section class="ledger-band" id="proof">
+      <div class="section-inner">
+        <div class="ledger-grid">
+          <div class="ledger-stat-cell" data-scroll style="--delay: 0ms">
+            <span class="ledger-stat-figure">137+</span>
+            <span class="ledger-stat-label">Delivered Websites</span>
+            <p class="ledger-stat-detail">Completed WordPress installations, bespoke re-platforms, and e-commerce stores worldwide.</p>
+          </div>
+          <div class="ledger-stat-cell" data-scroll style="--delay: 70ms">
+            <span class="ledger-stat-figure">5.0</span>
+            <span class="ledger-stat-label">Verified Client Rating</span>
+            <p class="ledger-stat-detail">Consistent five-star assessment across 80+ public testimonials on primary gig.</p>
+          </div>
+          <div class="ledger-stat-cell" data-scroll style="--delay: 140ms">
+            <span class="ledger-stat-figure">100%</span>
+            <span class="ledger-stat-label">Quality & Delivery Record</span>
+            <p class="ledger-stat-detail">Flawless rating metrics in communication, delivery standard, and commercial value.</p>
+          </div>
+          <div class="ledger-stat-cell" data-scroll style="--delay: 210ms">
+            <span class="ledger-stat-figure">Level 2</span>
+            <span class="ledger-stat-label">Market Credentials</span>
+            <p class="ledger-stat-detail">Recognized specialist rank with verified international repeat commercial buyers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Index of Work & Interactive Architectural Drawer -->
+    <section class="page-section" id="work">
+      <div class="section-inner">
+
+        <div class="work-section-header" data-scroll>
+          <h2 class="section-heading">Index of completed client work.</h2>
+          <p class="section-standfirst">Every project is built from clean architectural foundations: bespoke Elementor implementations, fast loading profiles, and intuitive customer navigation.</p>
+        </div>
+
+        <!-- Live Interactive Stage Drawer -->
+        <div class="project-interactive-stage" data-scroll>
+          <div class="stage-directory-list" role="tablist" aria-label="Featured Project Briefs">
+            <button class="stage-item-btn active" role="tab" aria-selected="true" data-proj="morgans">
+              <span class="stage-item-title">Morgans Detailing</span>
+              <span class="stage-item-industry">Prestige Automotive · United Kingdom</span>
+            </button>
+            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="cloud9">
+              <span class="stage-item-title">Cloud 9 Kitchen & Bar</span>
+              <span class="stage-item-industry">Hospitality & Dining · United Kingdom</span>
+            </button>
+            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="tmad">
+              <span class="stage-item-title">TMAD Property Services</span>
+              <span class="stage-item-industry">Commercial Services · United Kingdom</span>
+            </button>
+            <button class="stage-item-btn" role="tab" aria-selected="false" data-proj="balloon">
+              <span class="stage-item-title">Bucket-List Flights</span>
+              <span class="stage-item-industry">Aviation & Tourism · United Kingdom</span>
+            </button>
+          </div>
+
+          <div class="stage-display-view">
+            <div class="stage-preview-frame">
+              <img id="stageImg" src="assets/projects/01-car-detailing.png" alt="Morgans Detailing website hero fold">
+            </div>
+            <div class="stage-spec-row">
+              <div class="spec-group">
+                <span class="spec-key">Core Technology</span>
+                <span class="spec-value" id="specTech">WordPress · Elementor Pro · Custom CSS</span>
+              </div>
+              <div class="spec-group">
+                <span class="spec-key">Project Scope</span>
+                <span class="spec-value" id="specScope">Complete Commercial Redesign</span>
+              </div>
+              <div class="spec-group">
+                <span class="spec-key">Execution Standard</span>
+                <span class="spec-value" id="specDelivery">Mobile Optimized · 100% Top-Fold Impact</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Catalogue of Deliverables (One Strip Per Project) -->
+        <div class="catalogue-strips-stack">
+
+          <article class="project-strip" data-scroll style="--delay: 0ms">
+            <div class="strip-thumb-box">
+              <img src="assets/projects/04-midlands-carcare.png" alt="Gleave Auto Detailing website screenshot">
+            </div>
+            <div class="strip-info-col">
+              <h3 class="strip-title">Gleave Auto Detailing</h3>
+              <p class="strip-summary">Specialist vehicle enhancement platform featuring package comparisons, service tiers, and responsive booking inquiries.</p>
+              <div class="strip-details-meta">WordPress · Elementor Pro · Bespoke Tiers</div>
+              <a href="#contact" class="strip-link">Discuss Similar Project</a>
+            </div>
+          </article>
+
+          <article class="project-strip" data-scroll style="--delay: 50ms">
+            <div class="strip-thumb-box">
+              <img src="assets/projects/05-chapmans.png" alt="Chapmans Valeting website screenshot">
+            </div>
+            <div class="strip-info-col">
+              <h3 class="strip-title">Chapmans Valeting</h3>
+              <p class="strip-summary">Mobile automotive care website with direct WhatsApp integration, instant package pricing, and verified customer testimonials.</p>
+              <div class="strip-details-meta">WordPress · Instant Pricing Architecture</div>
+              <a href="#contact" class="strip-link">Discuss Similar Project</a>
+            </div>
+          </article>
+
+          <article class="project-strip" data-scroll style="--delay: 50ms">
+            <div class="strip-thumb-box">
+              <img src="assets/projects/08-divine-you.png" alt="Divine You Xx holistic therapy website screenshot">
+            </div>
+            <div class="strip-info-col">
+              <h3 class="strip-title">Divine You Xx Practice</h3>
+              <p class="strip-summary">Holistic wellness and therapy platform built with calm editorial typography, session scheduling, and service directories.</p>
+              <div class="strip-details-meta">WordPress · Consultation Booking CMS</div>
+              <a href="#contact" class="strip-link">Discuss Similar Project</a>
+            </div>
+          </article>
+
+          <article class="project-strip" data-scroll style="--delay: 50ms">
+            <div class="strip-thumb-box">
+              <img src="assets/projects/09-reynolds-son.png" alt="Reynolds and Son heritage building website screenshot">
+            </div>
+            <div class="strip-info-col">
+              <h3 class="strip-title">Reynolds & Son Craftsmanship</h3>
+              <p class="strip-summary">Heritage property restoration website highlighting decades of building expertise, project galleries, and private consultation forms.</p>
+              <div class="strip-details-meta">WordPress · High-Resolution Gallery Architecture</div>
+              <a href="#contact" class="strip-link">Discuss Similar Project</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Client Monographs & Verified Reviews -->
+    <section class="monograph-band" id="reviews">
+      <div class="section-inner">
+
+        <div class="monograph-header" data-scroll>
+          <h2 class="section-heading">Verified monographs and client accounts.</h2>
+          <p class="section-standfirst">Documented feedback from real business owners across the United Kingdom, North America, Europe, and Asia.</p>
+        </div>
+
+        <div class="monograph-featured-account" data-scroll>
+          <p class="monograph-featured-quote">"Siam truly impressed me with his exceptional website design skills. His work is not only visually appealing but also reflects a strong attention to detail and professionalism. It was a pleasure working with him, as he went above and beyond, delivering on time with a deep understanding of the project needs."</p>
+          <div class="monograph-author-block">
+            <span class="monograph-author-name">ace2k6</span>
+            <span class="monograph-author-market">United Kingdom · Verified Commercial Buyer · Five Star Delivery</span>
+          </div>
+        </div>
+
+        <div class="monograph-ledger-columns">
+
+          <div class="monograph-ledger-entry" data-scroll style="--delay: 0ms">
+            <p class="monograph-ledger-quote">"Siam's professionalism and attention to detail in website design were outstanding, perfectly aligning with our brand vision. Working with him was an absolute joy due to his deep understanding, politeness, and excellent cooperation."</p>
+            <div class="monograph-author-block">
+              <span class="monograph-author-name">stevecollett2</span>
+              <span class="monograph-author-market">United Kingdom · Verified Buyer</span>
+            </div>
+          </div>
+
+          <div class="monograph-ledger-entry" data-scroll style="--delay: 70ms">
+            <p class="monograph-ledger-quote">"Siam did an amazing job designing our website, showcasing true professionalism and exceeding all our expectations. Working with him was a breeze; his politeness and excellent cooperation made the entire process smooth and enjoyable."</p>
+            <div class="monograph-author-block">
+              <span class="monograph-author-name">hrhnina</span>
+              <span class="monograph-author-market">Hong Kong · Verified Buyer</span>
+            </div>
+          </div>
+
+          <div class="monograph-ledger-entry" data-scroll style="--delay: 140ms">
+            <p class="monograph-ledger-quote">"It was a pleasure working with Siam. His communication was excellent, clear, and professional. He was incredibly efficient, delivering the project ahead of schedule without compromising on quality. Throughout the process, he was solution-oriented."</p>
+            <div class="monograph-author-block">
+              <span class="monograph-author-name">carolinegorska</span>
+              <span class="monograph-author-market">Sweden · Verified Buyer</span>
+            </div>
+          </div>
+
+          <div class="monograph-ledger-entry" data-scroll style="--delay: 210ms">
+            <p class="monograph-ledger-quote">"Amazing work as always. This is my top choice for all my website needs, tech setup, and expert advice. If you want someone who truly invests in your project and makes it a success, look no further; this is the one."</p>
+            <div class="monograph-author-block">
+              <span class="monograph-author-name">royalphoxx1</span>
+              <span class="monograph-author-market">United States · Repeat Commercial Buyer</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Engagement & Inquiries -->
+    <section class="contact-editorial-section" id="contact">
+      <div class="section-inner">
+        <div class="contact-editorial-grid" data-scroll>
+
+          <div class="contact-callout-block">
+            <h2 class="section-heading">Initiate a commercial engagement.</h2>
+            <p class="section-standfirst">Whether you need a bespoke WordPress deployment, a complete rebuild of an outdated brand, or performance tuning for high search conversion, reach out directly with your project requirements.</p>
+            <div>
+              <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="action-button action-button-accent">View Verified Fiverr Profile</a>
+            </div>
+          </div>
+
+          <div class="contact-channels-block">
+            <div class="channel-row">
+              <span class="channel-title">Direct Electronic Mail</span>
+              <a href="mailto:mineuddin20siam@gmail.com" class="channel-contact-val">mineuddin20siam@gmail.com</a>
+            </div>
+            <div class="channel-row">
+              <span class="channel-title">Direct WhatsApp Messaging</span>
+              <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="channel-contact-val">+880 1743-248400</a>
+            </div>
+            <div class="channel-row">
+              <span class="channel-title">Official Fiverr Marketplace</span>
+              <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="channel-contact-val">fiverr.com/users/mineuddinsiam</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Colophon & Archival Credits -->
+  <footer class="colophon-footer">
+    <div class="footer-inner">
+      <span>Mineuddin Siam · Web Designer & WordPress Developer</span>
+      <p class="footer-credits-note">Footage credit: "Tbilisi life - Georgia Travel - canon camera Eosm27" by Mostafameraji, CC BY-SA 4.0, via Wikimedia Commons.</p>
+      <span>2019–2026</span>
+    </div>
+  </footer>
+
+  <!-- Script for Live Architectural Drawer and Scroll Observer -->
+  <script>
+    (function() {
+      // Intersection Observer for scroll entrances
+      if ('IntersectionObserver' in window) {
+        var scrollObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              scrollObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('[data-scroll]').forEach(function(el) {
+          scrollObserver.observe(el);
+        });
+      } else {
+        document.querySelectorAll('[data-scroll]').forEach(function(el) {
+          el.classList.add('in-view');
+        });
+      }
+
+      var projectData = {
+        morgans: {
+          img: 'assets/projects/01-car-detailing.png',
+          alt: 'Morgans Detailing website hero fold',
+          tech: 'WordPress · Elementor Pro · Custom CSS',
+          scope: 'Complete Commercial Redesign',
+          delivery: 'Mobile Optimized · 100% Top-Fold Impact'
+        },
+        cloud9: {
+          img: 'assets/projects/06-airfield-cafe.png',
+          alt: 'Cloud 9 Kitchen and artisan dining website interface',
+          tech: 'WordPress · Responsive Navigation · Menu CMS',
+          scope: 'Hospitality & Dining Platform',
+          delivery: 'Rapid Table Inquiries · High Contrast Imagery'
+        },
+        tmad: {
+          img: 'assets/projects/02-tmad-property.png',
+          alt: 'TMAD Property Services website screenshot',
+          tech: 'WordPress · Elementor · Commercial Services Grid',
+          scope: 'Corporate Facility Management Site',
+          delivery: 'Instant Quote Callout · Service Detail Architecture'
+        },
+        balloon: {
+          img: 'assets/projects/07-balloon-flights.png',
+          alt: 'Bucket-List Flights aviation website screenshot',
+          tech: 'WordPress · WooCommerce · Booking Integration',
+          scope: 'Luxury Aviation & Tourism Store',
+          delivery: 'Voucher Checkout · Experience Catalogues'
+        }
+      };
+
+      var buttons = document.querySelectorAll('.stage-item-btn');
+      var stageImg = document.getElementById('stageImg');
+      var specTech = document.getElementById('specTech');
+      var specScope = document.getElementById('specScope');
+      var specDelivery = document.getElementById('specDelivery');
+
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          buttons.forEach(function(b) {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          var key = btn.getAttribute('data-proj');
+          var data = projectData[key];
+          if (data && stageImg) {
+            stageImg.src = data.img;
+            stageImg.alt = data.alt;
+            specTech.textContent = data.tech;
+            specScope.textContent = data.scope;
+            specDelivery.textContent = data.delivery;
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
+</body>
+</html>

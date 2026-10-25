@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Siam Portfolio — Version Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0c0f12;
+      color: #f0f4f8;
+      padding: 60px 24px;
+      line-height: 1.6;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    p.lead {
+      color: #8b99a8;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+    .card {
+      background: #151a21;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      background: #1a2029;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #60a5fa;
+      background: rgba(96, 165, 250, 0.12);
+      padding: 4px 10px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card-desc {
+      font-size: 0.92rem;
+      color: #8b99a8;
+    }
+    .btn {
+      padding: 10px 20px;
+      border-radius: 100px;
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Portfolio Versions</h1>
+    <p class="lead">Compare all 4 live iterations created for Mineuddin Siam's website:</p>
+
+    <div class="grid">
+      <a href="v4.html" class="card">
+        <div>
+          <span class="tag">Version 4.0 · Current</span>
+          <h2 class="card-title">Modern Dark Theme (Plus Jakarta Sans)</h2>
+          <p class="card-desc">High-converting dark portfolio with everyday natural language, clean cards, and direct WhatsApp contact.</p>
+        </div>
+        <span class="btn">View Live →</span>
+      </a>
+
+      <a href="v1.html" class="card">
+        <div>
+          <span class="tag">Version 1.0</span>
+          <h2 class="card-title">Outfit Sans with 3D Tilt Hero</h2>
+          <p class="card-desc">Warm aesthetic with Outfit typography, interactive 3D hero card, live status pill, and featured project cards.</p>
+        </div>
+        <span class="btn">View Live →</span>
+      </a>
+
+      <a href="v2.html" class="card">
+        <div>
+          <span class="tag">Version 2.0</span>
+          <h2 class="card-title">Architectural Monograph (Frost & Slate)</h2>
+          <p class="card-desc">Editorial monograph layout with Schibsted Grotesk, video masthead, and interactive project drawer.</p>
+        </div>
+        <span class="btn">View Live →</span>
+      </a>
+
+      <a href="v3.html" class="card">
+        <div>
+          <span class="tag">Version 3.0</span>
+          <h2 class="card-title">Restored Outfit with Simplified Copy</h2>
+          <p class="card-desc">Restored Version 1 design with simplified client review text and natural language.</p>
+        </div>
+        <span class="btn">View Live →</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
