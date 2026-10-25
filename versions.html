@@ -6,12 +6,12 @@
   <title>Siam Portfolio — Design Versions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #090c0f;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #0E0F0C;
       color: #f0f4f8;
       padding: 60px 24px 80px;
       line-height: 1.6;
@@ -33,37 +33,37 @@
       font-size: 0.78rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #00875a;
-      background: rgba(0, 135, 90, 0.12);
-      border: 1px solid rgba(0, 135, 90, 0.3);
+      color: #9FE870;
+      background: rgba(159, 232, 112, 0.12);
+      border: 1px solid rgba(159, 232, 112, 0.3);
       padding: 6px 14px;
-      border-radius: 100px;
+      border-radius: 9999px;
       margin-bottom: 16px;
     }
     .badge-dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #00a86b;
-      box-shadow: 0 0 10px #00a86b;
+      background: #9FE870;
+      box-shadow: 0 0 10px #9FE870;
     }
     h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: -0.035em;
       margin-bottom: 10px;
     }
     p.lead {
-      color: #8b99a8;
+      color: #9ea8b3;
       font-size: 1.1rem;
-      max-width: 680px;
+      max-width: 700px;
     }
     .grid {
       display: grid;
       gap: 20px;
     }
     .card {
-      background: #12171e;
+      background: #15181b;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 18px;
       padding: 28px 32px;
@@ -74,21 +74,19 @@
       transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       color: inherit;
-      position: relative;
-      overflow: hidden;
     }
     .card:hover {
       border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-2px);
-      background: #171d26;
+      background: #1b2024;
     }
     .card.featured {
-      border-color: rgba(0, 135, 90, 0.4);
-      background: linear-gradient(180deg, #121d19 0%, #0f151b 100%);
+      border-color: rgba(159, 232, 112, 0.5);
+      background: linear-gradient(180deg, #163300 0%, #101c0c 100%);
     }
     .card.featured:hover {
-      border-color: rgba(0, 175, 110, 0.6);
-      background: linear-gradient(180deg, #16241f 0%, #121921 100%);
+      border-color: #9FE870;
+      background: linear-gradient(180deg, #1c4000 0%, #14240f 100%);
     }
     .tag {
       display: inline-block;
@@ -97,8 +95,12 @@
       letter-spacing: 0.04em;
       text-transform: uppercase;
       padding: 4px 10px;
-      border-radius: 100px;
+      border-radius: 9999px;
       margin-bottom: 10px;
+    }
+    .tag-lime {
+      color: #163300;
+      background: #9FE870;
     }
     .tag-green {
       color: #2ee59d;
@@ -122,34 +124,44 @@
     }
     .card-title {
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 6px;
     }
     .card-desc {
       font-size: 0.94rem;
-      color: #8b99a8;
+      color: #9ea8b3;
       max-width: 620px;
+    }
+    .card.featured .card-desc {
+      color: rgba(255, 255, 255, 0.85);
     }
     .meta-pills {
       display: flex;
+      flex-wrap: wrap;
       gap: 8px;
       margin-top: 10px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.74rem;
-      color: #6c7d93;
+      color: #7b8b9d;
+    }
+    .card.featured .meta-pills {
+      color: #9FE870;
     }
     .meta-pills span {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       padding: 2px 8px;
       border-radius: 4px;
     }
+    .card.featured .meta-pills span {
+      background: rgba(159, 232, 112, 0.15);
+    }
     .btn {
       padding: 13px 26px;
-      border-radius: 100px;
+      border-radius: 9999px;
       background: #2563eb;
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.92rem;
       white-space: nowrap;
       transition: all 0.15s ease;
@@ -161,12 +173,12 @@
       background: #1d4ed8;
       transform: translateX(2px);
     }
-    .btn-green {
-      background: #005032;
-      color: #fff;
+    .btn-lime {
+      background: #9FE870;
+      color: #163300;
     }
-    .card.featured:hover .btn-green {
-      background: #006842;
+    .card.featured:hover .btn-lime {
+      background: #b5f28f;
     }
     .footer {
       margin-top: 48px;
@@ -205,30 +217,47 @@
         <span>GitHub Pages Active</span>
       </div>
       <h1>Portfolio Design Iterations</h1>
-      <p class="lead">Compare the distinct website versions created for Mineuddin Siam. Every version is fully interactive and live on GitHub Pages.</p>
+      <p class="lead">Compare all 5 distinct design directions created for Mineuddin Siam. Every version is live and interactive.</p>
     </div>
 
     <div class="grid">
-      <!-- Latest: DesignMD Agentsure -->
+      <!-- Latest: Wise Fintech System -->
       <a href="index.html" class="card featured">
         <div>
-          <span class="tag tag-green">Latest · DesignMD System (Active index.html)</span>
-          <h2 class="card-title">DesignMD / Agentsure System (Forest Green & Clean White)</h2>
-          <p class="card-desc">Pure white canvas, deep forest green (#005032) accents, Inter Tight + JetBrains Mono typography, color-blocked metric bar, interactive technical terminal spec, 6 real client projects, and verified Fiverr reviews.</p>
+          <span class="tag tag-lime">Latest · Wise Design System (Active index.html)</span>
+          <h2 class="card-title">Wise Fintech System (Deep Forest Green & Vibrant Lime)</h2>
+          <p class="card-desc">High-contrast fintech confidence, Inter typography, Wise-style side-by-side agency comparison table, interactive instant project budget estimator, 6 client projects, and verified reviews.</p>
+          <div class="meta-pills">
+            <span>Inter</span>
+            <span>#163300 Deep Forest</span>
+            <span>#9FE870 Lime</span>
+            <span>Interactive Estimator</span>
+            <span>DESIGN.md Source of Truth</span>
+          </div>
+        </div>
+        <span class="btn btn-lime">View Live →</span>
+      </a>
+
+      <!-- Agentsure Version (v5.html) -->
+      <a href="v5.html" class="card">
+        <div>
+          <span class="tag tag-green">Design 4 · Agentsure System</span>
+          <h2 class="card-title">Agentsure Clean System (White Canvas & Dark Forest)</h2>
+          <p class="card-desc">Minimalist white canvas layout with Inter Tight & JetBrains Mono, color-blocked metric banner, and technical terminal spec breakdown.</p>
           <div class="meta-pills">
             <span>Inter Tight</span>
             <span>JetBrains Mono</span>
             <span>#005032 Forest</span>
-            <span>DesignMD Source of Truth</span>
+            <span>Terminal Spec</span>
           </div>
         </div>
-        <span class="btn btn-green">View Live →</span>
+        <span class="btn">View Live →</span>
       </a>
 
       <!-- Version 4: Modern Dark -->
       <a href="v4.html" class="card">
         <div>
-          <span class="tag tag-blue">Design 2 · Modern Dark</span>
+          <span class="tag tag-blue">Design 3 · Modern Dark</span>
           <h2 class="card-title">Modern Dark Theme (Plus Jakarta Sans)</h2>
           <p class="card-desc">High-contrast dark portfolio with natural conversational copy, clean glassmorphism project cards, verified client reviews grid, and WhatsApp quick-contact.</p>
           <div class="meta-pills">
@@ -243,13 +272,13 @@
       <!-- Version 1: Warm Interactive -->
       <a href="v1.html" class="card">
         <div>
-          <span class="tag tag-amber">Design 3 · Warm Interactive</span>
+          <span class="tag tag-amber">Design 2 · Warm Interactive</span>
           <h2 class="card-title">Warm Aesthetic (Outfit & 3D Tilt Hero)</h2>
           <p class="card-desc">Warm aesthetic with Outfit geometric typography, interactive 3D hero stage, live status badge, and side-by-side featured project layouts.</p>
           <div class="meta-pills">
             <span>Outfit Font</span>
             <span>3D Tilt Card</span>
-            <span>Warm Dark Tone</span>
+            <span>Warm Tone</span>
           </div>
         </div>
         <span class="btn">View Live →</span>
@@ -258,7 +287,7 @@
       <!-- Version 2: Architectural Monograph -->
       <a href="v2.html" class="card">
         <div>
-          <span class="tag tag-purple">Design 4 · Architectural Monograph</span>
+          <span class="tag tag-purple">Design 1 · Architectural Monograph</span>
           <h2 class="card-title">Architectural Monograph (Frost & Slate)</h2>
           <p class="card-desc">High-end editorial magazine aesthetic with Schibsted Grotesk, video mosaic hero, and interactive project directory drawer.</p>
           <div class="meta-pills">

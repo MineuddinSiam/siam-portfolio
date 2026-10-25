@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mineuddin Siam — WordPress Web Designer & Developer</title>
+  <meta name="description" content="Independent WordPress web designer and developer creating fast, modern, high-converting websites for businesses worldwide.">
+
+  <!-- DesignMD Typography: Inter Tight & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── DesignMD Source of Truth Tokens (Agentsure System) ─── */
+    :root {
+      --color-primary: #005032;       /* Deep Forest Green */
+      --color-on-primary: #FFFFFF;
+      --color-canvas: #FFFFFF;        /* Pure White Canvas */
+      --color-ink: #000000;           /* Absolute Black */
+      --color-body: #0D1016;          /* Near-black body */
+      --color-muted: #1A1A1A;         /* Dark container/terminal */
+      --color-faint: #68655E;         /* Warm Gray secondary text */
+      --color-hairline: #E6E6E6;      /* 1px Hairline divider */
+      --color-accent-1: #E68846;      /* Warm Earth Highlight for prose italics */
+      --color-neutral-1: #F2E9DA;     /* Warm Sand for trust bands */
+      --color-neutral-subtle: #FAFAFA;
+
+      /* Typography: Inter Tight */
+      --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Spacing Scale */
+      --space-xs: 8px;
+      --space-sm: 12px;
+      --space-md: 16px;
+      --space-lg: 20px;
+      --space-xl: 24px;
+      --space-xxl: 28px;
+      --space-xxxl: 32px;
+      --space-section: 48px;
+      --space-band: clamp(64px, 8vw, 110px);
+
+      /* Radius */
+      --rounded-none: 0px;
+      --rounded-sm: 8px;
+      --rounded-full: 9999px;
+
+      --max-width: 1180px;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--color-canvas);
+      color: var(--color-body);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--color-body);
+      background-color: var(--color-canvas);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* Highlight in prose from DesignMD rule 10 */
+    em {
+      font-style: italic;
+      color: var(--color-accent-1);
+    }
+
+    /* ─── Structural Containers ─── */
+    .container {
+      max-width: var(--max-width);
+      margin-inline: auto;
+      padding-inline: clamp(20px, 4vw, 40px);
+    }
+
+    .section {
+      padding-block: var(--space-band);
+      border-bottom: 1px solid var(--color-hairline);
+    }
+
+    /* ─── Header & Navigation ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-hairline);
+      padding: 16px 0;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      color: var(--color-ink);
+    }
+
+    .brand-status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: var(--rounded-full);
+      background-color: var(--color-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-faint);
+    }
+
+    .nav-links a {
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--color-ink);
+    }
+
+    /* Pill Buttons (DesignMD Rule 1: All buttons are pill-shaped) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 42px;
+      padding: 0 24px;
+      border-radius: var(--rounded-full);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0px;
+      transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+    }
+
+    .btn-primary:hover {
+      background-color: #003d26;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--color-ink);
+      border: 1px solid var(--color-hairline);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--color-ink);
+    }
+
+    .btn-whatsapp {
+      background-color: #107c41;
+      color: #ffffff;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #0b592e;
+    }
+
+    /* ─── Hero Section ─── */
+    .hero {
+      padding-top: clamp(60px, 8vw, 100px);
+      padding-bottom: clamp(60px, 8vw, 90px);
+      border-bottom: 1px solid var(--color-hairline);
+    }
+
+    .hero-kicker-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--color-faint);
+      letter-spacing: 0.4px;
+    }
+
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--color-neutral-subtle);
+      border: 1px solid var(--color-hairline);
+      padding: 4px 12px;
+      border-radius: var(--rounded-full);
+      color: var(--color-primary);
+      font-weight: 500;
+    }
+
+    .hero-title {
+      font-size: clamp(38px, 5.8vw, 68px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -1.6px;
+      color: var(--color-ink);
+      max-width: 20ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-lead {
+      font-size: clamp(17px, 1.6vw, 19px);
+      line-height: 1.55;
+      letter-spacing: -0.2px;
+      color: var(--color-body);
+      max-width: 58ch;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    /* ─── Verified Metrics Strip (DesignMD Elevation & Color-blocking) ─── */
+    .metrics-bar {
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: var(--color-canvas);
+    }
+
+    .metric-cell {
+      padding: 24px 28px;
+      border-right: 1px solid var(--color-hairline);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .metric-cell:last-child {
+      border-right: none;
+    }
+
+    .metric-number {
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.8px;
+      color: var(--color-ink);
+      line-height: 1.1;
+    }
+
+    .metric-label {
+      font-size: 13.5px;
+      color: var(--color-faint);
+      font-weight: 500;
+    }
+
+    /* ─── Work / Portfolio Section ─── */
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 500;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      color: var(--color-ink);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--color-faint);
+      max-width: 60ch;
+      line-height: 1.6;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .project-card {
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      background: var(--color-canvas);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-2px);
+      border-color: #BDBDBD;
+    }
+
+    .project-image-box {
+      width: 100%;
+      height: 300px;
+      background-color: var(--color-neutral-subtle);
+      border-bottom: 1px solid var(--color-hairline);
+      overflow: hidden;
+    }
+
+    .project-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .project-body {
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .project-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .project-tech-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: var(--rounded-full);
+      background-color: var(--color-neutral-subtle);
+      border: 1px solid var(--color-hairline);
+      color: var(--color-faint);
+    }
+
+    .project-name {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      color: var(--color-ink);
+      margin-bottom: 6px;
+    }
+
+    .project-summary {
+      font-size: 14.5px;
+      color: var(--color-faint);
+      line-height: 1.55;
+    }
+
+    .project-cta-link {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--color-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ─── Client Reviews Section (DesignMD Neutral Warm Band) ─── */
+    .reviews-band {
+      background-color: #FAFAFA;
+      border-bottom: 1px solid var(--color-hairline);
+      padding-block: var(--space-band);
+    }
+
+    .reviews-top-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+    }
+
+    .reviews-summary-badge {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-canvas);
+      border: 1px solid var(--color-hairline);
+      padding: 16px 24px;
+      border-radius: var(--rounded-sm);
+    }
+
+    .review-score-big {
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--color-ink);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .review-stars-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .review-stars {
+      color: #D97706;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .review-source-note {
+      font-size: 13px;
+      color: var(--color-faint);
+      font-weight: 500;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-item {
+      background: var(--color-canvas);
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      padding: 30px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      transition: transform 0.15s ease;
+    }
+
+    .review-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .review-quote-text {
+      font-size: 14.5px;
+      color: var(--color-body);
+      line-height: 1.6;
+    }
+
+    .review-client-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--color-hairline);
+    }
+
+    .client-avatar-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--rounded-full);
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .client-title-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .client-handle {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-ink);
+    }
+
+    .client-geo {
+      font-size: 12px;
+      color: var(--color-faint);
+    }
+
+    /* ─── Services Section (Terminal & Engineering Native) ─── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      padding: 32px 26px;
+      background: var(--color-canvas);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-2px);
+      border-color: #BDBDBD;
+    }
+
+    .service-mono-index {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--color-primary);
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .service-headline {
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--color-ink);
+      letter-spacing: -0.3px;
+    }
+
+    .service-paragraph {
+      font-size: 14px;
+      color: var(--color-faint);
+      line-height: 1.6;
+    }
+
+    /* ─── About Section ─── */
+    .about-split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text-column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .about-text-column p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--color-body);
+    }
+
+    /* Terminal-style Code Container (DesignMD: #1A1A1A background with monospace) */
+    .terminal-container {
+      background-color: var(--color-muted);
+      border-radius: var(--rounded-sm);
+      padding: 24px 28px;
+      color: #E6E6E6;
+      font-family: var(--font-mono);
+      font-size: 12.5px;
+      line-height: 1.7;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      color: #888888;
+      font-size: 11px;
+    }
+
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #444;
+    }
+
+    .terminal-line {
+      display: flex;
+      gap: 8px;
+    }
+
+    .terminal-prompt {
+      color: #10B981;
+    }
+
+    .terminal-val {
+      color: #FFFFFF;
+    }
+
+    .terminal-accent {
+      color: var(--color-accent-1);
+    }
+
+    /* ─── Contact Section ─── */
+    .contact-box {
+      background: #FAFAFA;
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      padding: clamp(40px, 6vw, 64px);
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .contact-title {
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 500;
+      letter-spacing: -0.8px;
+      color: var(--color-ink);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .contact-sub {
+      font-size: 15.5px;
+      color: var(--color-faint);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .channels-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .channel-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--color-canvas);
+      border: 1px solid var(--color-hairline);
+      border-radius: var(--rounded-sm);
+      font-size: 14.5px;
+      font-weight: 500;
+      color: var(--color-ink);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .channel-row:hover {
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+
+    .channel-key {
+      color: var(--color-faint);
+      font-size: 12px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      padding: 32px 0;
+      font-size: 13.5px;
+      color: var(--color-faint);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── Responsive Media Queries ─── */
+    @media (max-width: 1024px) {
+      .metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-cell:nth-child(2) {
+        border-right: none;
+      }
+      .metric-cell:nth-child(n+3) {
+        border-top: 1px solid var(--color-hairline);
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-split {
+        grid-template-columns: 1fr;
+      }
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+      .metrics-bar {
+        grid-template-columns: 1fr;
+      }
+      .metric-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--color-hairline);
+      }
+      .metric-cell:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-logo">
+        <span class="brand-status-dot"></span>
+        <span>Mineuddin Siam</span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-primary">
+        Chat on WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-kicker-row">
+          <span class="hero-badge-tag">● Available for Projects</span>
+          <span>Fiverr Level 2 Seller</span>
+          <span>·</span>
+          <span>5.0 Star Rating</span>
+        </div>
+
+        <h1 class="hero-title">
+          Fast, custom WordPress websites that <em>bring you clients.</em>
+        </h1>
+
+        <p class="hero-lead">
+          I’m Mineuddin Siam, an independent WordPress web designer and developer. I build clean, responsive, and easy-to-manage websites for businesses that want to look professional and increase inquiries.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-primary">View Selected Work</a>
+          <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="btn btn-outline">Hire on Fiverr</a>
+          <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Directly</a>
+        </div>
+
+        <!-- Verified Credibility Metrics -->
+        <div class="metrics-bar">
+          <div class="metric-cell">
+            <span class="metric-number">137+</span>
+            <span class="metric-label">Completed Deliveries</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-number">5.0 ★</span>
+            <span class="metric-label">Rating Across 80+ Reviews</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-number">Level 2</span>
+            <span class="metric-label">Verified Fiverr Seller</span>
+          </div>
+          <div class="metric-cell">
+            <span class="metric-number">5+ Yrs</span>
+            <span class="metric-label">Developing for the Web</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="section" id="work">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Websites built for real businesses.</h2>
+          <p class="section-desc">Each website is custom-built on WordPress with Elementor Pro and clean custom CSS. Fast-loading, fully mobile-responsive, and tailored to the client's business goals.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Morgans Detailing -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/screencapture-silver-rabbit-386922-hostingersite-2026-09-14-03_03_39.png" alt="Morgans Detailing website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">Elementor Pro</span>
+                  <span class="project-tech-tag">Automotive</span>
+                </div>
+                <h3 class="project-name">Morgans Detailing</h3>
+                <p class="project-summary">High-contrast branding and booking structure for a West Midlands vehicle detailing specialist. Built to drive fast customer service inquiries.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+          <!-- Project 2: Cloud 9 Kitchen & Bar -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/screencapture-cyan-zebra-828714-hostingersite-2026-10-11-23_05_38.png" alt="Cloud 9 Kitchen and Bar website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">Menu CMS</span>
+                  <span class="project-tech-tag">Hospitality</span>
+                </div>
+                <h3 class="project-name">Cloud 9 Kitchen & Bar</h3>
+                <p class="project-summary">Artisan dining and airfield bar website featuring high-quality photography, easy menu navigation, and direct table booking callouts.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+          <!-- Project 3: TMAD Cleaning Services -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/screencapture-tmadcleaningservices-co-uk-2026-10-17-23_52_59.png" alt="TMAD Cleaning Services website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">Lead Generation</span>
+                  <span class="project-tech-tag">Commercial Services</span>
+                </div>
+                <h3 class="project-name">TMAD Cleaning Services</h3>
+                <p class="project-summary">Trustworthy corporate website for a UK commercial property and facility cleaning company with instant quote contact flows.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+          <!-- Project 4: Bucket-List Balloon Flights -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/Submission 3.png" alt="Bucket-List Balloon Flights website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">WooCommerce</span>
+                  <span class="project-tech-tag">Aviation & Tourism</span>
+                </div>
+                <h3 class="project-name">Bucket-List Balloon Flights</h3>
+                <p class="project-summary">Experience booking platform for hot air balloon rides, complete with voucher purchasing, flight schedules, and customer FAQs.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+          <!-- Project 5: Chapmans Valeting -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/screencapture-lightpink-fox-698358-hostingersite-2026-08-03-23_01_42.png" alt="Chapmans Valeting website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">WhatsApp Integration</span>
+                  <span class="project-tech-tag">Mobile Valeting</span>
+                </div>
+                <h3 class="project-name">Chapmans Valeting</h3>
+                <p class="project-summary">Mobile automotive care website with direct WhatsApp customer chat, transparent tier pricing, and clear service area coverage.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+          <!-- Project 6: Reynolds & Son Heritage Craft -->
+          <article class="project-card">
+            <div class="project-image-box">
+              <img src="assets/Client Projects/Reynolds.png" alt="Reynolds and Son website screenshot" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-row">
+                  <span class="project-tech-tag">WordPress</span>
+                  <span class="project-tech-tag">Portfolio Gallery</span>
+                  <span class="project-tech-tag">Heritage Building</span>
+                </div>
+                <h3 class="project-name">Reynolds & Son Building & Restoration</h3>
+                <p class="project-summary">Timeless craftsmanship showcase highlighting building heritage, client recommendations, and high-resolution restoration galleries.</p>
+              </div>
+              <a href="#contact" class="project-cta-link">Discuss a project like this →</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section class="reviews-band" id="reviews">
+      <div class="container">
+
+        <div class="reviews-top-row">
+          <div>
+            <p class="section-label">Client Reviews</p>
+            <h2 class="section-title">What clients say about working with me.</h2>
+            <p class="section-desc">Over 80 verified five-star reviews on Fiverr from business owners in the United Kingdom, United States, Canada, Sweden, and Hong Kong.</p>
+          </div>
+
+          <div class="reviews-summary-badge">
+            <span class="review-score-big">5.0</span>
+            <div class="review-stars-stack">
+              <span class="review-stars">★★★★★</span>
+              <span class="review-source-note">Verified Fiverr Profile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-grid">
+
+          <div class="review-item">
+            <p class="review-quote-text">"Siam truly impressed me with his exceptional website design skills. His work is visually appealing, professional, and reflects a strong attention to detail. It was a pleasure working with him — he delivered on time with a deep understanding of what I needed."</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">A</div>
+              <div class="client-title-col">
+                <span class="client-handle">ace2k6</span>
+                <span class="client-geo">United Kingdom · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <p class="review-quote-text">"Siam's professionalism and attention to detail were outstanding, perfectly aligning with our brand vision. Working with him was an absolute joy due to his polite communication, fast replies, and great cooperation throughout the project."</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">S</div>
+              <div class="client-title-col">
+                <span class="client-handle">stevecollett2</span>
+                <span class="client-geo">United Kingdom · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <p class="review-quote-text">"Siam did an amazing job designing our website, showcasing true professionalism and exceeding all our expectations! Working with him was a breeze. Politeness and excellent cooperation made the whole process smooth. Would definitely hire him again."</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">H</div>
+              <div class="client-title-col">
+                <span class="client-handle">hrhnina</span>
+                <span class="client-geo">Hong Kong · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <p class="review-quote-text">"It was a pleasure working with Siam. His communication was clear, fast, and professional. He was incredibly efficient, delivering the project ahead of schedule without cutting corners on quality. Friendly and solution-oriented all the way through."</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">C</div>
+              <div class="client-title-col">
+                <span class="client-handle">carolinegorska</span>
+                <span class="client-geo">Sweden · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <p class="review-quote-text">"I recently worked with Siam to create our website, and I couldn't be happier with the outcome. We even had a Zoom call where he walked me through how everything works and how I can make simple changes myself in the future. Highly recommended!"</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">L</div>
+              <div class="client-title-col">
+                <span class="client-handle">luceric</span>
+                <span class="client-geo">Canada · Verified Buyer</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-item">
+            <p class="review-quote-text">"Amazing work as always! This is my go-to developer for all my website builds, technical setups, and advice. If you want someone who truly cares about making your project a success, look no further — Siam is the one. 5 stars!"</p>
+            <div class="review-client-meta">
+              <div class="client-avatar-circle">R</div>
+              <div class="client-title-col">
+                <span class="client-handle">royalphoxx1</span>
+                <span class="client-geo">United States · Repeat Client</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">Services</p>
+          <h2 class="section-title">How I help your business grow.</h2>
+          <p class="section-desc">Reliable, end-to-end WordPress solutions designed to give you peace of mind.</p>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="service-card">
+            <span class="service-mono-index">01 / DESIGN</span>
+            <h3 class="service-headline">Custom WordPress Design</h3>
+            <p class="service-paragraph">Brand-new websites tailored to your unique brand, audience, and market. Built cleanly using Elementor Pro for effortless content updates.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-mono-index">02 / REDESIGN</span>
+            <h3 class="service-headline">Website Redesigns</h3>
+            <p class="service-paragraph">Revamp an outdated website into a modern, credible, and trustworthy digital presence that reflects your true business quality.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-mono-index">03 / COMMERCE</span>
+            <h3 class="service-headline">WooCommerce Stores</h3>
+            <p class="service-paragraph">Robust e-commerce stores with smooth product navigation, secure payment checkout (Stripe, PayPal), and mobile-optimized carts.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-mono-index">04 / PERFORMANCE</span>
+            <h3 class="service-headline">Speed & Mobile Optimization</h3>
+            <p class="service-paragraph">Fast loading times, compressed media, and responsive design tested meticulously across smartphones, tablets, and laptops.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-mono-index">05 / CONVERSION</span>
+            <h3 class="service-headline">Landing Pages for Ads</h3>
+            <p class="service-paragraph">High-converting single-page sales funnels designed to turn Google, Meta, and social ad clicks into real phone calls and booked appointments.</p>
+          </div>
+
+          <div class="service-card">
+            <span class="service-mono-index">06 / SUPPORT</span>
+            <h3 class="service-headline">Ongoing Support & Edits</h3>
+            <p class="service-paragraph">Dependable maintenance, plugin updates, bug fixes, and content modifications whenever your business needs assistance.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="about-split">
+          <div class="about-text-column">
+            <p class="section-label">About Me</p>
+            <h2 class="section-title">The person behind your website.</h2>
+            <p>
+              I’m <strong>Mineuddin Siam</strong>, a WordPress web designer and developer based in Bangladesh. Since 2019, I’ve partnered with over 54 unique business owners across the UK, USA, Europe, and Asia to design websites that actually produce results.
+            </p>
+            <p>
+              Whether working with a car detailing workshop, an artisan kitchen, a specialist clinic, or an e-commerce shop, I focus on two things: <em>making your business look exceptional</em>, and <em>making it effortless for visitors to become paying clients</em>.
+            </p>
+            <p>
+              Every project comes with clear communication, fast delivery, and a walkthrough video showing you how to update text and images easily without touching any code.
+            </p>
+          </div>
+
+          <!-- Technical Spec Terminal Block -->
+          <div class="terminal-container">
+            <div class="terminal-header">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span style="margin-left: 6px;">developer-profile.sh</span>
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>whoami</span>
+            </div>
+            <div class="terminal-val" style="margin-bottom: 12px;">Mineuddin Siam (WordPress Specialist)</div>
+
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>cat credentials.json</span>
+            </div>
+            <div style="color: #999; margin-bottom: 12px;">
+              {<br>
+              &nbsp;&nbsp;"seller_rank": "<span class="terminal-val">Fiverr Level 2</span>",<br>
+              &nbsp;&nbsp;"rating": "<span class="terminal-val">5.0 / 5.0</span>",<br>
+              &nbsp;&nbsp;"orders_completed": <span class="terminal-accent">137</span>,<br>
+              &nbsp;&nbsp;"stack": ["WordPress", "Elementor Pro", "WooCommerce", "CSS"],<br>
+              &nbsp;&nbsp;"status": "<span style="color: #10B981;">Available for hire</span>"<br>
+              }
+            </div>
+
+            <div class="terminal-line">
+              <span class="terminal-prompt">$</span>
+              <span>echo $DIRECT_CONTACT</span>
+            </div>
+            <div class="terminal-accent">whatsapp: +8801743248400</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="border-bottom: none;">
+      <div class="container">
+
+        <div class="contact-box">
+          <div>
+            <h2 class="contact-title">Have a project in mind? Let's talk.</h2>
+            <p class="contact-sub">
+              Tell me about your business and what you're looking to build. I’ll review your requirements and get back to you with actionable ideas and a clear quote.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+              <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="btn btn-whatsapp">Message on WhatsApp</a>
+              <a href="mailto:mineuddin20siam@gmail.com" class="btn btn-outline">Send an Email</a>
+            </div>
+          </div>
+
+          <div class="channels-stack">
+            <a href="mailto:mineuddin20siam@gmail.com" class="channel-row">
+              <div>
+                <div class="channel-key">Direct Email</div>
+                <div>mineuddin20siam@gmail.com</div>
+              </div>
+              <span>→</span>
+            </a>
+
+            <a href="https://wa.me/8801743248400" target="_blank" rel="noopener" class="channel-row">
+              <div>
+                <div class="channel-key">WhatsApp (Fastest Reply)</div>
+                <div>+880 1743-248400</div>
+              </div>
+              <span>→</span>
+            </a>
+
+            <a href="https://www.fiverr.com/users/mineuddinsiam/" target="_blank" rel="noopener" class="channel-row">
+              <div>
+                <div class="channel-key">Fiverr Marketplace Profile</div>
+                <div>fiverr.com/users/mineuddinsiam</div>
+              </div>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2019–2026 Mineuddin Siam · WordPress Web Designer & Developer</span>
+      <a href="#top" style="color: var(--color-faint);">Back to top ↑</a>
+    </div>
+  </footer>
+
+</body>
+</html>
