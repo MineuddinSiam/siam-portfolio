@@ -6,119 +6,274 @@
   <title>Siam Portfolio — Design Versions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #0c0f12;
+      background: #090c0f;
       color: #f0f4f8;
-      padding: 60px 24px;
+      padding: 60px 24px 80px;
       line-height: 1.6;
     }
     .wrap {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
+    .header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #00875a;
+      background: rgba(0, 135, 90, 0.12);
+      border: 1px solid rgba(0, 135, 90, 0.3);
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00a86b;
+      box-shadow: 0 0 10px #00a86b;
+    }
     h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 800;
       letter-spacing: -0.03em;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     p.lead {
       color: #8b99a8;
       font-size: 1.1rem;
-      margin-bottom: 40px;
+      max-width: 680px;
     }
     .grid {
       display: grid;
       gap: 20px;
     }
     .card {
-      background: #151a21;
+      background: #12171e;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 26px 30px;
+      border-radius: 18px;
+      padding: 28px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 24px;
-      transition: all 0.2s ease;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       color: inherit;
+      position: relative;
+      overflow: hidden;
     }
     .card:hover {
-      border-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.25);
       transform: translateY(-2px);
-      background: #1a2029;
+      background: #171d26;
+    }
+    .card.featured {
+      border-color: rgba(0, 135, 90, 0.4);
+      background: linear-gradient(180deg, #121d19 0%, #0f151b 100%);
+    }
+    .card.featured:hover {
+      border-color: rgba(0, 175, 110, 0.6);
+      background: linear-gradient(180deg, #16241f 0%, #121921 100%);
     }
     .tag {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
-      color: #60a5fa;
-      background: rgba(96, 165, 250, 0.12);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       padding: 4px 10px;
       border-radius: 100px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .tag-green {
+      color: #2ee59d;
+      background: rgba(46, 229, 157, 0.12);
+      border: 1px solid rgba(46, 229, 157, 0.25);
+    }
+    .tag-blue {
+      color: #60a5fa;
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.2);
+    }
+    .tag-amber {
+      color: #f59e0b;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .tag-purple {
+      color: #c084fc;
+      background: rgba(192, 132, 252, 0.12);
+      border: 1px solid rgba(192, 132, 252, 0.2);
     }
     .card-title {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 700;
+      letter-spacing: -0.02em;
       margin-bottom: 6px;
     }
     .card-desc {
       font-size: 0.94rem;
       color: #8b99a8;
+      max-width: 620px;
+    }
+    .meta-pills {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.74rem;
+      color: #6c7d93;
+    }
+    .meta-pills span {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 2px 8px;
+      border-radius: 4px;
     }
     .btn {
-      padding: 12px 24px;
+      padding: 13px 26px;
       border-radius: 100px;
       background: #2563eb;
       color: #fff;
       font-weight: 600;
       font-size: 0.92rem;
       white-space: nowrap;
-      transition: background 0.15s ease;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
     .card:hover .btn {
       background: #1d4ed8;
+      transform: translateX(2px);
+    }
+    .btn-green {
+      background: #005032;
+      color: #fff;
+    }
+    .card.featured:hover .btn-green {
+      background: #006842;
+    }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+      color: #6c7d93;
+    }
+    .footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: #fff;
+    }
+    @media (max-width: 640px) {
+      .card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <h1>Portfolio Design Versions</h1>
-    <p class="lead">Compare the 3 distinct website designs created for Mineuddin Siam:</p>
+    <div class="header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        <span>GitHub Pages Active</span>
+      </div>
+      <h1>Portfolio Design Iterations</h1>
+      <p class="lead">Compare the distinct website versions created for Mineuddin Siam. Every version is fully interactive and live on GitHub Pages.</p>
+    </div>
 
     <div class="grid">
-      <a href="index.html" class="card">
+      <!-- Latest: DesignMD Agentsure -->
+      <a href="index.html" class="card featured">
         <div>
-          <span class="tag">Design 1 · Current Live</span>
+          <span class="tag tag-green">Latest · DesignMD System (Active index.html)</span>
+          <h2 class="card-title">DesignMD / Agentsure System (Forest Green & Clean White)</h2>
+          <p class="card-desc">Pure white canvas, deep forest green (#005032) accents, Inter Tight + JetBrains Mono typography, color-blocked metric bar, interactive technical terminal spec, 6 real client projects, and verified Fiverr reviews.</p>
+          <div class="meta-pills">
+            <span>Inter Tight</span>
+            <span>JetBrains Mono</span>
+            <span>#005032 Forest</span>
+            <span>DesignMD Source of Truth</span>
+          </div>
+        </div>
+        <span class="btn btn-green">View Live →</span>
+      </a>
+
+      <!-- Version 4: Modern Dark -->
+      <a href="v4.html" class="card">
+        <div>
+          <span class="tag tag-blue">Design 2 · Modern Dark</span>
           <h2 class="card-title">Modern Dark Theme (Plus Jakarta Sans)</h2>
-          <p class="card-desc">High-converting dark portfolio with natural conversational English, clean project cards, client review grid, and direct WhatsApp contact.</p>
+          <p class="card-desc">High-contrast dark portfolio with natural conversational copy, clean glassmorphism project cards, verified client reviews grid, and WhatsApp quick-contact.</p>
+          <div class="meta-pills">
+            <span>Plus Jakarta Sans</span>
+            <span>#0c0f12 Dark</span>
+            <span>#2563eb Blue</span>
+          </div>
         </div>
         <span class="btn">View Live →</span>
       </a>
 
+      <!-- Version 1: Warm Interactive -->
       <a href="v1.html" class="card">
         <div>
-          <span class="tag">Design 2</span>
-          <h2 class="card-title">Warm Interactive (Outfit Typography & 3D Tilt Hero)</h2>
-          <p class="card-desc">Warm aesthetic with Outfit geometric font, interactive 3D hero stage, live status badge, and side-by-side featured project layouts.</p>
+          <span class="tag tag-amber">Design 3 · Warm Interactive</span>
+          <h2 class="card-title">Warm Aesthetic (Outfit & 3D Tilt Hero)</h2>
+          <p class="card-desc">Warm aesthetic with Outfit geometric typography, interactive 3D hero stage, live status badge, and side-by-side featured project layouts.</p>
+          <div class="meta-pills">
+            <span>Outfit Font</span>
+            <span>3D Tilt Card</span>
+            <span>Warm Dark Tone</span>
+          </div>
         </div>
         <span class="btn">View Live →</span>
       </a>
 
+      <!-- Version 2: Architectural Monograph -->
       <a href="v2.html" class="card">
         <div>
-          <span class="tag">Design 3</span>
+          <span class="tag tag-purple">Design 4 · Architectural Monograph</span>
           <h2 class="card-title">Architectural Monograph (Frost & Slate)</h2>
-          <p class="card-desc">Editorial magazine style with Schibsted Grotesk, video mosaic masthead, and interactive project directory drawer.</p>
+          <p class="card-desc">High-end editorial magazine aesthetic with Schibsted Grotesk, video mosaic hero, and interactive project directory drawer.</p>
+          <div class="meta-pills">
+            <span>Schibsted Grotesk</span>
+            <span>Editorial Slate</span>
+            <span>Interactive Drawer</span>
+          </div>
         </div>
         <span class="btn">View Live →</span>
       </a>
+    </div>
+
+    <div class="footer">
+      <span>Repository: <a href="https://github.com/MineuddinSiam/siam-portfolio" target="_blank" rel="noopener">MineuddinSiam/siam-portfolio</a></span>
+      <a href="DESIGN.md">View DESIGN.md System Specs →</a>
     </div>
   </div>
 </body>
